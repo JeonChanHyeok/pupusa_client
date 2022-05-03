@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">pupusa</string>
+    <string name="My_Info">내 정보</string>
+    <string name="Notice">공지사항</string>
+    <string name="Service_center">고객센터</string>
+    <string name="Policy">약관 및 정책</string>
+
+</resources>
