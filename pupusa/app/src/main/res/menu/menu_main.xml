@@ -5,7 +5,7 @@
         android:id="@+id/menu_my_info"
         android:title="@string/My_Info"
         android:icon="@drawable/ic_person"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
     <item
         android:id="@+id/menu_notice"
         android:title="@string/Notice"

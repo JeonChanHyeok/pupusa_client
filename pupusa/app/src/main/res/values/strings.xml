@@ -4,5 +4,8 @@
     <string name="Notice">공지사항</string>
     <string name="Service_center">고객센터</string>
     <string name="Policy">약관 및 정책</string>
+    <string name="Login">로그인</string>
+    <string name="Google_login">구글 계정으로 로그인</string>
+    <string name="Kakao_login">카카오 계정으로 로그인</string>
 
 </resources>
