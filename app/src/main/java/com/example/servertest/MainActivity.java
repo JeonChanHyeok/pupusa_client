@@ -86,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 try{
-                    Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    if(response.body().getCode() == 1){
+
+                    }
                 }catch (Exception e){
                     e.printStackTrace();
                 }

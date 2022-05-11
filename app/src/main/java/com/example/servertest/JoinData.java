@@ -6,7 +6,6 @@ public class JoinData {
     @SerializedName("UserID")
     private String UserID;
 
-
     @SerializedName("UserPW")
     private String UserPW;
 
