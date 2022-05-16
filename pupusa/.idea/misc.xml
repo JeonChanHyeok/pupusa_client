@@ -12,8 +12,11 @@
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/drawable/edge3.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/drawable/edge4.xml" value="0.32916666666666666" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/drawable/edge5.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/drawable/edge6.xml" value="0.2861111111111111" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/drawable/kakao.xml" value="0.2935185185185185" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/activity_alert.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/activity_join.xml" value="0.12" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/activity_main.xml" value="0.24722222222222223" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/api_address.xml" value="0.19635416666666666" />
@@ -21,18 +24,22 @@
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/btn_popcorn.xml" value="0.1" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/btn_popcorn2.xml" value="0.1" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/header.xml" value="0.196875" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/listview_alert.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/listview_main.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/listview_sub.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/test_activity.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/text_activity.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/toobar_test2.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/toolbar_alert.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/toolbar_join.xml" value="0.15625" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/toolbar_login.xml" value="0.1" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/toolbar_main.xml" value="0.22" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/toolbar_test.xml" value="0.22" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/layout/user_login.xml" value="0.35520833333333335" />
-        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/menu/menu_main.xml" value="0.3515625" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/menu/menu_main.xml" value="0.22" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/menu/menu_sub.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18888888888888888" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>

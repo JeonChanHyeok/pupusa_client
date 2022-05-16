@@ -73,7 +73,9 @@
             app:layout_constraintTop_toTopOf="@+id/find_pwd"
             app:layout_constraintTop_toBottomOf="@+id/btn_login"
             app:layout_constraintLeft_toRightOf="@+id/find_pwd"
-            app:layout_constraintRight_toRightOf="parent">
+            app:layout_constraintRight_toRightOf="parent"
+            android:clickable="true"
+            android:onClick="signUp">
         </TextView>
 
         <Button

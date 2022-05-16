@@ -1,5 +1,6 @@
 package com.example.pupusa;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +11,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends BaseAdapter {
+public class AdapterAlert extends BaseAdapter {
 
     Context mContext = null;
     LayoutInflater mLayoutInflater = null;
-    ArrayList<SampleData> sample;
+    ArrayList<AlertSampleData> sample;
 
-    public MyAdapter(Context context, ArrayList<SampleData> data) {
+    public AdapterAlert(Context context, ArrayList<AlertSampleData> data) {
         mContext = context;
         sample = data;
         mLayoutInflater = LayoutInflater.from(mContext);
@@ -33,25 +34,23 @@ public class MyAdapter extends BaseAdapter {
     }
 
     @Override
-    public SampleData getItem(int position) {
+    public AlertSampleData getItem(int position) {
         return sample.get(position);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View ChatView = mLayoutInflater.inflate(R.layout.listview_chattingroom, null);
+        @SuppressLint("ViewHolder") View AlertView = mLayoutInflater.inflate(R.layout.listview_alert, null);
 
 
-        ImageView imageView = (ImageView)ChatView.findViewById(R.id.shop_icon);
-        TextView title = (TextView)ChatView.findViewById(R.id.chatting_title);
-        TextView address = (TextView)ChatView.findViewById(R.id.chatting_address);
-        TextView contents = (TextView)ChatView.findViewById(R.id.chatting_context);
+        TextView title = AlertView.findViewById(R.id.alert_title);
+        TextView contents = AlertView.findViewById(R.id.alert_contents);
+        TextView date = AlertView.findViewById(R.id.alert_date);
 
-        imageView.setImageResource(sample.get(position).getPoster());
         title.setText(sample.get(position).getTitle());
-        address.setText(sample.get(position).getAddress());
-        contents.setText(sample.get(position).getMyContext());
+        contents.setText(sample.get(position).getMyContents());
+        date.setText(sample.get(position).getDate());
 
-        return ChatView;
+        return AlertView;
     }
 }
