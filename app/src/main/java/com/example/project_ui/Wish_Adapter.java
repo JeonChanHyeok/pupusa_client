@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class Chat_MyAdapter extends BaseAdapter {
+public class Wish_Adapter extends BaseAdapter {
     Context mContext = null;
     LayoutInflater mLayoutInflater = null;
-    ArrayList<Chat_Data> sample;
+    ArrayList<Wish_Data> sample;
 
-    public Chat_MyAdapter(Context context, ArrayList<Chat_Data> data) {
+    public Wish_Adapter(Context context, ArrayList<Wish_Data> data) {
         mContext = context;
         sample = data;
         mLayoutInflater = LayoutInflater.from(mContext);
@@ -32,23 +32,25 @@ public class Chat_MyAdapter extends BaseAdapter {
     }
 
     @Override
-    public Chat_Data getItem(int position) {
+    public Wish_Data getItem(int position) {
         return sample.get(position);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = mLayoutInflater.inflate(R.layout.chat_listview_custom, null);
+        View view = mLayoutInflater.inflate(R.layout.listview_custom, null);
 
         ImageView imageView = (ImageView) view.findViewById(R.id.poster);
-        TextView chat_title = (TextView) view.findViewById(R.id.chatting_title);
-        TextView  chat_location= (TextView) view.findViewById(R.id.chatting_location);
-        TextView chat_content = (TextView) view.findViewById(R.id.chatting_context);
+        ImageView imageView1 = (ImageView) view.findViewById(R.id.heart);
+        ImageView imageView2 = (ImageView) view.findViewById(R.id.star);
+
+        TextView store = (TextView) view.findViewById(R.id.wish_title);
+        TextView star_score = (TextView) view.findViewById(R.id.star_score);
 
         imageView.setImageResource(sample.get(position).getPoster());
-        chat_title.setText(sample.get(position).getStore());
-        chat_location.setText(sample.get(position).store_location());
-        chat_content.setText(sample.get(position).store_content());
+        store.setText(sample.get(position).getStore());
+        star_score.setText(sample.get(position).getstarscore());
+
         return view;
     }
 }

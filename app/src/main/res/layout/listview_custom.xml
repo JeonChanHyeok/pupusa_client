@@ -27,24 +27,17 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/chatting_title"
-                android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:id="@+id/movieName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/chatting_location"
-                android:layout_width="150dp"
-                android:layout_height="20dp"
-                android:textColor="#00AAFF"
+                android:id="@+id/grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="TextView" />
-
-            <TextView
-            android:id="@+id/chatting_context"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
-            android:text="TextView" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout >

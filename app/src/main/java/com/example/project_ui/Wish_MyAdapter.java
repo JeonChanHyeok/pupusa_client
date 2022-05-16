@@ -13,9 +13,9 @@ import java.util.ArrayList;
 public class Wish_MyAdapter extends BaseAdapter {
     Context mContext = null;
     LayoutInflater mLayoutInflater = null;
-    ArrayList<SampleData> sample;
+    ArrayList<Wish_Data> sample;
 
-    public Wish_MyAdapter(Context context, ArrayList<SampleData> data) {
+    public Wish_MyAdapter(Context context, ArrayList<Wish_Data> data) {
         mContext = context;
         sample = data;
         mLayoutInflater = LayoutInflater.from(mContext);
@@ -32,7 +32,7 @@ public class Wish_MyAdapter extends BaseAdapter {
     }
 
     @Override
-    public SampleData getItem(int position) {
+    public Wish_Data getItem(int position) {
         return sample.get(position);
     }
 
@@ -40,13 +40,20 @@ public class Wish_MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = mLayoutInflater.inflate(R.layout.wish_listview_custom, null);
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.poster);
-        TextView wishtitle = (TextView) view.findViewById(R.id.wish_title);
-        TextView wishcontext = (TextView) view.findViewById(R.id.wish_context);
+        ImageView imageView = (ImageView) view.findViewById(R.id.heart);
+        ImageView imageView2 = (ImageView) view.findViewById(R.id.poster);
+        ImageView imageView3 = (ImageView) view.findViewById(R.id.star);
 
-        imageView.setImageResource(sample.get(position).getPoster());
-        wishtitle.setText(sample.get(position).getMovieName());
-        wishcontext.setText(sample.get(position).getGrade());
+
+        TextView wishtitle = (TextView) view.findViewById(R.id.wish_title);
+        TextView wishcontext = (TextView) view.findViewById(R.id.star_score);
+
+        imageView.setImageResource(sample.get(position).getPoster2());
+        imageView2.setImageResource(sample.get(position).getPoster());
+        imageView3.setImageResource(sample.get(position).getPoster3());
+
+        wishtitle.setText(sample.get(position).getStore());
+        wishcontext.setText(sample.get(position).getstarscore());
 
         return view;
     }

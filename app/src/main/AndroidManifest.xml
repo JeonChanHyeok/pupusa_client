@@ -67,7 +67,7 @@
 
         </activity>
         <activity
-            android:name=".coupon"
+            android:name=".Coupon"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

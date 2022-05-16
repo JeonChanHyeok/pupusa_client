@@ -6,11 +6,13 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/coupon_btn"
         android:layout_width="399dp"
         android:layout_height="86dp"
         android:text="+ 쿠폰 등록하기"
         android:textSize="20sp"
+        android:background="@color/popcorn"
+
         app:layout_constraintEnd_toEndOf="@+id/textView12"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView12"
@@ -23,10 +25,10 @@
         android:layout_marginTop="16dp"
         android:scaleType="fitCenter"
         android:src="@drawable/coupon3"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="@+id/coupon_btn"
         app:layout_constraintHorizontal_bias="0.544"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintStart_toStartOf="@+id/coupon_btn"
+        app:layout_constraintTop_toBottomOf="@+id/coupon_btn" />
 
     <EditText
         android:id="@+id/textView12"
