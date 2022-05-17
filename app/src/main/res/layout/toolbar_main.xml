@@ -46,8 +46,8 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/ic_alarm" />
     </RelativeLayout>
