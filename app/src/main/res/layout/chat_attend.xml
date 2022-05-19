@@ -51,6 +51,7 @@
         android:layout_width="416dp"
         android:layout_height="47dp"
         android:text="채팅방 참여하기"
+        android:background="@color/popcorn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView15"
         app:layout_constraintStart_toStartOf="@+id/textView15" />

@@ -39,15 +39,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        //채팅방 입장화면(chat_info)
-        Button chatinfobtn=findViewById(R.id.chatinfobtn);
-        chatinfobtn.setOnClickListener(new View.OnClickListener() {//버튼 이벤트 처리
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Chat_Info.class);
-                startActivity(intent);
-            }
-        });
+
         // 비밀번호 확인 표시
         firstText = (EditText)findViewById(R.id.firstText);
         secondText = (EditText)findViewById(R.id.secondText);
@@ -74,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
+        });
+
+        //채팅방 입장화면(chat_info)
+        Button chatinfobtn=findViewById(R.id.chatinfobtn);
+        chatinfobtn.setOnClickListener(new View.OnClickListener() {//버튼 이벤트 처리
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Chat_Info.class);
+                startActivity(intent);
+            }
         });
         //찜 목록(wishlist)
         Button wishbtn=findViewById(R.id.wishbtn);
