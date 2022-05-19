@@ -51,6 +51,8 @@
             app:layout_constraintBottom_toTopOf="@+id/Whole_chattingRoom"
             android:background="@drawable/edge6"/>
 
+
+
         <TextView
             android:id="@+id/Whole_chattingRoom"
             android:layout_width="match_parent"

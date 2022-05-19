@@ -15,11 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pupusa">
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.Pupusa.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -28,6 +28,8 @@
         <activity android:name="com.example.pupusa.TestActivity"/>
         <activity android:name="com.example.pupusa.AddressApiActivity"/>
         <activity android:name="com.example.pupusa.AlertActivity"/>
+        <activity android:name="com.example.pupusa.MainActivity"/>
+        <activity android:name="com.example.pupusa.ChattingActivity"/>
 
     </application>
 

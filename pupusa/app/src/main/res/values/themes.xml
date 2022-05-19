@@ -20,4 +20,10 @@
         <!-- Customize color of menu icon in toolbar. -->
         <item name="android:textColorSecondary">@color/black</item>
     </style>
+
+    <style name="Theme.Pupusa.Splash" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+    </style>
 </resources>
