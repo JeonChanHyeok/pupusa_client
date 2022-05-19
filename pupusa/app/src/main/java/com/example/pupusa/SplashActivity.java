@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pupusa.activity.MainActivity;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override

@@ -1,27 +1,31 @@
-package com.example.pupusa;
+package com.example.pupusa.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.ImageView;
 import androidx.appcompat.widget.SearchView;
 
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.example.pupusa.AddressApiActivity;
+import com.example.pupusa.ChattingActivity;
+import com.example.pupusa.MyAdapter;
+import com.example.pupusa.NetworkStatus;
+import com.example.pupusa.R;
+import com.example.pupusa.SampleData;
+import com.example.pupusa.UserLogin;
+import com.example.pupusa.activity.AlertActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.InitializeDrawerLayout();
         this.InitializeSearchView();
-        this.InitializeAddress();
+        //this.InitializeAddress();
         this.InitializeChattingData();
 
         ListView listView = findViewById(R.id.listView);
@@ -129,29 +133,29 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void InitializeAddress() {
-        //UI 요소 연결
-        edit_addr = findViewById(R.id.edit_addr);
-
-        //터치 안되게 막기
-        edit_addr.setFocusable(false);
-
-        edit_addr.setOnClickListener(view -> {
-            Log.i("주소설정페이지", "주소입력창 클릭");
-            int status = NetworkStatus.getConnectivityStatus(getApplicationContext());
-            if(status == NetworkStatus.TYPE_MOBILE || status == NetworkStatus.TYPE_WIFI) {
-
-                Log.i("주소설정페이지", "주소입력창 클릭");
-                Intent i = new Intent(getApplicationContext(), AddressApiActivity.class);
-                //화면전환 애니메이션 없애기
-                overridePendingTransition(0, 0);
-                //주소 결과
-                startActivityForResult(i, SEARCH_ADDRESS_ACTIVITY);
-            }else {
-                Toast.makeText(getApplicationContext(), "인터넷 연결을 확인해주세요.", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    public void InitializeAddress() {
+//        //UI 요소 연결
+//        edit_addr = findViewById(R.id.edit_addr);
+//
+//        //터치 안되게 막기
+//        edit_addr.setFocusable(false);
+//
+//        edit_addr.setOnClickListener(view -> {
+//            Log.i("주소설정페이지", "주소입력창 클릭");
+//            int status = NetworkStatus.getConnectivityStatus(getApplicationContext());
+//            if(status == NetworkStatus.TYPE_MOBILE || status == NetworkStatus.TYPE_WIFI) {
+//
+//                Log.i("주소설정페이지", "주소입력창 클릭");
+//                Intent i = new Intent(getApplicationContext(), AddressApiActivity.class);
+//                //화면전환 애니메이션 없애기
+//                overridePendingTransition(0, 0);
+//                //주소 결과
+//                startActivityForResult(i, SEARCH_ADDRESS_ACTIVITY);
+//            }else {
+//                Toast.makeText(getApplicationContext(), "인터넷 연결을 확인해주세요.", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
     public void InitializeChattingData()
     {

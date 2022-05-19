@@ -1,10 +1,14 @@
-package com.example.pupusa;
+package com.example.pupusa.activity;
 
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pupusa.AdapterAlert;
+import com.example.pupusa.AlertSampleData;
+import com.example.pupusa.R;
 
 import java.util.ArrayList;
 
