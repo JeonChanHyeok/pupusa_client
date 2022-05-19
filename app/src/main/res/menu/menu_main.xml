@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_my_info"
+        android:title="@string/My_Info"
+        android:icon="@drawable/ic_person"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/menu_notice"
+        android:title="@string/Notice"
+        android:icon="@drawable/ic_notice"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_service_center"
+        android:title="@string/Service_center"
+        android:icon="@drawable/ic_service"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_policy"
+        android:title="@string/Policy"
+        android:icon="@drawable/ic_policy"
+        app:showAsAction="always"/>
+</menu>
