@@ -3,8 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/drawable/edge2.xml" value="0.1" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/drawable/edge4.xml" value="0.1" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/drawable/edge6.xml" value="0.1" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_join.xml" value="0.176" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_my_page.xml" value="0.264" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_popup.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_splash.xml" value="0.109375" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/announcement.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/announcement_child_list_view.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/announcement_parent_list_view.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/chat_listview_custom.xml" value="0.264" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/chat_listview_parent.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/coupon_list.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/gonggu_popup.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/listview_alert.xml" value="0.109375" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/listview_main.xml" value="0.109375" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/listview_sub.xml" value="0.264" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/mypage.xml" value="0.15729166666666666" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/service_center_item.xml" value="0.15729166666666666" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_alert.xml" value="0.15729166666666666" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_join.xml" value="0.109375" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_orderhistory.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/wish_listview_custom.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/wish_listview_parent.xml" value="0.2391304347826087" />
       </map>
     </option>
   </component>

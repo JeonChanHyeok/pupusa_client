@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -32,27 +33,27 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         /*    아래부터 전찬혁 코드 */
 
-        EditText e_id = (EditText)findViewById(R.id.login);
-        EditText e_pw = (EditText)findViewById(R.id.password);
-        Button join = (Button) findViewById(R.id.sign_up);
-        Button login = (Button) findViewById(R.id.btn_login);
+        EditText et_login_email = (EditText)findViewById(R.id.et_login_email);
+        EditText et_login_pw = (EditText)findViewById(R.id.et_login_pw);
+        TextView tv_sign_up = (TextView) findViewById(R.id.tv_sign_up);
+        Button btn_login = (Button) findViewById(R.id.btn_login);
 
-        join.setOnClickListener(new View.OnClickListener() {
+        tv_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                id = e_id.getText().toString();
-                pw = e_pw.getText().toString();
+                id = et_login_email.getText().toString();
+                pw = et_login_pw.getText().toString();
                 JoinData data = new JoinData(id, pw);
                 String objJson = gson.toJson(data);
                 startJoin(objJson);
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                id = e_id.getText().toString();
-                pw = e_pw.getText().toString();
+                id = et_login_email.getText().toString();
+                pw = et_login_pw.getText().toString();
                 LoginData data = new LoginData(id, pw);
                 String objJson = gson.toJson(data);
                 startLogin(objJson);

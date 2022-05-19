@@ -16,7 +16,7 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_my_page_profile_image"
             android:scaleType="fitCenter"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_width="50dp"

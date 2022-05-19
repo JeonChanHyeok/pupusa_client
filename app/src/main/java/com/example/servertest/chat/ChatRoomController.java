@@ -71,7 +71,7 @@ public class ChatRoomController extends AppCompatActivity {
         loginedId = chatRoomIntent.getStringExtra("userId");
         roomId = chatRoomIntent.getStringExtra("roomId");
 
-        wsServerUrl = "ws://175.200.243.163:8080/inchatroom/websocket";
+        wsServerUrl = "ws://ec2-34-227-207-122.compute-1.amazonaws.com:8080/inchatroom/websocket";
         listView = (ListView) findViewById(R.id.listView_chat_message);
 
         initStomp();
@@ -117,7 +117,7 @@ public class ChatRoomController extends AppCompatActivity {
     public void InitializeChattingData()
     {
         chattingDataList = new ArrayList<ChatMessage>();
-        String roomIdData = roomId.substring(6);
+        String roomIdData = roomId;
         Call chat = service.loadChatData(roomIdData);
         chat.enqueue(new Callback() {
             @Override

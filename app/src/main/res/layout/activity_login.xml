@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".UserLogin"
+        tools:context=".LoginActivity"
         android:background="@color/white">
 
         <include
@@ -17,23 +17,23 @@
             layout="@layout/toolbar_login"/>
 
         <EditText
-            android:id="@+id/login"
+            android:id="@+id/et_login_email"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:hint="Email"
             app:layout_constraintTop_toBottomOf="@+id/include"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/password"
+            app:layout_constraintBottom_toTopOf="@+id/et_login_pw"
             android:layout_marginTop="150dp">
         </EditText>
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/et_login_pw"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:hint="Password"
-            app:layout_constraintTop_toBottomOf="@+id/login"
+            app:layout_constraintTop_toBottomOf="@+id/et_login_email"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/btn_login"
@@ -44,40 +44,42 @@
             android:id="@+id/btn_login"
             android:layout_width="300dp"
             android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edge4"
             android:text="@string/Login"
             android:textSize="15dp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/password"
+            app:layout_constraintBottom_toTopOf="@+id/btn_login_google"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/btn_google"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/edge4"/>
+            app:layout_constraintTop_toBottomOf="@+id/et_login_pw" />
 
         <TextView
-            android:id="@+id/find_pwd"
+            android:id="@+id/tv_find_pwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Find Password"
             app:layout_constraintTop_toBottomOf="@+id/btn_login"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/sign_up"
+            app:layout_constraintRight_toLeftOf="@+id/tv_sign_up"
             android:layout_marginTop="10dp">
         </TextView>
 
-        <Button
-            android:id="@+id/sign_up"
+        <TextView
+            android:id="@+id/tv_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
-            app:layout_constraintTop_toTopOf="@+id/find_pwd"
+            app:layout_constraintTop_toTopOf="@+id/tv_find_pwd"
             app:layout_constraintTop_toBottomOf="@+id/btn_login"
-            app:layout_constraintLeft_toRightOf="@+id/find_pwd"
-            app:layout_constraintRight_toRightOf="parent">
-        </Button>
+            app:layout_constraintLeft_toRightOf="@+id/tv_find_pwd"
+            app:layout_constraintRight_toRightOf="parent"
+            android:clickable="true"
+            android:onClick="signUp">
+        </TextView>
 
         <Button
-            android:id="@+id/btn_google"
+            android:id="@+id/btn_login_google"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:text="@string/Google_login"
@@ -90,13 +92,13 @@
             android:background="@drawable/edge3"/>
 
         <Button
-            android:id="@+id/btn_kakao"
+            android:id="@+id/btn_login_kakao"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:text="@string/Kakao_login"
             android:textSize="15dp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/btn_google"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login_google"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:background="@drawable/kakao"
