@@ -1,4 +1,4 @@
-package com.example.servertest;
+package com.example.capston.servertest;
 
 import org.junit.Test;
 
