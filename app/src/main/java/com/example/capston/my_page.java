@@ -18,6 +18,9 @@ public class my_page extends AppCompatActivity {
         Button btn_order = findViewById(R.id.button_order_history);
         Button btn_review = findViewById(R.id.button_review_management);
         Button btn_wish_list = findViewById(R.id.button_wish_list);
+        Button btn_locker = findViewById(R.id.button_locker);
+        Button btn_chat =findViewById(R.id.button_participated_chat);
+        Button btn_change_info = findViewById(R.id.button_changing_information);
 
         btn_order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +46,31 @@ public class my_page extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn_locker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(my_page.this, create_chat_room.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_chat.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(my_page.this, information_chat_room.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_change_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(my_page.this, menu_list.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

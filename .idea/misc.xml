@@ -11,6 +11,7 @@
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/drawable/image_rounded_corner.xml" value="0.259" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/drawable/image_stroke.xml" value="0.23" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/drawable/menu_list.xml" value="0.4735" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/drawable/mypage_btn_changing_information_icon_resize.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/drawable/mypage_btn_icon_resize.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/drawable/mypage_btn_locker_icon_resize.xml" value="0.26979166666666665" />
@@ -19,7 +20,17 @@
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/drawable/mypage_btn_wish_list_icon_resize.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/aaaa.xml" value="0.2692502532928065" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/activity_main.xml" value="0.536" />
-        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/create_chat_room.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/address_api.xml" value="0.4109375" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/alarm.xml" value="0.4125" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/alarm_item.xml" value="0.4125" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/create_chat_room.xml" value="0.264" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/information_chat_room.xml" value="0.34010416666666665" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu.xml" value="0.4708333333333333" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_item.xml" value="0.4744791666666667" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_item1.xml" value="0.4744791666666667" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_list.xml" value="0.38636363636363635" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_main.xml" value="0.43385416666666665" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_select.xml" value="0.4125" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/my_review.xml" value="0.4" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/my_review_writeable_item.xml" value="0.34193840579710144" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/my_review_written_item.xml" value="0.34193840579710144" />
@@ -29,8 +40,12 @@
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/order_history_iitem.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/order_history_item.xml" value="0.4" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/order_history_item2.xml" value="0.4166666666666667" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/search_address.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/service_center.xml" value="0.2692502532928065" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/service_center_item.xml" value="0.27102330293819654" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/toolbar_alarm.xml" value="0.4125" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/toolbar_createchatroom.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/toolbar_informationchatroom.xml" value="0.4125" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/toolbar_main.xml" value="0.2692502532928065" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/toolbar_myreview.xml" value="0.21453900709219859" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/toolbar_orderhistory.xml" value="0.5536458333333333" />

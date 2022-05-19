@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Capston">
         <activity
             android:name=".my_page"
@@ -21,6 +22,15 @@
         <activity android:name=".order_history"/>
         <activity android:name=".service_center"/>
         <activity android:name=".my_review"/>
+        <activity android:name=".create_chat_room"/>
+        <activity android:name=".search_address"/>
+        <activity android:name=".connect_address_api"/>
+        <activity android:name=".information_chat_room"/>
+        <activity android:name=".menu_list"/>
     </application>
 
+    <!-- 인터넷 권한 설정   -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 인터넷 연결 확인-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 </manifest>
