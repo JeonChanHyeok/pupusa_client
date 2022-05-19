@@ -39,18 +39,19 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = mLayoutInflater.inflate(R.layout.listview_sub, null);
+        View ChatView = mLayoutInflater.inflate(R.layout.listview_chattingroom, null);
 
-        ImageView imageView = (ImageView)view.findViewById(R.id.shop_icon);
-        TextView title = (TextView)view.findViewById(R.id.chatting_title);
-        TextView address = (TextView)view.findViewById(R.id.chatting_address);
-        TextView contents = (TextView)view.findViewById(R.id.chatting_context);
+
+        ImageView imageView = (ImageView)ChatView.findViewById(R.id.shop_icon);
+        TextView title = (TextView)ChatView.findViewById(R.id.chatting_title);
+        TextView address = (TextView)ChatView.findViewById(R.id.chatting_address);
+        TextView contents = (TextView)ChatView.findViewById(R.id.chatting_context);
 
         imageView.setImageResource(sample.get(position).getPoster());
         title.setText(sample.get(position).getTitle());
         address.setText(sample.get(position).getAddress());
         contents.setText(sample.get(position).getMyContext());
 
-        return view;
+        return ChatView;
     }
 }

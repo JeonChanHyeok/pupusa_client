@@ -33,8 +33,8 @@ public class AddressApiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        webView = (WebView) findViewById(R.id.webView);
-        webView.getSettings().setJavaScriptEnabled(true);
+        webView = findViewById(R.id.webView);
+        //webView.getSettings().setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new MyJavaScriptInterface(), "Android");
 
         webView.setWebViewClient(new WebViewClient() {
@@ -44,7 +44,7 @@ public class AddressApiActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl("your server url");
+        webView.loadUrl("http://ec2-34-227-207-122.compute-1.amazonaws.com:8080");
 
 
     }
