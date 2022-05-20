@@ -16,7 +16,7 @@ import java.util.ArrayList;
 // 리스트 뷰
 public class MyChatHistoryListActivity extends AppCompatActivity {
 
-    ArrayList<Chat_Data> chatDataArrayList;
+    ArrayList<ChatData> chatDataArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +44,10 @@ public class MyChatHistoryListActivity extends AppCompatActivity {
 
     public void InitializeMovieData()
     {
-        chatDataArrayList = new ArrayList<Chat_Data>();
+        chatDataArrayList = new ArrayList<ChatData>();
 
-        chatDataArrayList.add(new Chat_Data(R.drawable.ic_60gye, "60계치킨","연제구 길벗동 동흠로13","10시에 60계 드실분"));
-        chatDataArrayList.add(new Chat_Data(R.drawable.ic_kyochon2, "교촌치킨","동래구 사직동 연분로45","1시에 교촌 드실분"));
-        chatDataArrayList.add(new Chat_Data(R.drawable.ic_thunder2,"썬더치킨","금정구 고동동 지금로2","5시에 썬더 드실분"));
+        chatDataArrayList.add(new ChatData(R.drawable.ic_60gye, "60계치킨","연제구 길벗동 동흠로13","10시에 60계 드실분"));
+        chatDataArrayList.add(new ChatData(R.drawable.ic_kyochon2, "교촌치킨","동래구 사직동 연분로45","1시에 교촌 드실분"));
+        chatDataArrayList.add(new ChatData(R.drawable.ic_thunder2,"썬더치킨","금정구 고동동 지금로2","5시에 썬더 드실분"));
     }
 }

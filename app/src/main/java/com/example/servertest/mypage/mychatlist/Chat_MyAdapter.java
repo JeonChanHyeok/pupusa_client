@@ -15,9 +15,9 @@ import java.util.ArrayList;
 public class Chat_MyAdapter extends BaseAdapter {
     Context mContext = null;
     LayoutInflater mLayoutInflater = null;
-    ArrayList<Chat_Data> sample;
+    ArrayList<ChatData> sample;
 
-    public Chat_MyAdapter(Context context, ArrayList<Chat_Data> data) {
+    public Chat_MyAdapter(Context context, ArrayList<ChatData> data) {
         mContext = context;
         sample = data;
         mLayoutInflater = LayoutInflater.from(mContext);
@@ -34,7 +34,7 @@ public class Chat_MyAdapter extends BaseAdapter {
     }
 
     @Override
-    public Chat_Data getItem(int position) {
+    public ChatData getItem(int position) {
         return sample.get(position);
     }
 

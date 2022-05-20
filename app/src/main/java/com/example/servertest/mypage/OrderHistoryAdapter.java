@@ -13,10 +13,10 @@ import com.example.servertest.R;
 
 import java.util.ArrayList;
 
-public class order_history_adapter extends BaseAdapter {
-    private ArrayList<order_history_item> order_history_item = new ArrayList<>();
+public class OrderHistoryAdapter extends BaseAdapter {
+    private ArrayList<OrderHistoryItem> order_history_item = new ArrayList<>();
 
-    public order_history_adapter(){}
+    public OrderHistoryAdapter(){}
 
     // 최초의 화면의 갯수를 설정
     @Override
@@ -55,7 +55,7 @@ public class order_history_adapter extends BaseAdapter {
         TextView price = (TextView) convertView.findViewById(R.id.price);
 
         //Data Seet에서 position에 위치한 데이터 참조 획득
-        order_history_item order_item = order_history_item.get(position);
+        OrderHistoryItem order_item = order_history_item.get(position);
 
         imageView.setImageDrawable(order_item.getShop_img());
         shopName.setText(order_item.getShop_name());
@@ -68,7 +68,7 @@ public class order_history_adapter extends BaseAdapter {
 
     //item에 데이터 추가
     public void addItem(Drawable shop_img, String shop_name, String date, String menu, int price){
-        order_history_item item = new order_history_item();
+        OrderHistoryItem item = new OrderHistoryItem();
 
         item.setShop_img(shop_img);
         item.setDate(date);

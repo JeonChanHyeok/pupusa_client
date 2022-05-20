@@ -6,7 +6,7 @@ package com.example.servertest.mypage.mychatlist;
 
         import com.example.servertest.R;
 
-public class Chat_Info extends Activity {
+public class ChatInfo extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){

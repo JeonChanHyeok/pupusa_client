@@ -2,7 +2,7 @@ package com.example.servertest.mypage;
 
 import android.graphics.drawable.Drawable;
 
-public class my_review_written_item {
+public class MyReviewWrittenItem {
     private String store_name; //가게이름
     private Drawable icon; //리뷰 별점
     private Drawable image; //메뉴 사진

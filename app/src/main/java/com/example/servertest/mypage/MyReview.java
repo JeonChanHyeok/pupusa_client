@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.servertest.R;
 
-public class my_review extends AppCompatActivity {
+public class MyReview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +19,7 @@ public class my_review extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.ll2);
 
-        my_review_written_adapter adapter = new my_review_written_adapter();
+        MyReviewWrittenAdapter adapter = new MyReviewWrittenAdapter();
         listView.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "닭다리치킨집",
@@ -45,7 +45,7 @@ public class my_review extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                my_review_written_item item = (my_review_written_item) parent.getItemAtPosition(position);
+                MyReviewWrittenItem item = (MyReviewWrittenItem) parent.getItemAtPosition(position);
 
                 String title = item.getStore_name();
                 String str = title;

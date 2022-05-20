@@ -19,7 +19,7 @@
 
 
     <ImageView
-        android:id="@+id/iv_user_face"
+        android:id="@+id/iv_coupon_list_coupon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:background="#FFE695"
         android:id="@+id/btn_pwd_update"
         android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
         app:layout_constraintVertical_bias="0.817" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_address_find"
         android:layout_width="93dp"
         android:layout_height="42dp"
@@ -213,7 +213,7 @@
         app:layout_constraintStart_toStartOf="@+id/tv_marketing_info"
         app:layout_constraintTop_toBottomOf="@+id/tv_marketing_sns" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_user_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -247,10 +247,10 @@
         android:layout_height="27dp"
         android:text="전찬혁님"
 
-        app:layout_constraintEnd_toEndOf="@+id/iv_user_face"
+        app:layout_constraintEnd_toEndOf="@+id/iv_coupon_list_coupon"
         app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="@+id/iv_user_face"
-        app:layout_constraintTop_toBottomOf="@id/iv_user_face" />
+        app:layout_constraintStart_toStartOf="@+id/iv_coupon_list_coupon"
+        app:layout_constraintTop_toBottomOf="@id/iv_coupon_list_coupon" />
 
     <TextView
         android:id="@+id/textView10"

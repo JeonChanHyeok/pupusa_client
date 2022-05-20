@@ -13,14 +13,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servertest.R;
 
-import java.util.ArrayList;
-
-public class MyPage_Update_Activity extends AppCompatActivity {
+public class MyPageUpdateActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +117,7 @@ public class MyPage_Update_Activity extends AppCompatActivity {
             public void onClick(View v){
                 switch (v.getId()){
                     case R.id.btn_user_delete:
-                        Intent intent = new Intent(MyPage_Update_Activity.this, DeleteUserPopupActivity.class);
+                        Intent intent = new Intent(MyPageUpdateActivity.this, DeleteUserPopupActivity.class);
                         startActivityForResult(intent, 1);
                         break;
                 }

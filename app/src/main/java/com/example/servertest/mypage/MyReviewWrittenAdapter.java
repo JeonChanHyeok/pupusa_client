@@ -13,10 +13,10 @@ import com.example.servertest.R;
 
 import java.util.ArrayList;
 
-public class my_review_written_adapter extends BaseAdapter {
-    private ArrayList<my_review_written_item> my_review_written_item = new ArrayList<>();
+public class MyReviewWrittenAdapter extends BaseAdapter {
+    private ArrayList<MyReviewWrittenItem> my_review_written_item = new ArrayList<>();
 
-    public my_review_written_adapter(){}
+    public MyReviewWrittenAdapter(){}
 
     @Override
     public int getCount() {
@@ -50,7 +50,7 @@ public class my_review_written_adapter extends BaseAdapter {
         TextView menu = (TextView) convertView.findViewById(R.id.menu);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.image);
 
-        my_review_written_item my_review_item = my_review_written_item.get(position);
+        MyReviewWrittenItem my_review_item = my_review_written_item.get(position);
 
         iconImageView.setImageDrawable(my_review_item.getIcon());
         storeTextView.setText(my_review_item.getStore_name());
@@ -63,7 +63,7 @@ public class my_review_written_adapter extends BaseAdapter {
     }
 
     public void addItem(Drawable icon, String store, String date, String content, String menu, Drawable image){
-        my_review_written_item item = new my_review_written_item();
+        MyReviewWrittenItem item = new MyReviewWrittenItem();
         item.setDate(date);
         item.setIcon(icon);
         item.setMenu(menu);

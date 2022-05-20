@@ -13,10 +13,10 @@ import androidx.fragment.app.Fragment;
 
 import com.example.servertest.R;
 
-public class my_review_scroll extends Fragment {
+public class MyReviewScroll extends Fragment {
     private ListView ll;
     private ListView ll2;
-    private my_review_written_adapter adapter;
+    private MyReviewWrittenAdapter adapter;
 
     public static void setListViewHeightBasedOnChildren(ListView listView) {
         ListAdapter listAdapter = (ListAdapter) listView.getAdapter();
@@ -38,7 +38,7 @@ public class my_review_scroll extends Fragment {
         View v = inflater.inflate(R.layout.my_review, container, false);
 
         //report list view
-        adapter = new my_review_written_adapter();
+        adapter = new MyReviewWrittenAdapter();
         ll = (ListView) v.findViewById(R.id.ll);
         ll.setAdapter(adapter);
 
@@ -51,7 +51,7 @@ public class my_review_scroll extends Fragment {
         adapter.notifyDataSetChanged();
 
         //report list view
-        adapter = new my_review_written_adapter();
+        adapter = new MyReviewWrittenAdapter();
         ll2 = (ListView) v.findViewById(R.id.ll2);
         ll2.setAdapter(adapter);
 

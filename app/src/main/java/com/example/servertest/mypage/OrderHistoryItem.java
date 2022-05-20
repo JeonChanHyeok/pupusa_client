@@ -2,7 +2,7 @@ package com.example.servertest.mypage;
 
 import android.graphics.drawable.Drawable;
 
-public class order_history_item {
+public class OrderHistoryItem {
     private Drawable shop_img;  // 가게 사진
     private String shop_name;  //가게 이름
     private String date; //주문 날짜

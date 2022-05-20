@@ -30,7 +30,7 @@ public class MyPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("click");
-                Intent intent = new Intent(MyPageActivity.this, order_history.class);
+                Intent intent = new Intent(MyPageActivity.this, OrderHistory.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +38,7 @@ public class MyPageActivity extends AppCompatActivity {
         btn_review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyPageActivity.this, my_review.class);
+                Intent intent = new Intent(MyPageActivity.this, MyReview.class);
                 startActivity(intent);
             }
         });
@@ -70,7 +70,7 @@ public class MyPageActivity extends AppCompatActivity {
         btn_changing_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MyPage_Update_Activity.class);
+                Intent intent = new Intent(getApplicationContext(), MyPageUpdateActivity.class);
                 startActivity(intent);
             }
         });

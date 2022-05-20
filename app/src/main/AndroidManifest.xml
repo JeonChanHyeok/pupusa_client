@@ -29,11 +29,11 @@
         <activity android:name="com.example.servertest.chat.ChatRoomController"/>
         <activity android:name=".mypage.MyPageActivity"
             android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.order_history"
+        <activity android:name=".mypage.OrderHistory"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".servicecenter.service_center"
             android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.my_review"
+        <activity android:name=".mypage.MyReview"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.wishlist.WishListActivity"
             android:theme="@style/Theme.Capston"/>
@@ -43,7 +43,7 @@
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.coupon.Coupon"
             android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.MyPage_Update_Activity"
+        <activity android:name=".mypage.MyPageUpdateActivity"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.DeleteUserPopupActivity"
             android:theme="@style/popupTheme" />

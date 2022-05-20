@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.servertest.R;
 
-public class order_history extends AppCompatActivity {
+public class OrderHistory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +18,7 @@ public class order_history extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.ll);
 
-        order_history_adapter adapter = new order_history_adapter();
+        OrderHistoryAdapter adapter = new OrderHistoryAdapter();
         listView.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this,R.drawable.kyochon),"교촌치킨", "2022-04-10", "순살 닭강정 치킨", 10000);
@@ -28,7 +28,7 @@ public class order_history extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                order_history_item item = (order_history_item) parent.getItemAtPosition(position);
+                OrderHistoryItem item = (OrderHistoryItem) parent.getItemAtPosition(position);
 
                 String title = item.getShop_name();
                 String str = title;

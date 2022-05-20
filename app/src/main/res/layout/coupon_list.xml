@@ -6,37 +6,37 @@
     android:layout_height="match_parent">
     <include
         android:id="@+id/include"
-        layout="@layout/toolbar_main"
+        layout="@layout/toolbar_coupon"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
-    <Button
-        android:id="@+id/coupon_btn"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_coupon_list_coupon"
         android:layout_width="399dp"
         android:layout_height="86dp"
         android:text="+ 쿠폰 등록하기"
         android:textSize="20sp"
         android:background="@color/popcorn"
 
-        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="@+id/et_coupon_list_coupon"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintStart_toStartOf="@+id/et_coupon_list_coupon"
+        app:layout_constraintTop_toBottomOf="@+id/et_coupon_list_coupon" />
 
     <ImageView
-        android:id="@+id/iv_user_face"
+        android:id="@+id/iv_coupon_list_coupon"
         android:layout_width="468dp"
         android:layout_height="182dp"
         android:layout_marginTop="16dp"
         android:scaleType="fitCenter"
         android:src="@drawable/coupon3"
-        app:layout_constraintEnd_toEndOf="@+id/coupon_btn"
+        app:layout_constraintEnd_toEndOf="@+id/btn_coupon_list_coupon"
         app:layout_constraintHorizontal_bias="0.544"
-        app:layout_constraintStart_toStartOf="@+id/coupon_btn"
-        app:layout_constraintTop_toBottomOf="@+id/coupon_btn" />
+        app:layout_constraintStart_toStartOf="@+id/btn_coupon_list_coupon"
+        app:layout_constraintTop_toBottomOf="@+id/btn_coupon_list_coupon" />
 
     <EditText
-        android:id="@+id/textView12"
+        android:id="@+id/et_coupon_list_coupon"
         android:layout_width="398dp"
         android:layout_height="72dp"
         android:layout_marginTop="60dp"
