@@ -23,8 +23,8 @@ public class DeleteUserPopupActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_popup);
 
-        okBtn = (Button) findViewById(R.id.okBtn);
-        cancleBtn = (Button) findViewById(R.id.cancleBtn);
+        okBtn = (Button) findViewById(R.id.btn_ok);
+        cancleBtn = (Button) findViewById(R.id.btn_cancle);
 
     }
 

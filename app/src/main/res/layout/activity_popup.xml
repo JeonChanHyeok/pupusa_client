@@ -8,39 +8,32 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
         <TextView
-            android:id="@+id/titleTV"
-            android:text="회원탈퇴"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:background="@color/black"
-            android:textColor="#fff"
+            android:id="@+id/tv_user_delete"
             android:layout_width="match_parent"
-            android:layout_height="53sp" />
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:background="@color/white"
+            android:text="회원탈퇴"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
     </LinearLayout>
 
 
 
     <LinearLayout
-        android:padding="24dp"
+        android:padding="4dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/txtText"
+            android:id="@+id/tv_user_delete_content"
             android:textSize="15sp"
             android:textColor="#000"
             android:text="회원탈퇴 시 쿠폰이 모두 소멸됩니다.\n 탈퇴 하시겠습니까?"
-            android:gravity="center"
-            android:layout_marginBottom="3dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/txtText2"
-            android:textSize="15sp"
-            android:textColor="#000"
             android:gravity="center"
             android:layout_marginBottom="3dp"
             android:layout_width="match_parent"
@@ -58,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/cancleBtn"
+            android:id="@+id/btn_cancle"
             android:text="취소"
             android:textSize="20sp"
             android:layout_width="wrap_content"
@@ -66,7 +59,7 @@
             android:onClick="mCancle"/>
 
         <Button
-            android:id="@+id/okBtn"
+            android:id="@+id/btn_ok"
             android:text="확인"
             android:textSize="20sp"
             android:layout_width="wrap_content"

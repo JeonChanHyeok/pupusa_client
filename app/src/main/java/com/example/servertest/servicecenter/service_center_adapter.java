@@ -44,7 +44,7 @@ public class service_center_adapter extends BaseAdapter{
         }
 
         ImageView iconImageView = (ImageView) convertView.findViewById(R.id.iv_my_page_profile_image);
-        TextView titleTextView = (TextView) convertView.findViewById(R.id.textView);
+        TextView titleTextView = (TextView) convertView.findViewById(R.id.tv_user_name);
 
         service_center_item service_item = service_center_item.get(position);
 

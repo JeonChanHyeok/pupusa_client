@@ -42,10 +42,10 @@ public class Chat_MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = mLayoutInflater.inflate(R.layout.chat_listview_custom, null);
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.poster);
-        TextView chat_title = (TextView) view.findViewById(R.id.chatting_title);
-        TextView  chat_location= (TextView) view.findViewById(R.id.chatting_location);
-        TextView chat_content = (TextView) view.findViewById(R.id.chatting_context);
+        ImageView imageView = (ImageView) view.findViewById(R.id.iv_poster);
+        TextView chat_title = (TextView) view.findViewById(R.id.tv_chatting_title);
+        TextView  chat_location= (TextView) view.findViewById(R.id.tv_chatting_location);
+        TextView chat_content = (TextView) view.findViewById(R.id.tv_chatting_context);
 
         imageView.setImageResource(sample.get(position).getPoster());
         chat_title.setText(sample.get(position).getStore());

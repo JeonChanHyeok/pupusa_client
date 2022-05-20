@@ -37,7 +37,7 @@ public class AnnouncementAdapter extends BaseExpandableListAdapter {
         }
         ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
         layoutParams.height = 100;
-        TextView groupName = (TextView)convertView.findViewById(R.id.groupName);
+        TextView groupName = (TextView)convertView.findViewById(R.id.tv_announcement_parent_list);
         groupName.setText(DataList.get(groupPosition).groupName);
         return convertView;
     }
@@ -50,7 +50,7 @@ public class AnnouncementAdapter extends BaseExpandableListAdapter {
         }
         ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
         layoutParams.height = 500;
-        TextView childName = (TextView)convertView.findViewById(R.id.childName);
+        TextView childName = (TextView)convertView.findViewById(R.id.tv_announcement_child_list);
         childName.setText(DataList.get(groupPosition).child.get(childPosition));
         return convertView;
     }

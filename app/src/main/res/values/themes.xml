@@ -34,10 +34,12 @@
         <!-- Customize your theme here. -->
         <item name="windowNoTitle">true</item>
     </style>
-
     <style name="Theme.Pupusa.Splash" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+    </style>
+    <!--팝업창 화면 -->
+    <style name="popupTheme" parent="Theme.AppCompat.DayNight.Dialog">
     </style>
 </resources>

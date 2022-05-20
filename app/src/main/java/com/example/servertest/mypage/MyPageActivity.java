@@ -24,6 +24,7 @@ public class MyPageActivity extends AppCompatActivity {
         Button btn_wish_list = findViewById(R.id.btn_my_page_wish_list);
         Button btn_chat_history = findViewById(R.id.btn_my_page_chattingroom_history);
         Button btn_coupon = findViewById(R.id.btn_my_page_coupon_management);
+        Button btn_changing_info = findViewById(R.id.btn_my_page_changing_information);
 
         btn_order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +63,14 @@ public class MyPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MyChatHistoryListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_changing_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MyPage_Update_Activity.class);
                 startActivity(intent);
             }
         });

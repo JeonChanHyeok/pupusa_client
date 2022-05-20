@@ -24,7 +24,7 @@
         </activity>
         <activity android:name="com.example.servertest.login.LoginActivity"/>
         <activity android:name="com.example.servertest.login.JoinActivity"/>
-        <activity android:name="com.example.servertest.alret.AlertActivity"/>
+      <!--<activity android:name="com.example.servertest.alret.AlertActivity"/>-->
         <activity android:name="com.example.servertest.MainActivity"/>
         <activity android:name="com.example.servertest.chat.ChatRoomController"/>
         <activity android:name=".mypage.MyPageActivity"
@@ -43,6 +43,11 @@
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.coupon.Coupon"
             android:theme="@style/Theme.Capston"/>
+        <activity android:name=".mypage.MyPage_Update_Activity"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".mypage.DeleteUserPopupActivity"
+            android:theme="@style/popupTheme" />
+
     </application>
 
 </manifest>

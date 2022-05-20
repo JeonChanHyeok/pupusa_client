@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
         <TextView
             android:textColor="@color/black"
-            android:id="@+id/titleTV"
+            android:id="@+id/tv_user_delete"
             android:text="공동구매"
             android:background="@color/popcorn"
 

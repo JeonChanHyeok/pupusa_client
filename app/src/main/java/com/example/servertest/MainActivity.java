@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.servertest.alret.AlertActivity;
 import com.example.servertest.announcement.AnnouncementActivity;
 import com.example.servertest.chat.ChatRoom;
 import com.example.servertest.chat.ChatRoomController;
@@ -227,15 +226,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //알림센터 화면전환
-    public void nextLayout(View v) {
-        int id = v.getId();
-        ImageView imageView = v.findViewById(id);
-        String tag = (String) imageView.getTag();
-
-        Intent it = new Intent(this, AlertActivity.class);
-        it.putExtra("it_tag", tag);
-        startActivity(it);
-    }
 }
 

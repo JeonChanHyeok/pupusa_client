@@ -41,9 +41,9 @@ public class ChatRoomListAdapter extends BaseAdapter {
         View view = mLayoutInflater.inflate(R.layout.listview_sub, null);
 
         ImageView imageView = (ImageView)view.findViewById(R.id.shop_icon);
-        TextView title = (TextView)view.findViewById(R.id.chatting_title);
+        TextView title = (TextView)view.findViewById(R.id.tv_chatting_title);
         TextView address = (TextView)view.findViewById(R.id.chatting_address);
-        TextView contents = (TextView)view.findViewById(R.id.chatting_context);
+        TextView contents = (TextView)view.findViewById(R.id.tv_chatting_context);
 
         imageView.setImageResource(sample.get(position).getPoster());
         title.setText(sample.get(position).getTitle());

@@ -42,13 +42,13 @@ public class Wish_MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = mLayoutInflater.inflate(R.layout.wish_listview_custom, null);
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.heart);
-        ImageView imageView2 = (ImageView) view.findViewById(R.id.poster);
-        ImageView imageView3 = (ImageView) view.findViewById(R.id.star);
+        ImageView imageView = (ImageView) view.findViewById(R.id.ib_heart);
+        ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_poster);
+        ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_star);
 
 
-        TextView wishtitle = (TextView) view.findViewById(R.id.wish_title);
-        TextView wishcontext = (TextView) view.findViewById(R.id.star_score);
+        TextView wishtitle = (TextView) view.findViewById(R.id.tv_wish_title);
+        TextView wishcontext = (TextView) view.findViewById(R.id.tv_star_score);
 
         imageView.setImageResource(sample.get(position).getPoster2());
         imageView2.setImageResource(sample.get(position).getPoster());

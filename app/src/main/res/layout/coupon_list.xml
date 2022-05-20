@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar_main"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <Button
         android:id="@+id/coupon_btn"
@@ -19,7 +24,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_user_face"
         android:layout_width="468dp"
         android:layout_height="182dp"
         android:layout_marginTop="16dp"
@@ -34,9 +39,11 @@
         android:id="@+id/textView12"
         android:layout_width="398dp"
         android:layout_height="72dp"
+        android:layout_marginTop="60dp"
         android:hint="쿠폰을 입력하세요"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

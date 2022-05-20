@@ -29,6 +29,39 @@
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_orderhistory.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/wish_listview_custom.xml" value="0.2391304347826087" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/wish_listview_parent.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/activity_alert.xml" value="0.2421875" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/activity_join.xml" value="0.2212962962962963" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/activity_login.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/activity_main.xml" value="0.27803521779425394" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/activity_my_page.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/activity_popup.xml" value="0.536" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/announcement.xml" value="0.264" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/announcement_child_list_view.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/announcement_parent_list_view.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/api_address.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/chat_attend.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/chat_listview_custom.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/chat_listview_parent.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/chatting_item.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/coupon_list.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/in_chatting_room.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/listview_alert.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/listview_custom.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/listview_main.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/listview_parent.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/listview_sub.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/my_info_activity_main.xml" value="0.2212962962962963" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/my_review_written_item.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/order_history_item.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/toolbar_alert.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/toolbar_join.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/toolbar_login.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/toolbar_main.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/toolbar_myreview.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/toolbar_orderhistory.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/toolbar_servicecenter.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/wish_listview_custom.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ysj62/Documents/Github/pupusa_client/app/src/main/res/layout/wish_listview_parent.xml" value="0.23854166666666668" />
       </map>
     </option>
   </component>
