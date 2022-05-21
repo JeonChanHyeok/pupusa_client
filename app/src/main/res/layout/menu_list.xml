@@ -48,7 +48,7 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:background="@color/white_gray"
             app:tabGravity="fill"
             app:tabMode="fixed"
@@ -76,7 +76,6 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
@@ -293,41 +292,39 @@
                 android:id="@+id/recycler"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:layout_marginBottom="10dp"
                 android:scrollbars="none"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="대표메뉴"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler2"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:background="@color/white_gray"
-                android:scrollbars="none"/>
+                android:layout_marginBottom="10dp"
+                android:scrollbars="none">
+            </androidx.recyclerview.widget.RecyclerView>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                app:layout_collapseMode="pin"
-                android:text="test"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:text="test"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:text="test"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:text="test"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:text="test"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:text="test"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="5dp"
+                android:text="메뉴종류"/>
 
+            <ListView
+                android:id="@+id/lv_menu_list_list_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
