@@ -11,7 +11,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Capston">
         <activity
-            android:name=".my_page"
+            android:name=".MyPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".order_history"/>
-        <activity android:name=".service_center"/>
-        <activity android:name=".my_review"/>
-        <activity android:name=".create_chat_room"/>
-        <activity android:name=".search_address"/>
-        <activity android:name=".connect_address_api"/>
-        <activity android:name=".information_chat_room"/>
-        <activity android:name=".menu_list"/>
+        <activity android:name=".OrderHistory"/>
+        <activity android:name=".ServiceCenter"/>
+        <activity android:name=".MyReview"/>
+        <activity android:name=".CreateChatRoom"/>
+        <activity android:name=".ConnectAddressApi"/>
+        <activity android:name=".InformationChatRoom"/>
+        <activity android:name=".MenuList"/>
     </application>
 
     <!-- 인터넷 권한 설정   -->
