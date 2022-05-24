@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.servertest">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- 지도 부분 permission Start-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 지도 부분 permission End-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -43,6 +48,9 @@
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.coupon.Coupon"
             android:theme="@style/Theme.Capston"/>
+
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="4836efed425c05ae10a211f0956a589c"/>
+        <!-- 지도 앱 사용키-->
     </application>
 
 </manifest>
