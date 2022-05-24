@@ -21,7 +21,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
-            app:srcCompat="@drawable/ic_back" />
+            app:srcCompat="@drawable/ic_menu" />
 
         <TextView
             android:id="@+id/tv_logo"
@@ -34,10 +34,21 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="주문 내역"
+            android:text="알림 "
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
+        <ImageView
+            android:id="@+id/alarm"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_alarm" />
     </RelativeLayout>
 </androidx.appcompat.widget.Toolbar>

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.servertest">
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    package="com.example.capston">
 
     <application
         android:allowBackup="true"
@@ -11,38 +8,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Pupusa"
-        android:usesCleartextTraffic="true">
+        android:theme="@style/Theme.Capston">
         <activity
-            android:name=".SplashActivity"
-            android:theme="@style/Theme.Pupusa.Splash"
+            android:name=".my_page"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.servertest.login.LoginActivity"/>
-        <activity android:name="com.example.servertest.login.JoinActivity"/>
-        <activity android:name="com.example.servertest.alret.AlertActivity"/>
-        <activity android:name="com.example.servertest.MainActivity"/>
-        <activity android:name="com.example.servertest.chat.ChatRoomController"/>
-        <activity android:name=".mypage.MyPageActivity"
-            android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.order_history"
-            android:theme="@style/Theme.Capston"/>
-        <activity android:name=".servicecenter.service_center"
-            android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.my_review"
-            android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.wishlist.WishListActivity"
-            android:theme="@style/Theme.Capston"/>
-        <activity android:name=".announcement.AnnouncementActivity"
-            android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.mychatlist.MyChatHistoryListActivity"
-            android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.coupon.Coupon"
-            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".order_history"/>
+        <activity android:name=".service_center"/>
+        <activity android:name=".my_review"/>
     </application>
 
 </manifest>

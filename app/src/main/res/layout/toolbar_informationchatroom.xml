@@ -34,7 +34,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="주문 내역"
+            android:text="채팅방 정보"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
