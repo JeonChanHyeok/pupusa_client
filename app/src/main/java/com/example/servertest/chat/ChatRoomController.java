@@ -77,7 +77,6 @@ public class ChatRoomController extends AppCompatActivity {
         initStomp();
         this.InitializeChattingData();
 
-
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +86,6 @@ public class ChatRoomController extends AppCompatActivity {
                 sendMsg(objJson);
             }
         });
-
 
         //나가기 버튼
         btn_exit.setOnClickListener(new View.OnClickListener() {
@@ -105,12 +103,8 @@ public class ChatRoomController extends AppCompatActivity {
                     public void onFailure(Call call, Throwable t) {
                     }
                 });
-
             }
         });
-
-
-        
     }
 
     //채팅 불러오기
@@ -132,7 +126,6 @@ public class ChatRoomController extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call call, Throwable t) {
-
             }
         });
     }
