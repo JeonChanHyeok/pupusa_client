@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.servicecenter;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import com.example.servertest.R;
 
 public class ServiceCenter extends AppCompatActivity {
     @Override

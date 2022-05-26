@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.mypage.myreview;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import com.example.servertest.R;
 
 public class MyReviewScroll extends Fragment {
     private ListView ll;

@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.mypage;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.servertest.R;
 
 public class CreateChatRoom extends AppCompatActivity {
 

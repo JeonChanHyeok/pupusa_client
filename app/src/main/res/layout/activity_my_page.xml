@@ -6,20 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".mypage.MyPageActivity">
-=======
-    tools:context=".MyPage">
->>>>>>> c3d390936c5b59d4d24eedddcbad03f4d2e64904
+    tools:context=".mypage.MyPage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-<<<<<<< HEAD
-        tools:context=".mypage.MyPageActivity">
-=======
         tools:context=".MyPage">
->>>>>>> c3d390936c5b59d4d24eedddcbad03f4d2e64904
 
         <include
             android:id="@+id/include"
@@ -36,11 +28,7 @@
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
         <TextView
-<<<<<<< HEAD
-            android:id="@+id/tv_my_page_name"
-=======
             android:id="@+id/tv_my_page_my_name"
->>>>>>> c3d390936c5b59d4d24eedddcbad03f4d2e64904
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -59,16 +47,6 @@
             android:text="VVIP"
             android:textColor="@color/black"
             android:textSize="50dp"
-<<<<<<< HEAD
-            app:layout_constraintEnd_toEndOf="@+id/tv_my_page_name"
-            app:layout_constraintHorizontal_bias="0.458"
-            app:layout_constraintLeft_toRightOf="@+id/iv_my_page_profile_image"
-            app:layout_constraintStart_toStartOf="@+id/tv_my_page_name"
-            app:layout_constraintTop_toBottomOf="@+id/tv_my_page_name" />
-
-        <TextView
-            android:id="@+id/tv_my_page_my_address_text"
-=======
             app:layout_constraintEnd_toEndOf="@+id/tv_my_page_my_name"
             app:layout_constraintHorizontal_bias="0.458"
             app:layout_constraintLeft_toRightOf="@+id/iv_my_page_profile_image"
@@ -77,7 +55,6 @@
 
         <TextView
             android:id="@+id/tv_my_page_address"
->>>>>>> c3d390936c5b59d4d24eedddcbad03f4d2e64904
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -90,28 +67,13 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_my_page_profile_image" />
 
         <TextView
-<<<<<<< HEAD
-            android:id="@+id/tv_my_page_address"
-=======
             android:id="@+id/tv_my_page_show_address"
->>>>>>> c3d390936c5b59d4d24eedddcbad03f4d2e64904
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="부산 광역시 남구 신선대로"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_my_page_order_history"
-<<<<<<< HEAD
-            app:layout_constraintEnd_toEndOf="@+id/tv_my_page_my_address_text"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tv_my_page_my_address_text"
-            app:layout_constraintTop_toBottomOf="@+id/tv_my_page_my_address_text"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <View
-            android:id="@+id/v_my_page_line"
-=======
             app:layout_constraintEnd_toEndOf="@+id/tv_my_page_address"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintRight_toRightOf="parent"
@@ -121,16 +83,11 @@
 
         <View
             android:id="@+id/view_information_chat_room"
->>>>>>> c3d390936c5b59d4d24eedddcbad03f4d2e64904
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/gray"
             android:layout_marginTop="5dp"
-<<<<<<< HEAD
-            app:layout_constraintTop_toBottomOf="@id/tv_my_page_address"/>
-=======
             app:layout_constraintTop_toBottomOf="@id/tv_my_page_show_address"/>
->>>>>>> c3d390936c5b59d4d24eedddcbad03f4d2e64904
 
         <!--주문내역-->
         <androidx.appcompat.widget.AppCompatButton
@@ -148,11 +105,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/btn_my_page_review_management"
             app:layout_constraintBottom_toTopOf="@+id/btn_my_page_wish_list"
-<<<<<<< HEAD
-            app:layout_constraintTop_toBottomOf="@+id/v_my_page_line"
-=======
             app:layout_constraintTop_toBottomOf="@+id/view_information_chat_room"
->>>>>>> c3d390936c5b59d4d24eedddcbad03f4d2e64904
             />
 
         <!--리뷰관리-->

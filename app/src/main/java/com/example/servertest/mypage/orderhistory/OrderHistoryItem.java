@@ -1,8 +1,8 @@
-package com.example.servertest.mypage;
+package com.example.servertest.mypage.orderhistory;
 
 import android.graphics.drawable.Drawable;
 
-public class order_history_item {
+public class OrderHistoryItem {
     private Drawable storeImg;  // 가게 사진
     private String storeName;  //가게 이름
     private String date; //주문 날짜

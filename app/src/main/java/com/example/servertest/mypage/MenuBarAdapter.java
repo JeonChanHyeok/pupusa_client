@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.mypage;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import com.example.servertest.R;
 
 public class MenuBarAdapter extends RecyclerView.Adapter<MenuBarAdapter.ViewHolder> {
 

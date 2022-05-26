@@ -1,9 +1,10 @@
-package com.example.capston;
+package com.example.servertest.mypage;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.servertest.R;
 
 public class InformationChatRoom extends AppCompatActivity {
     @Override

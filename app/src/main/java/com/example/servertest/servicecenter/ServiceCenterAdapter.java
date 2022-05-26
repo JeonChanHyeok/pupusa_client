@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.servicecenter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import com.example.servertest.R;
 
 public class ServiceCenterAdapter extends BaseAdapter{
     private ArrayList<ServiceCenterItem> serviceCenterItemList = new ArrayList<ServiceCenterItem>();

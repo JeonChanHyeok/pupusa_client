@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.mypage.myreview;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import com.example.servertest.R;
 
 public class MyReview extends AppCompatActivity {
     @Override

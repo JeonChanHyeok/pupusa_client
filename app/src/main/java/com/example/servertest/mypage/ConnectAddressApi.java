@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.mypage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.servertest.R;
 
 public class ConnectAddressApi extends AppCompatActivity {
     private WebView webView;

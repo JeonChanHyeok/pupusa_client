@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.mypage;
 
 import android.graphics.drawable.Drawable;
 

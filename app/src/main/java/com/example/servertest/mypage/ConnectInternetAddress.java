@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.mypage;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

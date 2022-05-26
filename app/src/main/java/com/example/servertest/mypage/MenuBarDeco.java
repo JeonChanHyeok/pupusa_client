@@ -1,9 +1,8 @@
-package com.example.capston;
+package com.example.servertest.mypage;
 
 import android.graphics.Rect;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MenuBarDeco extends RecyclerView.ItemDecoration {

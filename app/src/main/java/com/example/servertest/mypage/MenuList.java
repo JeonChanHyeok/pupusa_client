@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.mypage;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import com.example.servertest.R;
 
 public class MenuList extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.capston;
+package com.example.servertest.mypage.orderhistory;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import com.example.servertest.R;
 
 public class OrderHistory extends AppCompatActivity {
     @Override
@@ -26,7 +27,7 @@ public class OrderHistory extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                order_history_item item = (order_history_item) parent.getItemAtPosition(position);
+                OrderHistoryItem item = (OrderHistoryItem) parent.getItemAtPosition(position);
 
                 String title = item.getStoreName();
                 String str = title;
