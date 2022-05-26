@@ -7,8 +7,13 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -17,7 +22,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.servertest.alret.AlertActivity;
+//import com.example.servertest.alret.AlertActivity;
 import com.example.servertest.announcement.AnnouncementActivity;
 import com.example.servertest.chat.ChatRoom;
 import com.example.servertest.chat.ChatRoomController;
@@ -30,7 +35,10 @@ import com.example.servertest.server.ServiceApi;
 import com.example.servertest.servicecenter.service_center;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
+import com.kakao.util.maps.helper.Utility;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -237,5 +245,25 @@ public class MainActivity extends AppCompatActivity {
         it.putExtra("it_tag", tag);
         startActivity(it);
     }
+
+    //지도를 위한 키 해시값 추출하는 메소드
+    //출처: https://manorgass.tistory.com/76 [생각하는 개발자:티스토리]
+    public String getKeyHashBase64(Context context) {
+        PackageInfo packageInfo = Utility.getPackageInfo(context, PackageManager.GET_SIGNATURES);
+        if (packageInfo == null)
+            return null;
+
+        for (Signature signature : packageInfo.signatures) {
+            try {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                return Base64.encodeToString(md.digest(), Base64.DEFAULT);
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
 }
 
