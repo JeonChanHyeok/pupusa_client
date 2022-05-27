@@ -9,6 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.servertest.R;
+
 import java.util.ArrayList;
 //어댑터를 쉽게하기 위해 BaseAdapter를 상속받는다.
 public class ListViewAdapter extends BaseAdapter {

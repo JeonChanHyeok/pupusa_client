@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">customlistview</string>
+    <string name="app_name">행복한 배달</string>
+    <string name="My_Info">내 정보</string>
+    <string name="Notice">공지사항</string>
+    <string name="Service_center">고객센터</string>
+    <string name="Policy">약관 및 정책</string>
+    <string name="Login">로그인</string>
+    <string name="Google_login">구글 계정으로 로그인</string>
+    <string name="Kakao_login">카카오 계정으로 로그인</string>
+    <string name="input_address">주소를 입력해주세요.</string>
+    <string name="whole_chatting_room">전체 채팅방</string>
+    <string name="MyAddress">고분로 50-1</string>
+    <string name="alert">알림센터</string>
+    <string name="join">회원가입</string>
+
 </resources>

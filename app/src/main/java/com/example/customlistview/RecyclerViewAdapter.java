@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.servertest.R;
+
 import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
@@ -25,6 +27,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    Toast.makeText(view.getContext(),position,Toast.LENGTH_SHORT ).show();
                 }
             });
             //imgView_item = (ImageView) itemView.findViewById(R.id.imgView_item);
