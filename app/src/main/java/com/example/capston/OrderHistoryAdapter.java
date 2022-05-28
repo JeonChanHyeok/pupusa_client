@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class OrderHistoryAdapter extends BaseAdapter {
-    private ArrayList<order_history_item> orderHistoryItemList = new ArrayList<>();
+    private ArrayList<OrderHistoryItem> orderHistoryItemList = new ArrayList<>();
 
     public OrderHistoryAdapter(){}
 
@@ -40,7 +40,7 @@ public class OrderHistoryAdapter extends BaseAdapter {
         final int pos = position;
         final Context context = parent.getContext();
 
-        //"order_history_item" Layout을 infalte하여 convertView 참조 획득.
+        //"orderHistoryItem" Layout을 infalte하여 convertView 참조 획득.
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.order_history_item, parent, false); }
@@ -53,7 +53,7 @@ public class OrderHistoryAdapter extends BaseAdapter {
         TextView price = (TextView) convertView.findViewById(R.id.tv_order_history_item_price);
 
         //Data Seet에서 position에 위치한 데이터 참조 획득
-        order_history_item orderItem = orderHistoryItemList.get(position);
+        OrderHistoryItem orderItem = orderHistoryItemList.get(position);
 
         imageView.setImageDrawable(orderItem.getStoreImg());
         shopName.setText(orderItem.getStoreName());
@@ -66,7 +66,7 @@ public class OrderHistoryAdapter extends BaseAdapter {
 
     //item에 데이터 추가
     public void addItem(Drawable shop_img, String shop_name, String date, String menu, int price){
-        order_history_item item = new order_history_item();
+        OrderHistoryItem item = new OrderHistoryItem();
 
         item.setStoreImg(shop_img);
         item.setDate(date);

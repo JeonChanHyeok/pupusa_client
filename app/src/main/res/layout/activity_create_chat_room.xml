@@ -61,8 +61,8 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_create_chat_room_current_location"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_light_gray"
+            android:layout_height="40dp"
+            android:background="@drawable/round_border"
             android:text="현재 위치로 주소 찾기"
             app:layout_constraintEnd_toEndOf="@+id/et_create_chat_room_input_address"
             app:layout_constraintStart_toStartOf="@+id/et_create_chat_room_input_address"
@@ -103,7 +103,8 @@
         <EditText
             android:id="@+id/tv_create_chat_room_input_content"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="350dp"
+            android:gravity="top"
             android:hint="내용을 입력하세요"
             android:paddingTop="8dp"
             android:background="@null"

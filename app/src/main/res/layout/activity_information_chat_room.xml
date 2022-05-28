@@ -141,10 +141,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="채팅방 참가하기"
+            android:background="@drawable/round_border"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:textStyle="bold"
+            android:backgroundTint="#FCD12A"
+            android:textColor="@color/white"
+            android:outlineProvider="none"
+            android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tv_information_chat_room_title"
             app:layout_constraintStart_toStartOf="@+id/tv_information_chat_room_content" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

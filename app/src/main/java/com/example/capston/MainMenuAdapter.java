@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +18,18 @@ public class MainMenuAdapter extends RecyclerView.Adapter<MainMenuAdapter.ViewHo
 
     public MainMenuAdapter(ArrayList<MainMenuItem> data) {
         mData = data;
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(View v, int pos);
+    }
+
+    // 리스너 객체 참조를 저장하는 변수
+    private OnItemClickListener mListener = null;
+
+    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener ;
     }
 
     // onCreateViewHolder : 아이템 뷰를 위한 뷰홀더 객체를 생성하여 리턴
@@ -52,10 +65,24 @@ public class MainMenuAdapter extends RecyclerView.Adapter<MainMenuAdapter.ViewHo
         TextView price;
         ViewHolder(View itemView) {
             super(itemView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        MainMenuItem item = mData.get(pos);
+                        if(mListener != null){
+                            mListener.onItemClick(view, pos);
+                        }
+                    }
+                }
+            });
         // 뷰 객체에 대한 참조
             mainMenuImage = itemView.findViewById(R.id.iv_main_menu_item_image);
             menuName = itemView.findViewById(R.id.tv_main_menu_item_menu_name);
             price = itemView.findViewById(R.id.tv_main_menu_item_price);
+
         }
     }
 }

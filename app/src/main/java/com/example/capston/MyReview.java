@@ -3,21 +3,34 @@ package com.example.capston;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import java.util.ArrayList;
+
 public class MyReview extends AppCompatActivity {
+    Button reviewDeleteBtn;
+    MyReviewWrittenAdapter adapter;
+    ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_review);
 
-        ListView listView = findViewById(R.id.ll_my_review);
+        listView = findViewById(R.id.ll_my_review);
 
-        MyReviewWrittenAdapter adapter = new MyReviewWrittenAdapter();
+//        // 빈 데이터 리스트 생성.
+//        final ArrayList<String> items = new ArrayList<String>() ;
+//        // ArrayAdapter 생성. 아이템 View를 선택(single choice)가능하도록 만듦.
+//        final ArrayAdapter adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, items) ;
+
+        adapter = new MyReviewWrittenAdapter();
         listView.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "닭다리치킨집",
@@ -43,7 +56,7 @@ public class MyReview extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MyReviewWrittenItem item = (MyReviewWrittenItem) parent.getItemAtPosition(position);
+                MyReviewWrittenItem item = (MyReviewWrittenItem) adapter.getItem(position); //parent.getItemAtPosition(position);
 
                 String title = item.getStoreName();
                 String str = title;
@@ -51,5 +64,20 @@ public class MyReview extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void deleteItem(){
+        reviewDeleteBtn = findViewById(R.id.btn_my_review_written_item_delete);
+        reviewDeleteBtn.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = listView.getCheckedItemPosition();
+                if (pos != ListView.INVALID_POSITION) {
+                   // listView.remove(pos);
+                    listView.clearChoices();
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        }) ;
     }
 }

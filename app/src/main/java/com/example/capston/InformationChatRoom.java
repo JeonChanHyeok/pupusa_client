@@ -23,4 +23,9 @@ public class InformationChatRoom extends AppCompatActivity {
         address.setText("부산 남구 한남동");
         name.setText("전찬혁");
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

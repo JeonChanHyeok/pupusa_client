@@ -6,13 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class MyReviewWrittenAdapter extends BaseAdapter {
     private ArrayList<MyReviewWrittenItem> MyReviewWrittenItemList = new ArrayList<>();
+    private ObjectInputStream.GetField list;
+    Button deleteButton;
 
     public MyReviewWrittenAdapter(){}
 
@@ -57,6 +63,30 @@ public class MyReviewWrittenAdapter extends BaseAdapter {
         menu.setText(my_review_item.getMenu());
         imageView.setImageDrawable(my_review_item.getImage());
 
+        //리뷰 삭제 버튼 클릭 이벤트
+        deleteButton =(Button) convertView.findViewById(R.id.btn_my_review_written_item_delete);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context.getApplicationContext(), position+"", Toast.LENGTH_SHORT).show();
+                int count, checked;
+                count = getCount();
+                if (count > 0) {
+                    // 현재 선택된 아이템의 position 획득.
+                    checked = deleteButton.getId();
+
+                    if (checked > -1 && checked < count) {
+                        // 아이템 삭제
+                        //items.remove(checked);
+
+                        // listview 갱신.
+                        notifyDataSetChanged();
+                    }
+                }
+            }
+        });
+
+
         return convertView;
     }
 
@@ -71,7 +101,4 @@ public class MyReviewWrittenAdapter extends BaseAdapter {
         MyReviewWrittenItemList.add(item);
     }
 
-    public void delItem(int position) {
-        MyReviewWrittenItemList.remove(position);
-    }
 }

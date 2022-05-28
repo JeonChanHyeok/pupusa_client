@@ -26,7 +26,7 @@ public class OrderHistory extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                order_history_item item = (order_history_item) parent.getItemAtPosition(position);
+                OrderHistoryItem item = (OrderHistoryItem) parent.getItemAtPosition(position);
 
                 String title = item.getStoreName();
                 String str = title;

@@ -1,15 +1,21 @@
 package com.example.capston;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -27,7 +33,11 @@ public class MenuList extends AppCompatActivity {
     private MainMenuAdapter mmAdapter;
     private SelectMenuItemAdapter smiAdapter;
     private TextView menuBarItem;
+    private Toolbar toolbar;
     ArrayList<MainMenuItem> mmList;
+    ImageButton menuListWishBtn;
+    ImageView menuListWishImageView;
+    boolean i = true;
 
     //메뉴 리스트
     ListView listView;
@@ -42,15 +52,47 @@ public class MenuList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_list);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar_menu_list);
 
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);  //뒤로가기 버튼 생김
 
         menuBarRecycler();
         mainMenuRecycler();
         selectMenuListView();
+        changeWishList();
+    }
 
+    //가게 찜 등록 버튼 클릭
+    public void changeWishList(){
+        menuListWishBtn = (ImageButton) findViewById(R.id.btn_menu_list_wish);
+
+        menuListWishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (i == true){
+                    menuListWishBtn.setBackgroundResource(R.drawable.wish_list);
+                    i = false;
+                }else {
+                    menuListWishBtn.setBackgroundResource(R.drawable.empty_wish_list);
+                    i = true;
+                }
+            }
+        });
+    }
+    //툴바 뒤로가기 키
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:{  //toolbar의 back키 눌렀을 때 동작
+                finish();
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                startActivity(intent);
+
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     //메뉴들 탭 리사이클러뷰
@@ -86,7 +128,6 @@ public class MenuList extends AppCompatActivity {
             String str = (String) v.getTag();
             Toast.makeText(MenuList.this, str, Toast.LENGTH_SHORT).show();
             menuBarItem = findViewById(R.id.tv_menu_bar_item);
-
         }
     };
 
@@ -100,19 +141,28 @@ public class MenuList extends AppCompatActivity {
         mmRecyclerView.setAdapter(mmAdapter);
         mmRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
 
+        mmAdapter.setOnItemClickListener(new MainMenuAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                Toast.makeText(MenuList.this, ""+position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
         mImageDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.appimage, null);
         menuName = "Crocus";
         price = 1000;
         addItem(mImageDrawable, menuName, price);
-        addItem(mImageDrawable, menuName, price);
-        addItem(mImageDrawable, menuName, price);
-        addItem(mImageDrawable, menuName, price);
-        addItem(mImageDrawable, menuName, price);
+        addItem(mImageDrawable, "asd", price);
+        addItem(mImageDrawable, "zxc", price);
+        addItem(mImageDrawable, "Qwe", price);
+        addItem(mImageDrawable, "fdg", price);
 
         MainMenuDeco decoration = new MainMenuDeco();
         mmRecyclerView.addItemDecoration(decoration);
 
         mmAdapter.notifyDataSetChanged();
+
+
     }
 
     private void addItem(Drawable icon, String mainText, int subText) {

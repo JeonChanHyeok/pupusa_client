@@ -37,7 +37,7 @@
                 app:layout_collapseMode="parallax" />
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_menu_list"
                 android:layout_width="match_parent"
                 android:layout_gravity="top"
                 android:layout_height="?attr/actionBarSize"
@@ -231,19 +231,26 @@
                 <!--리뷰 버튼-->
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_menu_list_review"
-                    android:layout_width="wrap_content"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="@drawable/round_border"
+                    android:outlineProvider="none"
                     android:textColor="@color/black"
                     android:text="리뷰"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
 
                 <!--가게 정보-->
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_menu_list_store_info"
-                    android:layout_width="wrap_content"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:text="가게정보"
-                    android:layout_weight="1"
+                    android:background="@drawable/round_border"
+                    android:outlineProvider="none"
                     android:textColor="@color/black"/>
             </LinearLayout>
 
@@ -300,8 +307,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:baselineAlignBottom="false"
-        android:src="@drawable/one_star"
+        android:src="@drawable/ic_add"
         app:fabSize="normal"
+        app:borderWidth="0dp"
         android:layout_gravity="end|bottom"
         android:backgroundTint="@color/yellow"/>
 <!--        app:layout_anchor="@id/appbar"-->

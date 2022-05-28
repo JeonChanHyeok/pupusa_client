@@ -26,6 +26,7 @@
         <activity android:name=".ConnectAddressApi"/>
         <activity android:name=".InformationChatRoom"/>
         <activity android:name=".MenuList"/>
+        <activity android:name=".ConfirmPayment"/>
     </application>
 
     <!-- 인터넷 권한 설정   -->
