@@ -17,7 +17,6 @@ import java.util.Map;
 
 public class MyReviewWrittenAdapter extends BaseAdapter {
     private ArrayList<MyReviewWrittenItem> MyReviewWrittenItemList = new ArrayList<>();
-    private ObjectInputStream.GetField list;
     Button deleteButton;
 
     public MyReviewWrittenAdapter(){}
@@ -69,20 +68,8 @@ public class MyReviewWrittenAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context.getApplicationContext(), position+"", Toast.LENGTH_SHORT).show();
-                int count, checked;
-                count = getCount();
-                if (count > 0) {
-                    // 현재 선택된 아이템의 position 획득.
-                    checked = deleteButton.getId();
-
-                    if (checked > -1 && checked < count) {
-                        // 아이템 삭제
-                        //items.remove(checked);
-
-                        // listview 갱신.
-                        notifyDataSetChanged();
-                    }
-                }
+                MyReviewWrittenItemList.remove(position);
+                notifyDataSetChanged();
             }
         });
 

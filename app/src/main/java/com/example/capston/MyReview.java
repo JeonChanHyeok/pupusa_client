@@ -14,7 +14,6 @@ import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
 
 public class MyReview extends AppCompatActivity {
-    Button reviewDeleteBtn;
     MyReviewWrittenAdapter adapter;
     ListView listView;
 
@@ -24,11 +23,6 @@ public class MyReview extends AppCompatActivity {
         setContentView(R.layout.activity_my_review);
 
         listView = findViewById(R.id.ll_my_review);
-
-//        // 빈 데이터 리스트 생성.
-//        final ArrayList<String> items = new ArrayList<String>() ;
-//        // ArrayAdapter 생성. 아이템 View를 선택(single choice)가능하도록 만듦.
-//        final ArrayAdapter adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, items) ;
 
         adapter = new MyReviewWrittenAdapter();
         listView.setAdapter(adapter);
@@ -64,20 +58,5 @@ public class MyReview extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    public void deleteItem(){
-        reviewDeleteBtn = findViewById(R.id.btn_my_review_written_item_delete);
-        reviewDeleteBtn.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int pos = listView.getCheckedItemPosition();
-                if (pos != ListView.INVALID_POSITION) {
-                   // listView.remove(pos);
-                    listView.clearChoices();
-                    adapter.notifyDataSetChanged();
-                }
-            }
-        }) ;
     }
 }
