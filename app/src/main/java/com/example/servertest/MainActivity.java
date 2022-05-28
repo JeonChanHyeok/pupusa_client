@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private Intent main_intent;
     private int isLogin = 0;
     private String loginedId;
+    private String loginedName;
     private ChatRoomList chatRoomList;
     private ListView listView;
     private ChatRoomListAdapter myAdapter;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         main_intent = getIntent();
         isLogin = main_intent.getIntExtra("islogin",0);
         loginedId = main_intent.getStringExtra("loginedId");
+        loginedName = main_intent.getStringExtra("loginedName");
         chatRoomList = new ChatRoomList();
         listView = (ListView)findViewById(R.id.listView);
 
@@ -178,8 +180,12 @@ public class MainActivity extends AppCompatActivity {
                         Intent it = new Intent(this, LoginActivity.class);
                         startActivity(it);
                     }else{
-                        Intent it = new Intent(this, MyPage.class);
-                        startActivity(it);
+                        Intent myPageIntent = new Intent(this, MyPage.class);
+                        System.out.println("야야"+this.loginedId);
+                        myPageIntent.putExtra("loginedId", loginedId);
+                        myPageIntent.putExtra("loginedName", loginedName);
+                        myPageIntent.putExtra("isLogin", isLogin);
+                        startActivity(myPageIntent);
                     }
                     return true;
 

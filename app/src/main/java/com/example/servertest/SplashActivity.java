@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.servertest.login.LoginActivity;
+
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -23,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run()
             {
                 //new Intent(현재 context, 이동할 activity)
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
 
                 startActivity(intent);	//intent 에 명시된 액티비티로 이동
 

@@ -9,8 +9,36 @@ public class JoinData {
     @SerializedName("userPw")
     private String userPw;
 
-    public JoinData(String userID, String userPW) {
-        this.userId = userID;
-        this.userPw = userPW;
+    @SerializedName("userName")
+    private String userName;
+
+    @SerializedName("userPhoneNumber")
+    private String userPhoneNumber;
+
+    @SerializedName("userAddress")
+    private String userAddress;
+
+    @SerializedName("userSmsChk")
+    private boolean userSmsChk;
+
+    @SerializedName("userPushChk")
+    private boolean userPushChk;
+
+    @SerializedName("userGrade")
+    private int userGrade;
+
+    @SerializedName("deleted")
+    private boolean deleted;
+
+    public JoinData(String userId, String userPw, String userName) {
+        this.userId = userId;
+        this.userPw = userPw;
+        this.userName = userName;
+        this.userPhoneNumber = "";
+        this.userAddress = "";
+        this.userSmsChk = false;
+        this.userPushChk = false;
+        this.userGrade = 0;
+        this.deleted = false;
     }
 }

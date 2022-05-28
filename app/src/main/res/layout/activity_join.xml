@@ -32,8 +32,8 @@
             android:layout_width="230dp"
             android:layout_height="50dp"
             android:hint="이메일"
-            app:layout_constraintTop_toBottomOf="@+id/tv_join_name"
-            app:layout_constraintLeft_toLeftOf="@id/tv_join_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_join_name"
+            app:layout_constraintLeft_toLeftOf="@id/et_join_name"
             app:layout_constraintBottom_toTopOf="@+id/et_join_pw"
             android:layout_marginTop="20dp">
         </EditText>
@@ -46,7 +46,7 @@
             android:textSize="15dp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="@+id/et_join_email"
-            app:layout_constraintRight_toRightOf="@id/tv_join_name"
+            app:layout_constraintRight_toRightOf="@id/et_join_name"
             android:background="@color/popcorn"/>
 
         <EditText

@@ -3,6 +3,7 @@ package com.example.servertest.server;
 import com.example.servertest.login.DupResponse;
 import com.example.servertest.login.JoinResponse;
 import com.example.servertest.login.LoginResponse;
+import com.example.servertest.login.User;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -15,12 +16,16 @@ public interface ServiceApi {
     Call<LoginResponse> userLogin(@Field("objJson") String objJson);
 
     @FormUrlEncoded
-    @POST("/user/joinemaildupchk")
+    @POST("/user/joindupchk")
     Call<DupResponse> userEmailDupChk(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/user/join")
     Call<JoinResponse> userJoin(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/mypage/load")
+    Call<User> userInfoLoad(@Field("objJson") String objJson);
 
     @POST("/chat/roomload")
     Call<Object>  loadRoomList();
