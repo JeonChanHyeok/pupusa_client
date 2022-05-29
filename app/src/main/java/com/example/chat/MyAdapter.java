@@ -9,7 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -80,7 +82,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public CenterViewHolder(@NonNull View itemView) {
             super(itemView);
-            textv = (TextView)itemView.findViewById(R.id.textv);
+            textv = (TextView)itemView.findViewById(R.id.tv_room_center_item_list);
         }
     }
 
@@ -92,11 +94,12 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public LeftViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgv = (CircleImageView)itemView.findViewById(R.id.imgv);
-            textv_nicname = (TextView)itemView.findViewById(R.id.textv_nicname);
-            textv_msg = (TextView)itemView.findViewById(R.id.textv_msg);
-            textv_time = (TextView)itemView.findViewById(R.id.textv_time);
+            imgv = (CircleImageView)itemView.findViewById(R.id.iv_room_left_item_list_profile);
+            textv_nicname = (TextView)itemView.findViewById(R.id.tv_room_left_item_list_name);
+            textv_msg = (TextView)itemView.findViewById(R.id.tv_room_left_item_list_message);
+            textv_time = (TextView)itemView.findViewById(R.id.tv_room_left_item_list_time);
 
+            textv_time.setText(getTime());
         }
     }
 
@@ -106,9 +109,21 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public RightViewHolder(@NonNull View itemView) {
             super(itemView);
-            textv_msg = (TextView)itemView.findViewById(R.id.textv_msg);
-            textv_time = (TextView)itemView.findViewById(R.id.textv_time);
+            textv_msg = (TextView)itemView.findViewById(R.id.tv_room_right_item_list_message);
+            textv_time = (TextView)itemView.findViewById(R.id.tv_room_right_item_list_time);
+
+            textv_time.setText(getTime());
         }
+    }
+
+    //현재 시간 불러오는 함수
+    private String getTime(){
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        SimpleDateFormat sdf = new SimpleDateFormat("aa hh:mm");
+        String getTime = sdf.format(date);
+
+        return getTime;
     }
 
 }

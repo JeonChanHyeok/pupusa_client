@@ -13,9 +13,9 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/imgv"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:id="@+id/iv_room_left_item_list_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="top"
             android:src="@drawable/ic_launcher_foreground"
             app:civ_border_color="#FF000000"
@@ -30,37 +30,44 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/textv_nicname"
+                    android:id="@+id/tv_room_left_item_list_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#ffffff"
                     android:layout_marginRight="5dp"
                     android:text="닉네임"
                     android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="15dp" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textv_msg"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffffff"
-                android:maxLength="150"
-                android:maxLines="15"
-                android:padding="10dp"
-                android:text="메세지 내용"
-                android:textColor="#000000"
-                android:textSize="15dp" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textv_time"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="2020-03-12 12:30" />
+                <TextView
+                    android:id="@+id/tv_room_left_item_list_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ic_chat_gray"
+                    android:maxLength="150"
+                    android:maxLines="15"
+                    android:padding="10dp"
+                    android:text="메세지 내용"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_room_left_item_list_time"
+                    android:layout_width="wrap_content"
+                    android:gravity="bottom"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="7dp"
+                    android:text="2020-03-12 12:30" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 
