@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
@@ -23,8 +24,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public MyAdapter(ArrayList<DataItem> dataList){
         myDataList = dataList;
     }
-
-
 
     @NonNull
     @Override
@@ -125,5 +124,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         return getTime;
     }
+
 
 }
