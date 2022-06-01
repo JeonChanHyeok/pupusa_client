@@ -3,18 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/drawable/edge.xml" value="0.1" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/layout/SubActivity.xml" value="0.1" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/layout/activity_recycler_item.xml" value="0.264" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/layout/edge.xml" value="0.18055555555555555" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/layout/list.xml" value="0.4" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/layout/list0.xml" value="0.264" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/layout/list2.xml" value="0.4" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/layout/subactivity.xml" value="0.13333333333333333" />
-        <entry key="..\:/Users/ysj62/AndroidStudioProjects/customlistview/app/src/main/res/layout/toolbar_store_select.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.185" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/drawable/edge.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/drawable/ic_launcher_background.xml" value="0.185" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/drawable/textline.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/activity_main2.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/announcement.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/announcement_child_list_view.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/announcement_parent_list_view.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/detailorder.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/detailorder_child_list_view.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/detailorder_parent_list_view.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/toolbar_alarm.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/detail_order/app/src/main/res/layout/toolbar_store_select.xml" value="0.1" />
       </map>
     </option>
   </component>
