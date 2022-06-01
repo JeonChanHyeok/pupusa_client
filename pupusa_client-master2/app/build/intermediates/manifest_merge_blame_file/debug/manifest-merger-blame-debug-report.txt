@@ -1,0 +1,130 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.capston"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="27"
+8-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+11-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:5:5-79
+11-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:5:22-76
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:6:5-67
+12-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:6:22-64
+13
+14    <application
+14-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:8:5-41:19
+15        android:allowBackup="true"
+15-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:9:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.7.0] C:\Users\LG\.gradle\caches\transforms-3\b9e4376e452ce4f1a2bbb1fc4b534124\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+17        android:debuggable="true"
+18        android:extractNativeLibs="false"
+19        android:icon="@mipmap/ic_launcher"
+19-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:10:9-43
+20        android:label="@string/app_name"
+20-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:11:9-41
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:12:9-54
+22        android:supportsRtl="true"
+22-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:13:9-35
+23        android:testOnly="true"
+24        android:theme="@style/Theme.Pupusa"
+24-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:14:9-44
+25        android:usesCleartextTraffic="true" >
+25-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:15:9-44
+26        <meta-data
+26-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:16:9-18:47
+27            android:name="com.google.android.gms.ads.APPLICATION_ID"
+27-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:17:13-69
+28            android:value="ca-app-pub~~~~~~" />
+28-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:18:13-45
+29
+30        <activity
+30-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:19:9-27:20
+31            android:name="com.example.servertest.SplashActivity"
+31-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:20:13-43
+32            android:exported="true"
+32-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:22:13-36
+33            android:theme="@style/Theme.Pupusa.Splash" >
+33-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:21:13-55
+34            <intent-filter>
+34-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:23:13-26:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:24:17-69
+35-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:24:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:25:17-77
+37-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:25:27-74
+38            </intent-filter>
+39        </activity>
+40        <activity android:name="com.example.servertest.login.LoginActivity" />
+40-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:28:9-78
+40-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:28:19-76
+41        <activity android:name="com.example.servertest.login.JoinActivity" />
+41-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:29:9-77
+41-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:29:19-75
+42        <activity android:name="com.example.servertest.AlertActivity" />
+42-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:30:9-72
+42-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:30:19-70
+43        <activity android:name="com.example.servertest.MainActivity" />
+43-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:31:9-71
+43-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:31:19-69
+44        <activity android:name="com.example.servertest.chat.ChatRoomController" />
+44-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:32:9-82
+44-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:32:19-80
+45        <activity android:name="com.example.servertest.mypage.MyPageActivity" />
+45-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:33:9-59
+45-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:33:19-56
+46        <activity android:name="com.example.servertest.mypage.order_history" />
+46-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:34:9-58
+46-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:34:19-55
+47        <activity android:name="com.example.servertest.servicecenter.service_center" />
+47-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:35:9-66
+47-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:35:19-63
+48        <activity android:name="com.example.servertest.mypage.my_review" />
+48-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:36:9-54
+48-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:36:19-51
+49        <activity android:name="com.example.servertest.mypage.wishlist.WishListActivity" />
+49-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:37:9-70
+49-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:37:19-67
+50        <activity android:name="com.example.servertest.announcement.AnnouncementActivity" />
+50-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:38:9-71
+50-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:38:19-68
+51        <activity android:name="com.example.servertest.mypage.mychatlist.MyChatHistoryListActivity" />
+51-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:39:9-81
+51-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:39:19-78
+52        <activity android:name="com.example.servertest.mypage.coupon.Coupon" />
+52-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:40:9-58
+52-->C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\AndroidManifest.xml:40:19-55
+53
+54        <provider
+54-->[androidx.emoji2:emoji2:1.0.0] C:\Users\LG\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+55            android:name="androidx.startup.InitializationProvider"
+55-->[androidx.emoji2:emoji2:1.0.0] C:\Users\LG\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+56            android:authorities="com.example.capston.androidx-startup"
+56-->[androidx.emoji2:emoji2:1.0.0] C:\Users\LG\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+57            android:exported="false" >
+57-->[androidx.emoji2:emoji2:1.0.0] C:\Users\LG\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+58            <meta-data
+58-->[androidx.emoji2:emoji2:1.0.0] C:\Users\LG\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+59                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+59-->[androidx.emoji2:emoji2:1.0.0] C:\Users\LG\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+60                android:value="androidx.startup" />
+60-->[androidx.emoji2:emoji2:1.0.0] C:\Users\LG\.gradle\caches\transforms-3\4d40ec21232b611dd716b892ede208d6\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+61            <meta-data
+61-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\LG\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+62                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+62-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\LG\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+63                android:value="androidx.startup" />
+63-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\LG\.gradle\caches\transforms-3\b5a10263a72c0b80aefb6f8f76c83ace\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+64        </provider>
+65    </application>
+66
+67</manifest>
