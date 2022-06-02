@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -33,13 +34,16 @@ import com.example.servertest.mypage.MyPageActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 import com.example.servertest.servicecenter.service_center;
+import com.example.servertest.Map_Main;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.kakao.util.maps.helper.Utility;
+//import com.kakao.util.maps.helper.Utility;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private ChatRoomListAdapter myAdapter;
 
+    Button map_btn;
+    //지도 출력용 테스트 버튼
+
     ArrayList<ChatRoomListData> chattingRoomDataList;
 
     @Override
@@ -77,6 +84,18 @@ public class MainActivity extends AppCompatActivity {
         loginedId = main_intent.getStringExtra("loginedId");
         chatRoomList = new ChatRoomList();
         listView = (ListView)findViewById(R.id.listView);
+
+        map_btn = (Button)findViewById(R.id.map_button);
+        //툴바의 MAP버튼 연결
+        map_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "Address Btn Clicked", Toast.LENGTH_LONG).show(); // 버튼 테스트용 -> 잘 작동함
+
+                Intent map = new Intent(getApplicationContext(), Map_Main.class);
+                startActivity(map);
+            }
+        });
 
         this.InitializeDrawerLayout();
         this.InitializeSearchView();
@@ -241,9 +260,9 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView = v.findViewById(id);
         String tag = (String) imageView.getTag();
 
-        Intent it = new Intent(this, AlertActivity.class);
-        it.putExtra("it_tag", tag);
-        startActivity(it);
+//        Intent it = new Intent(this, AlertActivity.class);
+//        it.putExtra("it_tag", tag);
+//        startActivity(it);
     }
 
     //지도를 위한 키 해시값 추출하는 메소드

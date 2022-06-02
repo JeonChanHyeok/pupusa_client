@@ -30,6 +30,9 @@
         <activity android:name="com.example.servertest.alret.AlertActivity"/>
         <activity android:name="com.example.servertest.MainActivity"/>
         <activity android:name="com.example.servertest.chat.ChatRoomController"/>
+
+        <activity android:name="com.example.servertest.Map_Main"/>
+
         <activity android:name=".mypage.MyPageActivity"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.order_history"

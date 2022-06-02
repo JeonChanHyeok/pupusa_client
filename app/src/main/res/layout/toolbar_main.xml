@@ -31,8 +31,10 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="1dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="-1dp"
+            android:layout_marginBottom="9dp"
             android:gravity="center"
             android:text="Pupusa"
             android:textColor="@android:color/black"
@@ -49,10 +51,18 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_alarm"
             android:clickable="true"
-            android:onClick="nextLayout"
             android:focusable="true"
+            android:onClick="nextLayout"
+            android:src="@drawable/ic_alarm"
             tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/map_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Map"
+            android:onClick=""/>
     </RelativeLayout>
 </androidx.appcompat.widget.Toolbar>
