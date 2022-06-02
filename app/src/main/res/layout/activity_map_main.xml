@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar_location_select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="89dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="80dp"
+        android:text="위치"
+        android:textSize="20dp"
+
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="106dp" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/kakao_map"
+        android:layout_width="401dp"
+        android:layout_height="384dp"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="166dp" />
+
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/textView_Addresss"
+        android:layout_width="307dp"
+        android:layout_height="58dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/text_chat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/text_chat"
+        android:layout_width="310dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="148dp"
+        android:layout_weight="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button2"
+        android:layout_width="372dp"
+        android:layout_height="42dp"
+        android:background="@color/popcorn"
+        android:text="주소 선택"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/text_chat"
+        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintStart_toStartOf="@+id/text_chat"
+        app:layout_constraintTop_toBottomOf="@+id/text_chat"
+        app:layout_constraintVertical_bias="0.849" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주소"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상세 주소"
+        app:layout_constraintBottom_toBottomOf="@+id/text_chat"
+        app:layout_constraintEnd_toStartOf="@+id/text_chat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.486" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

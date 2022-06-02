@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 
 import com.google.android.gms.common.internal.Constants;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 //import com.google.android.gms.maps.MapView;
 
 import net.daum.android.map.MapViewEventListener;
@@ -55,21 +56,36 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
     private Button btn_address;
     //선택한 위치의 주소를 리턴하는 버튼
 
+    private TextView address_box;
+
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kakao_map);
+        setContentView(R.layout.activity_map_main);
         //지도를 띄우자
         // java code
 
+        address_box = findViewById(R.id.textView_Addresss);
+
+        // 지정한 위치 리턴 버튼 시작
         btn_address = (Button) findViewById(R.id.kakao_button_address);
         btn_address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), global_address, Toast.LENGTH_LONG).show();
-                finish();
+                //Toast.makeText(getApplicationContext(), global_address, Toast.LENGTH_LONG).show();
+                address_box.setText(global_address);
+                // 버튼을 누르면 텍스트 박스에 현재 주소 삽입
+            }
+        });
+        // 지정한 위치 리턴 버튼 시작
+
+        FloatingActionButton fab = findViewById(R.id.floatingButton_show_current_location);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
             }
         });
 
@@ -247,6 +263,8 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
         MapReverseGeoCoder mapReverseGeoCoder = new MapReverseGeoCoder(APP_KEY, mapPoint, this, this);
         mapReverseGeoCoder.startFindingAddress();
         //경도값을 주소값으로 변환하는 MapReverseGeoCoder 클래스
+
+        mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOff);
     }
 
     @Override

@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/pupusa_client/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/pupusa_client/app/src/main/res/layout/kakao_map.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/pupusa_client/app/src/main/res/layout/activity_map_main.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/pupusa_client/app/src/main/res/layout/kakao_map.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/pupusa_client/app/src/main/res/layout/toolbar_location_select.xml" value="0.365625" />
         <entry key="..\:/Users/User/AndroidStudioProjects/pupusa_client/app/src/main/res/layout/toolbar_main.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/drawable/edge2.xml" value="0.1" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/drawable/edge4.xml" value="0.1" />

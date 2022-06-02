@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        this.InitializeDrawerLayout();
+        //this.InitializeDrawerLayout();
         this.InitializeSearchView();
         this.InitializeChattingRoomData();
 
