@@ -50,12 +50,10 @@
                     android:id="@+id/tv_room_left_item_list_message"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_chat_gray"
+                    android:background="@drawable/ic_chat_white"
+                    android:padding="10dp"
                     android:maxLength="150"
                     android:maxLines="15"
-                    android:paddingTop="16dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
                     android:text="메세지 내용"
                     android:textColor="#000000"
                     android:textSize="12dp" />
@@ -65,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:gravity="bottom"
                     android:layout_height="match_parent"
-                    android:paddingBottom="7dp"
+                    android:paddingBottom="5dp"
                     android:paddingLeft="4dp"
                     android:textSize="10dp"
                     android:text="2020-03-12 12:30" />
