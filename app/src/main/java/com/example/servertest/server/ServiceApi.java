@@ -32,7 +32,7 @@ public interface ServiceApi {
 
     @FormUrlEncoded
     @POST("/chat/roommake")
-    Call<Object> makeChatRoom(@Field("objJson") String objJson);
+    Call<Long> makeChatRoom(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/chat/joinroom")
@@ -49,6 +49,10 @@ public interface ServiceApi {
     @FormUrlEncoded
     @POST("/chat/sendchatmsg")
     Call<Void> sendChatData(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/store/loadstore")
+    Call<Void> loadStore(@Field("objJson") String objJson);
 
 
 }

@@ -1,4 +1,4 @@
-package com.example.servertest.chat;
+package com.example.servertest.chatroom;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.servertest.R;
+import com.example.servertest.chat.ChatMessage;
 
 import java.util.ArrayList;
 

@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.servertest.MainActivity;
 import com.example.servertest.R;
@@ -18,13 +16,12 @@ import com.example.servertest.mypage.orderhistory.OrderHistory;
 import com.example.servertest.mypage.wishlist.WishListActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
-import com.example.servertest.servicecenter.ServiceCenter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MyPage extends AppCompatActivity {
+public class MyPageActivity extends AppCompatActivity {
     private String loginedId;
     private String loginedName;
     private int isLogin;
@@ -91,7 +88,7 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("click");
-                Intent intent = new Intent(MyPage.this, OrderHistory.class);
+                Intent intent = new Intent(MyPageActivity.this, OrderHistory.class);
                 startActivity(intent);
             }
         });
@@ -99,7 +96,7 @@ public class MyPage extends AppCompatActivity {
         btn_review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyPage.this, MyReview.class);
+                Intent intent = new Intent(MyPageActivity.this, MyReview.class);
                 startActivity(intent);
             }
         });
@@ -107,7 +104,7 @@ public class MyPage extends AppCompatActivity {
         btn_wish_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyPage.this, WishListActivity.class);
+                Intent intent = new Intent(MyPageActivity.this, WishListActivity.class);
                 startActivity(intent);
             }
         });
@@ -115,7 +112,7 @@ public class MyPage extends AppCompatActivity {
         btn_locker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyPage.this, CreateChatRoom.class);
+                Intent intent = new Intent(MyPageActivity.this, CreateChatRoom.class);
                 startActivity(intent);
             }
         });
@@ -123,7 +120,7 @@ public class MyPage extends AppCompatActivity {
         btn_chat.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyPage.this, InformationChatRoom.class);
+                Intent intent = new Intent(MyPageActivity.this, InformationChatRoom.class);
                 startActivity(intent);
             }
         });
@@ -131,14 +128,15 @@ public class MyPage extends AppCompatActivity {
         btn_change_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyPage.this, MenuList.class);
+                Intent intent = new Intent(MyPageActivity.this, MenuList.class);
+                intent.putExtra("user", user);
                 startActivity(intent);
             }
         });
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyPage.this, MainActivity.class);
+                Intent intent = new Intent(MyPageActivity.this, MainActivity.class);
                 intent.putExtra("islogin", 0);
                 intent.putExtra("loginedId", "");
                 intent.putExtra("loginedName", "");

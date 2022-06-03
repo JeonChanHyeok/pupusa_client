@@ -44,7 +44,6 @@
             android:layout_width="251dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="mgonggu"
             android:background="@color/popcorn"
             android:text="공동구매방 생성"
             android:textSize="20sp" />
@@ -56,7 +55,6 @@
             android:layout_weight="1"
             android:layout_marginTop="20dp"
             android:background="@color/popcorn"
-            android:onClick="mgonggulist"
             android:text="공동구매방 리스트"
             android:textSize="20sp" />
 
@@ -76,7 +74,6 @@
             android:id="@+id/backbtn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:onClick="mback"
             android:text="뒤로가기"
             android:background="@color/popcorn"
             android:textSize="20sp" />

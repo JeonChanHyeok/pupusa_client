@@ -1,4 +1,4 @@
-package com.example.servertest.chat;
+package com.example.servertest.chatroom;
 
 public class JoinRoomData {
     String roomId;

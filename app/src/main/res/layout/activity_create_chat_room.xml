@@ -101,7 +101,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_create_chat_room_input_store_name" />
 
         <EditText
-            android:id="@+id/tv_create_chat_room_input_content"
+            android:id="@+id/et_create_chat_room_input_content"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="내용을 입력하세요"

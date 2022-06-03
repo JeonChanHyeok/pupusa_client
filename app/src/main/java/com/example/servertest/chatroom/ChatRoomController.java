@@ -1,4 +1,4 @@
-package com.example.servertest.chat;
+package com.example.servertest.chatroom;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servertest.R;
+import com.example.servertest.chat.ChatMessage;
+import com.example.servertest.chat.ChatMessageList;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 import com.google.gson.Gson;
@@ -27,7 +29,7 @@ import ua.naiksoftware.stomp.Stomp;
 import ua.naiksoftware.stomp.StompClient;
 import ua.naiksoftware.stomp.dto.StompHeader;
 
-public class ChatRoomController extends AppCompatActivity {
+/*public class ChatRoomController extends AppCompatActivity {
     private StompClient mStompClient;
     private List<StompHeader> headerList;
 
@@ -103,27 +105,7 @@ public class ChatRoomController extends AppCompatActivity {
     }
 
     //채팅 불러오기
-    public void InitializeChattingData()
-    {
-        chattingDataList = new ArrayList<ChatMessage>();
-        String roomIdData = roomId;
-        Call chat = service.loadChatData(roomIdData);
-        chat.enqueue(new Callback() {
-            @Override
-            public void onResponse(Call call, Response response) {
-                String chatlist = new Gson().toJson(response.body());
-                chatMessageList = new Gson().fromJson(chatlist,ChatMessageList.class);
-                for(ChatMessage c:chatMessageList.getChatMessageList()){
-                    chattingDataList.add(new ChatMessage(c.getMessage(), c.getRoomId(), c.getUserId()));
-                }
-                mAdapter = new ChatRoomAdapter(getApplicationContext(),chattingDataList);
-                listView.setAdapter(mAdapter);
-            }
-            @Override
-            public void onFailure(Call call, Throwable t) {
-            }
-        });
-    }
+
 
     @SuppressLint("CheckResult")
     public void initStomp(){
@@ -158,5 +140,29 @@ public class ChatRoomController extends AppCompatActivity {
 
     public void sendMsg(String c){
         mStompClient.send("/chat/sendmsg" ,c).subscribe();
+    }
+}*/
+
+public class ChatRoomController{
+    private Gson gson = new Gson();
+    private ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
+    private Long roomId = 0L;
+    public Long makeChatRoom(String userId, String chatRoomName, String chatRoomAddress, Long chatRoomStoreId, String chatRoomInfo){
+        ChatRoom chatRoom = new ChatRoom(userId, chatRoomName, chatRoomAddress, chatRoomStoreId, chatRoomInfo);
+        String objJson = gson.toJson(chatRoom);
+        Call<Long> makeChat = service.makeChatRoom(objJson);
+        ;
+        makeChat.enqueue(new Callback<Long>() {
+            @Override
+            public void onResponse(Call<Long> call, Response<Long> response) {
+                roomId = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<Long> call, Throwable t) {
+
+            }
+        });
+        return roomId;
     }
 }

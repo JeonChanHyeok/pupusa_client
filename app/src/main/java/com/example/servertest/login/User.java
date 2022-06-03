@@ -1,6 +1,10 @@
 package com.example.servertest.login;
 
-public class User {
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String userId;
 
     private String userPw;
