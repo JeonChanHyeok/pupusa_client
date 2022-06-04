@@ -213,6 +213,8 @@ public class ConfirmPayment extends AppCompatActivity {
         adapter.addItem("쫑뜩한 치킨", 2, 10000);
         adapter.addItem("맛있는 치킨", 3, 50000);
         adapter.addItem("맛있는 치킨", 3, 50000);
+        adapter.addItem("맛있는 치킨", 3, 50000);
+        adapter.addItem("맛있는 치킨", 3, 50000);
 
         amountOrderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

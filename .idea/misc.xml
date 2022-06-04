@@ -25,6 +25,7 @@
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/drawable/round_border.xml" value="0.3625" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/aaaa.xml" value="0.2692502532928065" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/activity_confirm_payment.xml" value="0.264" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/activity_confirm_payment2.xml" value="0.45208333333333334" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/activity_create_chat_room.xml" value="0.4411177644710579" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/activity_information_chat_room.xml" value="0.264" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/activity_main.xml" value="0.536" />
@@ -46,11 +47,13 @@
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/main_menu_item.xml" value="0.264" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu.xml" value="0.4708333333333333" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_bar_item.xml" value="0.4640625" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_bar_item_2.xml" value="0.25462962962962965" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_item.xml" value="0.4744791666666667" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_item1.xml" value="0.4744791666666667" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_list.xml" value="0.21648507816200852" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_main.xml" value="0.43385416666666665" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_select.xml" value="0.4125" />
+        <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/menu_title_header.xml" value="0.45208333333333334" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/my_review.xml" value="0.4" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/my_review_writeable_item.xml" value="0.34193840579710144" />
         <entry key="..\:/Users/YOU/AndroidStudioProjects/capston/app/src/main/res/layout/my_review_written_item.xml" value="0.34193840579710144" />

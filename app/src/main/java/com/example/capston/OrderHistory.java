@@ -23,6 +23,14 @@ public class OrderHistory extends AppCompatActivity {
         adapter.addItem(ContextCompat.getDrawable(this,R.drawable.thunder),"썬더치킨", "2022-03-10", "뼈 치킨", 19000);
         adapter.addItem(ContextCompat.getDrawable(this,R.drawable.zicoba),"지코바", "2022-02-10", "닭 날개", 10000);
 
+        adapter.addItem(ContextCompat.getDrawable(this,R.drawable.kyochon),"교촌치킨", "2022-04-10", "순살 닭강정 치킨", 10000);
+        adapter.addItem(ContextCompat.getDrawable(this,R.drawable.thunder),"썬더치킨", "2022-03-10", "뼈 치킨", 19000);
+        adapter.addItem(ContextCompat.getDrawable(this,R.drawable.zicoba),"지코바", "2022-02-10", "닭 날개", 10000);
+
+        adapter.addItem(ContextCompat.getDrawable(this,R.drawable.kyochon),"교촌치킨", "2022-04-10", "순살 닭강정 치킨", 10000);
+        adapter.addItem(ContextCompat.getDrawable(this,R.drawable.thunder),"썬더치킨", "2022-03-10", "뼈 치킨", 19000);
+        adapter.addItem(ContextCompat.getDrawable(this,R.drawable.zicoba),"지코바", "2022-02-10", "닭 날개", 10000);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){

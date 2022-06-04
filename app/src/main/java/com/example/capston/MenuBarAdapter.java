@@ -1,7 +1,6 @@
 package com.example.capston;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,44 +11,45 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MenuBarAdapter extends RecyclerView.Adapter<MenuBarAdapter.ViewHolder> {
+    private OnItemClickListener mListener = null;
+    private ArrayList<MenuBarItem> mData = null;
 
-    private ArrayList<String> itemList;
-    private Context context;
-    private View.OnClickListener onClickItem;
-
-    public MenuBarAdapter(Context context, ArrayList<String> itemList, View.OnClickListener onClickItem) {
-        this.context = context;
-        this.itemList = itemList;
-        this.onClickItem = onClickItem;
+    public MenuBarAdapter(ArrayList<MenuBarItem> data) {
+        mData = data;
     }
 
+    public interface OnItemClickListener{
+        void onItemClick(View v, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener;
+    }
 
     //껍데기 생성 1번(뷰홀더 객체 생성하여 리턴)
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
+        Context context = parent.getContext();
         // context 와 parent.getContext() 는 같다.
-        View view = LayoutInflater.from(context)
-                .inflate(R.layout.menu_bar_item, parent, false);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.menu_bar_item, parent, false);
+        MenuBarAdapter.ViewHolder vh = new MenuBarAdapter.ViewHolder(view);
 
-        return new ViewHolder(view);
+        return vh;
     }
 
     //껍데기에 데이터 바인딩 2번(뷰홀더 안의 내용을 position에 해당되는 데이터로 교체)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String item = itemList.get(position);
+        MenuBarItem item = mData.get(position);
 
-        holder.menuBarItem.setText(item);
-        holder.menuBarItem.setTag(item);
-        holder.menuBarItem.setOnClickListener(onClickItem);
-
+        holder.menuBarItem.setText(item.getMenuBarItem());
     }
 
     //전체 데이터 갯수 리턴
     @Override
     public int getItemCount() {
-        return itemList.size();
+        return mData.size();
     }
 
 
@@ -61,17 +61,20 @@ public class MenuBarAdapter extends RecyclerView.Adapter<MenuBarAdapter.ViewHold
         public ViewHolder(View itemView) {
             super(itemView);
 
-            menuBarItem = itemView.findViewById(R.id.tv_menu_bar_item);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int pos = getAdapterPosition();
-                    if(pos != RecyclerView.NO_POSITION){
-                        view.setBackgroundColor(Color.parseColor("#FFFF00"));
+                    int position = getAdapterPosition();  //현재 자신의 위치 확인
+                    if(position != RecyclerView.NO_POSITION){
+                        if (mListener != null) {
+                            mListener.onItemClick(view, position) ;
+                        }
                     }
                 }
             });
+            menuBarItem = itemView.findViewById(R.id.tv_menu_bar_item2);
         }
     }
+
+
 }

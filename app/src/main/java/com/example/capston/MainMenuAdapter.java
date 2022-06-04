@@ -63,6 +63,7 @@ public class MainMenuAdapter extends RecyclerView.Adapter<MainMenuAdapter.ViewHo
         ImageView mainMenuImage;
         TextView menuName;
         TextView price;
+
         ViewHolder(View itemView) {
             super(itemView);
 
