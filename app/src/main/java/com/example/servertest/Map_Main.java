@@ -81,11 +81,13 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
         });
         // 지정한 위치 리턴 버튼 시작
 
+        // 플로팅 버튼으로 내 위치 출력을 활성화 한다.
         FloatingActionButton fab = findViewById(R.id.floatingButton_show_current_location);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
+
             }
         });
 
@@ -127,7 +129,6 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
     @Override
     public void onCurrentLocationUpdateCancelled(MapView mapView) {
     }
-
 
     private void onFinishReverseGeoCoding(String result) {
 //        Toast.makeText(LocationDemoActivity.this, "Reverse Geo-coding : " + result, Toast.LENGTH_SHORT).show();
@@ -265,6 +266,13 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
         //경도값을 주소값으로 변환하는 MapReverseGeoCoder 클래스
 
         mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOff);
+        // 플로팅 버튼을 누르면 내 위치를 따라다니는 모드(TrackingMode)가 활성화된다.
+        // 그래서 지도의 중심을 움직이면 내 위치를 따라다니는 모드를 비활성화시켜
+        // 사용자가 원하는 위치를 선택할 수 있도록 한다.
+
+//        TextView current_map_address = (TextView) findViewById(R.id.textView_current_point_address);
+//        current_map_address.setText(global_address);
+//        //지도 이동 시 현재 마커의 주소를 출력한다.
     }
 
     @Override
@@ -289,7 +297,7 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
 
     @Override
     public void onMapViewDragStarted(MapView mapView, MapPoint mapPoint) {
-
+        System.out.println("Drag Start");
     }
 
     @Override
@@ -311,6 +319,10 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
         center_marker.setMarkerType(MapPOIItem.MarkerType.BluePin);
         //마커 모양을 파란압정모양으로 한다.
         mapView.addPOIItem(center_marker);
+
+        TextView current_map_address = (TextView) findViewById(R.id.textView_current_point_address);
+        current_map_address.setText(global_address);
+        //지도 이동 시 현재 마커의 주소를 출력한다.
     }
 
     @Override

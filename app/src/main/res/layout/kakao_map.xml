@@ -20,20 +20,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <RelativeLayout
-        android:id="@+id/map_view"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-7dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:orientation="vertical">
 
+        <RelativeLayout
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"></RelativeLayout>
 
         <Button
             android:id="@+id/kakao_button_address"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="0px"
+            android:layout_weight="0.15"
             android:text="위치 선택" />
-    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView_current_point_address"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_marginRight="20px"
+            android:layout_marginBottom="20px"
+            android:layout_weight="0.15"
+            android:text=""
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
