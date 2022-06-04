@@ -21,6 +21,13 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="29v6rI35NnKE4waQb6yCvTbCyr7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,12 +38,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\res\drawable" />
       <recent name="C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\res\layout" />
+      <recent name="C:\Users\LG\AndroidStudioProjects\pupusa_client-master2\app\src\main\res\drawable-v24" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.servertest" />

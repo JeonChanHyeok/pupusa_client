@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_kyochon2.png.flat",
-        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable-v24\\ic_kyochon2.png"
-    },
-    {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_mypage_btn_wish_list_icon_resize.xml.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\mypage_btn_wish_list_icon_resize.xml"
+    },
+    {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_kyochon2.png.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable-v24\\ic_kyochon2.png"
     },
     {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_hangbae_background.xml.flat",
@@ -84,8 +84,16 @@
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\rv_item_list2.xml"
     },
     {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_cheogatjib.jpg.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\ic_cheogatjib.jpg"
+    },
+    {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_login.xml.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\toolbar_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_japan2.png.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\ic_japan2.png"
     },
     {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\layout_wish_listview_custom.xml.flat",
@@ -244,6 +252,10 @@
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\wish_listview_parent.xml"
     },
     {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_recycler_item.xml.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\activity_recycler_item.xml"
+    },
+    {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_join.xml.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\toolbar_join.xml"
     },
@@ -268,6 +280,10 @@
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\service_center_item.xml"
     },
     {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_60.jpg.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\ic_60.jpg"
+    },
+    {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_policy.png.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable-v24\\ic_policy.png"
     },
@@ -278,6 +294,10 @@
     {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_bhc.jpg.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\ic_bhc.jpg"
     },
     {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_star.png.flat",
@@ -324,6 +344,10 @@
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\announcement_parent_list_view.xml"
     },
     {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_nana.png.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\ic_nana.png"
+    },
+    {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_kakaotalk.png.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable-v24\\kakaotalk.png"
     },
@@ -348,8 +372,16 @@
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\my_review_written_item.xml"
     },
     {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\layout_list.xml.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\list.xml"
+    },
+    {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_edge.xml.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\edge.xml"
+    },
+    {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_china2.png.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\ic_china2.png"
     },
     {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_thunder.jpg.flat",
@@ -388,6 +420,10 @@
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_puradak.jpg.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\puradak.jpg"
+    },
+    {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_japan.png.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable-v24\\ic_japan.png"
     },
@@ -408,12 +444,20 @@
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\layout\\service_center.xml"
     },
     {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_bunsik2.png.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\ic_bunsik2.png"
+    },
+    {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_btn_light_gray.xml.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\btn_light_gray.xml"
     },
     {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_person.png.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable-v24\\ic_person.png"
+    },
+    {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_edge_view.xml.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\edge_view.xml"
     },
     {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_splash.xml.flat",
@@ -434,6 +478,10 @@
     {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_chicken.png.flat",
+        "source": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\src\\main\\res\\drawable\\ic_chicken.png"
     },
     {
         "merged": "C:\\Users\\LG\\AndroidStudioProjects\\pupusa_client-master2\\app\\build\\intermediates\\merged_res\\debug\\layout_listview_custom.xml.flat",

@@ -3,6 +3,7 @@ package com.example.servertest;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -43,8 +44,6 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
     Gson gson = new Gson();
-    RecyclerView recyclerView2;
-    RecyclerAdapter2 recyclerAdapter2;
 
     private static final String TAG = "Main_Activity";
 
@@ -59,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
     private ChatRoomList chatRoomList;
     private ListView listView;
     private ChatRoomListAdapter myAdapter;
+
+    private RecyclerView mRecyclerView;
+    private ArrayList<RecyclerViewItem> mList;
+    private RecyclerViewAdapter mRecyclerViewAdapter;
 
     ArrayList<ChatRoomListData> chattingRoomDataList;
 
@@ -112,39 +115,104 @@ public class MainActivity extends AppCompatActivity {
         });
 
         bindList();
+        firstInit();
+        addItem("전체");
+        addItem("치킨");
+        addItem("피자");
+        addItem("분식");
+        addItem("일식");
+        addItem("패스트푸드");
 
-        recyclerView2 = findViewById(R.id.rv_Whole_chattingRoom);
-        recyclerView2.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)) ; // 좌우 스크롤
-        recyclerAdapter2 = new RecyclerAdapter2();
-
-
-        for (int i = 0; i < 6; i++) {
-            String str1 = "";
-            switch (i) {
-                case 0:
-                    str1 = "치킨";
-                    break;
-                case 1:
-                    str1 = "피자";
-                    break;
-                case 2:
-                    str1 = "분식";
-                    break;
-                case 3:
-                    str1 = "야식";
-                    break;
-                case 4:
-                    str1 = "일식";
-                    break;
-                case 5:
-                    str1 = "패스트푸드";
-                    break;
+        mRecyclerViewAdapter = new RecyclerViewAdapter(mList);
+        mRecyclerView.setAdapter(mRecyclerViewAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
+        mRecyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                // Toast.makeText(MainActivity.this, ""+position, Toast.LENGTH_SHORT).show();
+                temp(position);
             }
-            recyclerAdapter2.setArrayData(str1);
-        }
-        recyclerView2.setAdapter(recyclerAdapter2);
+        });
     }
 
+    public void firstInit() {
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_Whole_chattingRoom);
+        mList = new ArrayList<>();
+    }
+
+    public void addItem(String subText){
+        RecyclerViewItem item = new RecyclerViewItem();
+        item.setSubText(subText);
+        mList.add(item);
+
+//.....................리스트뷰
+
+            ListView list;
+            ListViewAdapter adapter;
+
+            list = (ListView)findViewById(R.id.listView);
+            adapter = new ListViewAdapter();
+
+            list.setAdapter(adapter);
+
+            adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
+            adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
+            adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
+            adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
+            adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_bhc), "BHC치킨", "4.9","3000원","15~30분");
+            adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_cheogatjib), "처갓집치킨", "4.6","3000원","15~30분");
+            adapter.additem(ContextCompat.getDrawable(this, R.drawable.bbq), "BBQ", "4.5","3000원","15~30분");
+            adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_nana), "네네치킨", "4.5","3000원","15~30분");
+        }
+
+    public void temp(int i){
+        ListView list;
+        ListViewAdapter adapter;
+
+        list = (ListView)findViewById(R.id.listView);
+        adapter = new ListViewAdapter();
+
+        list.setAdapter(adapter);
+
+        switch (i){
+            case 0:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_bhc), "BHC치킨", "4.9","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_cheogatjib), "처갓집치킨", "4.6","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.bbq), "BBQ", "4.5","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_nana), "네네치킨", "4.5","3000원","15~30분");
+                break;
+            case 1:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
+                break;
+            case 2:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
+                break;
+            case 3:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
+                break;
+            case 4:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
+                break;
+            case 5:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
+                break;
+            case 6:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
+        }
+
+        adapter.notifyDataSetChanged();
+
+    }
 
     public void InitializeChattingRoomData()
     {
@@ -283,10 +351,10 @@ public class MainActivity extends AppCompatActivity {
         //List item 생성
         List<RecyclerItem> itemList = new ArrayList<>();
 
-        itemList.add(new RecyclerItem(R.drawable.temp));
-        itemList.add(new RecyclerItem(R.drawable.ic_japan));
-        itemList.add(new RecyclerItem(R.drawable.ic_china));
-        itemList.add(new RecyclerItem(R.drawable.ic_bunsik));
+        itemList.add(new RecyclerItem(R.drawable.ic_chicken));
+        itemList.add(new RecyclerItem(R.drawable.ic_japan2));
+        itemList.add(new RecyclerItem(R.drawable.ic_china2));
+        itemList.add(new RecyclerItem(R.drawable.ic_bunsik2));
 
         //Recycler View
         RecyclerView recyclerView = findViewById(R.id.rv_main);
@@ -300,5 +368,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)) ; // 좌우 스크롤
 
     }
+
 }
 

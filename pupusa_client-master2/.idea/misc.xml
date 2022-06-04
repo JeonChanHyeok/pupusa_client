@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/layout/activity_main.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/drawable/bottom_stroke.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/drawable/edge.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/drawable/edge5.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/drawable/edge6.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/drawable/edge_view.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/layout/activity_main.xml" value="0.17842323651452283" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/layout/activity_recycler_item.xml" value="0.17249240121580547" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/layout/list.xml" value="0.17249240121580547" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/layout/rv_item_list.xml" value="0.17249240121580547" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/pupusa_client-master2/app/src/main/res/layout/rv_item_list2.xml" value="0.17249240121580547" />
       </map>
