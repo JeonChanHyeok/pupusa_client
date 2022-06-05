@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mSearchView = findViewById(R.id.search_view); // SearchView
-
         main_intent = getIntent();
         isLogin = main_intent.getIntExtra("islogin",0);
         loginedId = main_intent.getStringExtra("loginedId");
@@ -102,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-
         adapter.setOnItemClickListener(new MainRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
@@ -127,8 +125,6 @@ public class MainActivity extends AppCompatActivity {
                 initChatRoomData(objJson);
             }
         });
-
-
     }
 
 
@@ -199,7 +195,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), title + ": 약관 및 정책을 확인합니다.", Toast.LENGTH_SHORT).show();
                     Log.e(TAG, "약관 및 정책");
                     return true;
-
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;

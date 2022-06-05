@@ -10,13 +10,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.servertest.R;
+import com.example.servertest.order.ConfirmPaymentActivity;
+import com.example.servertest.order.OrderActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 import com.google.gson.Gson;
@@ -43,7 +45,7 @@ public class ChatRoomActivity extends Activity {
     private List<StompHeader> headerList;
     private Gson gson = new Gson();
     private ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
-    private String wsServerUrl = "ws://ec2-34-227-207-122.compute-1.amazonaws.com:8080/inchatroom/websocket";
+    private String wsServerUrl = "ws://175.200.243.163:8080/inchatroom/websocket";
     private static final String TAG = "ChatRoomActivity";
 
     List<ChatMessage> chatMessageList;
@@ -124,12 +126,38 @@ public class ChatRoomActivity extends Activity {
                 String objJson = gson.toJson(chat);
                 sendMsg(objJson);
 
-                //dataList.add(new ChatDataItem(editText.getText().toString(), "사용자2", ChatCode.ViewType.RIGHT_CONTENT));  //editText.getText().toString(), "사용자2", Code.ViewType.RIGHT_CONTENT
                 recyvlerv.scrollToPosition(dataList.size()-1);  //텍스트 입력하면 하단으로 자동 이동
                 editText.setText("");
             }
         });
 
+    }
+
+    public void goOrder(View v){
+        int id = v.getId();
+        String objJson = gson.toJson(this.roomId);
+        Call<Integer> getChatRoomState = service.getChatRoomState(objJson);
+        getChatRoomState.enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                String str = gson.toJson(response.body());
+                int state = gson.fromJson(str,Integer.class);
+                if(state == 0) {
+                    Intent goOrder = new Intent(getApplicationContext(), OrderActivity.class);
+                    goOrder.putExtra("roomId", roomId);
+                    goOrder.putExtra("loginedId", loginedId);
+                    startActivity(goOrder);
+                }else if(state == 1){
+                    Intent go_order = new Intent(getApplicationContext(), ConfirmPaymentActivity.class);
+                    startActivity(go_order);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+
+            }
+        });
     }
 
     private void initData(){

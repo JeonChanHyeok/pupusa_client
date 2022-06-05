@@ -57,6 +57,10 @@
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".chatroom.ChatRoomInfoActivity"
             android:theme="@style/Theme.Capston"/>
+        <activity android:name=".order.OrderActivity"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".order.ConfirmPaymentActivity"
+            android:theme="@style/Theme.Capston"/>
     </application>
 
 </manifest>

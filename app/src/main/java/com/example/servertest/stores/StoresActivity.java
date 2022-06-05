@@ -80,7 +80,7 @@ public class StoresActivity extends AppCompatActivity {
                         chatIntent = new Intent();
                         chatIntent.putExtra("loginedId", loginedId);
                         chatIntent.putExtra("isLogin", isLogin);
-                        chatIntent.putExtra("storeId", 0L);
+                        chatIntent.putExtra("storeId", 1L);
                         startActivity(chatIntent);
                         break;
                 }

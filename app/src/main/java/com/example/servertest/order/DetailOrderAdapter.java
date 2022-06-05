@@ -1,4 +1,4 @@
-package com.example.servertest.announcement;
+package com.example.servertest.order;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,20 +14,22 @@ import java.util.ArrayList;
 /**
  * Created by JSY on 2016-02-04.
  */
-public class AnnouncementAdapter extends BaseExpandableListAdapter {
+public class DetailOrderAdapter extends BaseExpandableListAdapter {
     private Context context;
     private int groupLayout = 0;
     private int chlidLayout = 0;
-    private ArrayList<AnnouncementGroup> DataList;
+    private ArrayList<DetailOrderGroup> DataList;
     private LayoutInflater myinf = null;
 
-    public AnnouncementAdapter(Context context, int groupLay, int chlidLay, ArrayList<AnnouncementGroup> DataList){
+    public DetailOrderAdapter(Context context, int groupLay, int chlidLay, ArrayList<DetailOrderGroup> DataList){
         this.DataList = DataList;
         this.groupLayout = groupLay;
         this.chlidLayout = chlidLay;
         this.context = context;
         this.myinf = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
+
+
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
@@ -36,9 +38,9 @@ public class AnnouncementAdapter extends BaseExpandableListAdapter {
             convertView = myinf.inflate(this.groupLayout, parent, false);
         }
         ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
-        layoutParams.height = 100;
-        //TextView groupName = (TextView)convertView.findViewById(R.id.groupName);
-        //groupName.setText(DataList.get(groupPosition).groupName);
+        layoutParams.height = 200;
+        TextView groupName = (TextView)convertView.findViewById(R.id.tv_order_list_groupName);
+        groupName.setText(DataList.get(groupPosition).groupName);
         return convertView;
     }
 
@@ -49,9 +51,9 @@ public class AnnouncementAdapter extends BaseExpandableListAdapter {
             convertView = myinf.inflate(this.chlidLayout, parent, false);
         }
         ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
-        layoutParams.height = 500;
-        //TextView childName = (TextView)convertView.findViewById(R.id.childName);
-        //childName.setText(DataList.get(groupPosition).child.get(childPosition));
+        layoutParams.height = 100;
+        TextView childName = (TextView)convertView.findViewById(R.id.tv_order_list_childName);
+        childName.setText(DataList.get(groupPosition).child.get(childPosition));
         return convertView;
     }
     @Override
@@ -84,7 +86,7 @@ public class AnnouncementAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public AnnouncementGroup getGroup(int groupPosition) {
+    public DetailOrderGroup getGroup(int groupPosition) {
         // TODO Auto-generated method stub
         return DataList.get(groupPosition);
     }

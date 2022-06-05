@@ -4,6 +4,7 @@ import com.example.servertest.login.DupResponse;
 import com.example.servertest.login.JoinResponse;
 import com.example.servertest.login.LoginResponse;
 import com.example.servertest.login.User;
+import com.example.servertest.order.OrderRoomInfoResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -52,14 +53,27 @@ public interface ServiceApi {
     Call<Object> loadChatData(@Field("objJson") String objJson);
 
     @FormUrlEncoded
-    @POST("/chat/sendchatmsg")
-    Call<Void> sendChatData(@Field("objJson") String objJson);
-
-    @FormUrlEncoded
     @POST("/store/loadstore")
     Call<Void> loadStore(@Field("objJson") String objJson);
 
+    @FormUrlEncoded
+    @POST("/order/loadroominfo")
+    Call<OrderRoomInfoResponse> loadOrderRoomInfo(@Field("objJson") String objJson);
 
+    @FormUrlEncoded
+    @POST("/order/loadorderlist")
+    Call<Object> loadOrderList(@Field("objJson") String objJson);
 
+    @FormUrlEncoded
+    @POST("/order/makeorder")
+    Call<Object> sendOrder(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/chat/getstate")
+    Call<Integer> getChatRoomState(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/order/goPay")
+    Call<Void> goPay(@Field("objJson") String objJson);
 
 }
