@@ -183,15 +183,6 @@ public class ChatRoomActivity extends Activity {
         });
     }
 
-
-
-        /*dataList.add(new ChatDataItem("시용자1님 입장했음",null, ChatCode.ViewType.CENTER_CONTENT));
-        dataList.add(new ChatDataItem("사용자2님 입장했음",null, ChatCode.ViewType.CENTER_CONTENT));
-        dataList.add(new ChatDataItem("안녕하세요11","사용자1", ChatCode.ViewType.LEFT_CONTENT));
-        dataList.add(new ChatDataItem("안녕하세요22","사용자2", ChatCode.ViewType.RIGHT_CONTENT));
-        */
-
-
     // 채팅방 입장을 위한 소켓 통신/ 소켓 열기
     @SuppressLint("CheckResult")
     public void initStomp(){
