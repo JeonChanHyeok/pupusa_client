@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar_createchatroom" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="3dp"
+            android:text="제목"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_margin="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include" />
+
+        <EditText
+            android:id="@+id/input_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            android:hint="제목을 입력해주세요"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="85dp" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주소"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@+id/input_title"
+            app:layout_constraintTop_toBottomOf="@id/input_title" />
+
+        <EditText
+            android:id="@+id/input_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="주소를 입력해주세요"
+            app:layout_constraintEnd_toEndOf="@+id/input_title"
+            app:layout_constraintStart_toStartOf="@+id/address"
+            app:layout_constraintTop_toBottomOf="@id/address" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_light_gray"
+            android:text="현재 위치로 주소 찾기"
+            app:layout_constraintEnd_toEndOf="@+id/input_address"
+            app:layout_constraintStart_toStartOf="@+id/input_address"
+            app:layout_constraintTop_toBottomOf="@+id/input_address" />
+
+        <TextView
+            android:id="@+id/store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="3dp"
+            android:text="가게 이름"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <EditText
+            android:id="@+id/input_store_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="가게 이름을 입력해주세요"
+            app:layout_constraintEnd_toEndOf="@+id/input_address"
+            app:layout_constraintStart_toStartOf="@+id/input_address"
+            app:layout_constraintTop_toBottomOf="@+id/store_name" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내용"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@+id/input_store_name"
+            app:layout_constraintTop_toBottomOf="@id/input_store_name" />
+
+        <EditText
+            android:id="@+id/input_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="내용을 입력하세요"
+            android:paddingTop="8dp"
+            android:background="@null"
+            app:layout_constraintEnd_toEndOf="@+id/input_title"
+            app:layout_constraintStart_toStartOf="@+id/content"
+            app:layout_constraintTop_toBottomOf="@id/content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
