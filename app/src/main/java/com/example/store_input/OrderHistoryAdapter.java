@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class OrderHistoryAdapter extends BaseAdapter {
-    private ArrayList<OrderHistoryItem> orderHistoryItemList = new ArrayList<>();
+    public ArrayList<OrderHistoryItem> orderHistoryItemList = new ArrayList<>();
 
     public OrderHistoryAdapter(){}
 

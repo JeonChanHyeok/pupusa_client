@@ -5,11 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class OrderCheckAdapter extends BaseAdapter {
+    ListView listView;
+    Button button;
+
     private ArrayList<OrderCheckItem> orderCheckItemList = new ArrayList<>();
 
     public OrderCheckAdapter(){}
@@ -48,6 +53,11 @@ public class OrderCheckAdapter extends BaseAdapter {
         TextView address = (TextView) convertView.findViewById(R.id.tv_order_check_address);
         TextView menu = (TextView) convertView.findViewById(R.id.tv_order_check_menu);
         TextView price = (TextView) convertView.findViewById(R.id.tv_order_check_price);
+
+        listView = (ListView) convertView.findViewById(R.id.ll_order_check);
+        button = (Button) convertView.findViewById(R.id.btn_order_check_unconfirm);
+        //listView.setFocusable(false);
+        button.setFocusable(false);
 
         //Data Seet에서 position에 위치한 데이터 참조 획득
         OrderCheckItem orderItem = orderCheckItemList.get(position);
