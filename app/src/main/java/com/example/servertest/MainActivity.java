@@ -144,9 +144,9 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 String chatlist = new Gson().toJson(response.body());
                 chatRoomList = new Gson().fromJson(chatlist,ChatRoomList.class);
-                for(ChatRoom c:chatRoomList.getchatroomlist()){
-                    chattingRoomDataList.add(new ChatRoomListData(R.drawable.ic_kyochon2,"방제목 : " + c.getChatRoomName(),"부산시 연제구 연산4동","방번호 : " + c.getChatRoomId()));
-                }
+//                for(ChatRoom c:chatRoomList.getchatroomlist()){
+//                    chattingRoomDataList.add(new ChatRoomListData(R.drawable.ic_kyochon2,"방제목 : " + c.getChatRoomName(),"부산시 연제구 연산4동","방번호 : " + c.getChatRoomId()));
+//                }
                 myAdapter = new ChatRoomListAdapter(getApplicationContext(), chattingRoomDataList);
                 listView.setAdapter(myAdapter);
             }

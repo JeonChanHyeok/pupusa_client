@@ -3,6 +3,9 @@ package com.example.servertest.server;
 import com.example.servertest.chat.ChatRoomList;
 import com.example.servertest.login.JoinResponse;
 import com.example.servertest.login.LoginResponse;
+import com.example.servertest.store.StoreData;
+import com.example.servertest.store.StoreList;
+import com.example.servertest.store.StoreResponse;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -43,5 +46,7 @@ public interface ServiceApi {
     @POST("/chat/sendchatmsg")
     Call<Void> sendChatData(@Field("objJson") String objJson);
 
-
+    @FormUrlEncoded
+    @POST("/store/storeload")
+    Call<StoreResponse> getStorename(@Field("objJson") String objJson);
 }
