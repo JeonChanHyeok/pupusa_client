@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/iv_menu"
+            android:id="@+id/iv_store_name_input"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentTop="true"
@@ -24,7 +24,7 @@
             app:srcCompat="@drawable/ic_back" />
 
         <TextView
-            android:id="@+id/tv_logo"
+            android:id="@+id/tv_store_name_input_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -34,10 +34,11 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="상세 주문"
+            android:text="가게 이름 입력"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
+
 
     </RelativeLayout>
 </androidx.appcompat.widget.Toolbar>

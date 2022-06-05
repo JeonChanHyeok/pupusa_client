@@ -34,7 +34,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="상세 주문"
+            android:text="주문 현황"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
