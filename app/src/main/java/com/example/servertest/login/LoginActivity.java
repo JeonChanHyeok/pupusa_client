@@ -1,5 +1,6 @@
 package com.example.servertest.login;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+    public static Activity _Main_Activity;
     ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
     String id;
     String pw;
@@ -56,7 +58,6 @@ public class LoginActivity extends AppCompatActivity {
                 startLogin(objJson);
             }
         });
-
 
     }
 

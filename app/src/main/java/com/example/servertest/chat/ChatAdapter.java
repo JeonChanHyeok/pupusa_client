@@ -46,7 +46,9 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     }
 
-
+    public void setMyDataList(ArrayList<ChatDataItem> myDataList) {
+        this.myDataList = myDataList;
+    }
 
     // 실제 각 뷰 홀더에 데이터를 연결해주는 함수
     @Override

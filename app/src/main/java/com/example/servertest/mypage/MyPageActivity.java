@@ -117,13 +117,6 @@ public class MyPageActivity extends AppCompatActivity {
             }
         });
 
-        btn_chat.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MyPageActivity.this, InformationChatRoom.class);
-                startActivity(intent);
-            }
-        });
 
         btn_change_info.setOnClickListener(new View.OnClickListener() {
             @Override

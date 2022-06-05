@@ -7,63 +7,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E7F6FF">
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/toolbar_app_name" />
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/include"
-        app:layout_constraintLeft_toLeftOf="parent">
+        android:background="#E7F6FF">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_activity_chat_room"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:transcriptMode="alwaysScroll"
-        android:layout_marginTop="50dp"
-        android:layout_weight="1"
-        app:layout_constraintTop_toBottomOf="@id/include">
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar_in_chat_room" />
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/include"
+            app:layout_constraintLeft_toLeftOf="parent">
 
-    <LinearLayout
-        android:id="@+id/ll_chat_room"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rc_activity_chat_room">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_activity_chat_room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:transcriptMode="alwaysScroll"
+                android:layout_marginTop="50dp"
+                android:layout_weight="1"
+                app:layout_constraintTop_toBottomOf="@id/include">
 
-        <EditText
-            android:id="@+id/et_chat_room_input_text"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:inputType="textMultiLine|textNoSuggestions"
-            android:maxLength="120"
-            android:maxLines="5"
-            android:padding="6dp" />
+            </androidx.recyclerview.widget.RecyclerView>
 
-        <ImageButton
-            android:id="@+id/btn_chat_room_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/ic_btn_chat_yellow" />
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_chat_room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rc_activity_chat_room">
+
+                <EditText
+                    android:id="@+id/et_chat_room_input_text"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:maxLength="120"
+                    android:maxLines="5"
+                    android:padding="6dp" />
+
+                <ImageButton
+                    android:id="@+id/btn_chat_room_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/ic_btn_chat_yellow" />
+            </LinearLayout>
 
 
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

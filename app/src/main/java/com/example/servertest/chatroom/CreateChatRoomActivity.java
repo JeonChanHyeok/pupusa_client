@@ -15,9 +15,15 @@ import com.example.servertest.R;
 import com.example.servertest.chat.ChatRoomActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
+import com.google.gson.Gson;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CreateChatRoomActivity extends AppCompatActivity {
-
+    private Gson gson = new Gson();
+    private ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
 
     String chatRoomTitle;
     String chatRoomAddress;
@@ -28,15 +34,12 @@ public class CreateChatRoomActivity extends AppCompatActivity {
     int isLogin;
     Long chatRoomStoreId;
 
-    ChatRoomController chatRoomController;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_chat_room);
 
         Intent getIntent = getIntent();
-        chatRoomController = new ChatRoomController();
 
         loginedId = getIntent.getStringExtra("loginedId");
         isLogin = getIntent.getIntExtra("isLogin",0);
@@ -56,13 +59,25 @@ public class CreateChatRoomActivity extends AppCompatActivity {
                 chatRoomAddress = etChatRoomAddress.getText().toString();
                 chatRoomInfo = etChatRoomInfo.getText().toString();
 
-                Long roomId =  chatRoomController.makeChatRoom(loginedId,chatRoomTitle, chatRoomAddress, chatRoomStoreId, chatRoomInfo);
-                Intent goChatRoom = new Intent(getApplicationContext(), ChatRoomActivity.class);
-                goChatRoom.putExtra("loginedId", loginedId);
-                goChatRoom.putExtra("roomId", roomId);
-                goChatRoom.putExtra("isLogin", isLogin);
-                startActivity(goChatRoom);
-                finish();
+                ChatRoom chatRoom = new ChatRoom(loginedId, chatRoomTitle, chatRoomAddress, chatRoomStoreId, chatRoomInfo);
+                String objJson = gson.toJson(chatRoom);
+                Call<Long> makeChat = service.makeChatRoom(objJson);
+                makeChat.enqueue(new Callback<Long>() {
+                    @Override
+                    public void onResponse(Call<Long> call, Response<Long> response) {
+                        Intent goChatRoom = new Intent(getApplicationContext(), ChatRoomActivity.class);
+                        goChatRoom.putExtra("loginedId", loginedId);
+                        goChatRoom.putExtra("roomId", response.body());
+                        goChatRoom.putExtra("isLogin", isLogin);
+                        startActivity(goChatRoom);
+                        finish();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Long> call, Throwable t) {
+
+                    }
+                });
             }
         });
 

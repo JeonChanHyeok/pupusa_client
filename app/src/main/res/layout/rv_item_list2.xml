@@ -10,6 +10,5 @@
         android:text="menu"
         android:textSize="20dp"
         android:layout_marginRight="5dp"
-        android:gravity="center"
-        android:clickable="true" />
+        android:gravity="center" />
 </LinearLayout>

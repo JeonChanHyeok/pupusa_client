@@ -6,10 +6,10 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class ChatRoomList {
-    @SerializedName("chatroomlist")
-    private List<ChatRoom> chatroomlist;
+    @SerializedName("chatRoomResponses")
+    private List<ChatRoomResponse> chatRoomResponses;
 
-    public List<ChatRoom> getchatroomlist() {
-        return chatroomlist;
+    public List<ChatRoomResponse> getchatroomlist() {
+        return chatRoomResponses;
     }
 }

@@ -27,16 +27,21 @@ public interface ServiceApi {
     @POST("/mypage/load")
     Call<User> userInfoLoad(@Field("objJson") String objJson);
 
+    @FormUrlEncoded
     @POST("/chat/roomload")
-    Call<Object>  loadRoomList();
+    Call<Object>  loadRoomList(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/chat/roommake")
     Call<Long> makeChatRoom(@Field("objJson") String objJson);
 
     @FormUrlEncoded
+    @POST("/chat/loadroominfo")
+    Call<Object> loadRoomInfo(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
     @POST("/chat/joinroom")
-    Call<Void> goChatRoom(@Field("objJson") String objJson);
+    Call<Integer> goChatRoom(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/chat/exitroom")
@@ -53,6 +58,8 @@ public interface ServiceApi {
     @FormUrlEncoded
     @POST("/store/loadstore")
     Call<Void> loadStore(@Field("objJson") String objJson);
+
+
 
 
 }

@@ -19,7 +19,7 @@
         android:background="@drawable/bottom_stroke">
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/shop_icon"
+            android:id="@+id/ifv_main_chat_list_shop_icon"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginLeft="20dp"
@@ -30,13 +30,13 @@
             android:background="@drawable/ic_kyochon2"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/linearLay_listView"
+            android:id="@+id/LL_main_chat_list_linearLay_listView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/chatting_title"
+                android:id="@+id/tv_main_chat_list_chatting_title"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Title"
@@ -47,7 +47,7 @@
                 android:gravity="center_vertical" />
 
             <TextView
-                android:id="@+id/chatting_address"
+                android:id="@+id/tv_main_chat_list_chatting_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Address"
@@ -57,7 +57,7 @@
                 android:gravity="center_vertical" />
 
             <TextView
-                android:id="@+id/chatting_context"
+                android:id="@+id/tv_main_chat_list_store_Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="7dp"

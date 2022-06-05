@@ -25,10 +25,7 @@
         <activity android:name="com.example.servertest.login.JoinActivity"/>
         <activity android:name="com.example.servertest.alret.AlertActivity"/>
         <activity android:name="com.example.servertest.MainActivity"/>
-        <activity android:name="com.example.servertest.chatroom.ChatRoomController"/>
         <activity android:name=".mypage.MenuList"
-            android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.InformationChatRoom"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.MyPageActivity"
             android:theme="@style/Theme.Capston"/>
@@ -56,6 +53,10 @@
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".stores.GongGuPopup"
             android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".chat.ChatRoomActivity"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".chatroom.ChatRoomInfoActivity"
+            android:theme="@style/Theme.Capston"/>
     </application>
 
 </manifest>

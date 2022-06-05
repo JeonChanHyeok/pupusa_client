@@ -30,9 +30,7 @@ public class MainRecyclerAdapter2 extends RecyclerView.Adapter<MainRecyclerAdapt
         this.mListener = listener;
     }
     public class MainViewHolder2 extends RecyclerView.ViewHolder {
-
         public TextView textView;
-
         public MainViewHolder2(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.tv_rv_item);
@@ -48,6 +46,10 @@ public class MainRecyclerAdapter2 extends RecyclerView.Adapter<MainRecyclerAdapt
                 }
             });
         }
+    }
+
+    public ArrayList<String> getArrayList() {
+        return arrayList;
     }
 
     @NonNull
