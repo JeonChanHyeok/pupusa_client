@@ -9,6 +9,15 @@ public class MyReviewWrittenItem {
     private String date; //날짜
     private String content; //리뷰 내용
     private String menu; //메뉴
+    private float ratingStar;
+
+    public float getRatingStar() {
+        return ratingStar;
+    }
+
+    public void setRatingStar(float ratingStar) {
+        this.ratingStar = ratingStar;
+    }
 
     public String getStoreName() {
         return storeName;

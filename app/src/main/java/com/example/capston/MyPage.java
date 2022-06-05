@@ -42,7 +42,7 @@ public class MyPage extends AppCompatActivity {
         btn_wish_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyPage.this, ServiceCenter.class);
+                Intent intent = new Intent(MyPage.this, WriteReview.class);
                 startActivity(intent);
             }
         });

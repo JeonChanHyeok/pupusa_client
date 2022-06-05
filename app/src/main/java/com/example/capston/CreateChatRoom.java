@@ -58,6 +58,8 @@ public class CreateChatRoom extends AppCompatActivity {
                 }else {
                     Toast.makeText(getApplicationContext(), "인터넷 연결을 확인해주세요.", Toast.LENGTH_SHORT).show();
                 }
+
+
             }
         });
 

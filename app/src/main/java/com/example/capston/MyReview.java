@@ -28,23 +28,29 @@ public class MyReview extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "닭다리치킨집",
-                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리", ContextCompat.getDrawable(this, R.drawable.pasta));
+                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리",
+                ContextCompat.getDrawable(this, R.drawable.pasta), 4f);
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "오봉이네",
-                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리", ContextCompat.getDrawable(this, R.drawable.pizza));
+                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리",
+                ContextCompat.getDrawable(this, R.drawable.pizza),3f);
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "기기괴괴",
-                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리", ContextCompat.getDrawable(this, R.drawable.pizza));
+                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리",
+                ContextCompat.getDrawable(this, R.drawable.pizza), 4.5f);
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "피자핫",
-                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리", ContextCompat.getDrawable(this, R.drawable.ramen));
-
-
+                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리",
+                ContextCompat.getDrawable(this, R.drawable.ramen), 4.5f);
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "닭다리치킨집",
-                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리", ContextCompat.getDrawable(this, R.drawable.pasta));
+                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리",
+                ContextCompat.getDrawable(this, R.drawable.pasta), 4.5f);
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "오봉이네",
-                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리", ContextCompat.getDrawable(this, R.drawable.pizza));
+                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리",
+                ContextCompat.getDrawable(this, R.drawable.pizza), 4.5f);
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "기기괴괴",
-                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리", ContextCompat.getDrawable(this, R.drawable.pizza));
+                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리",
+                ContextCompat.getDrawable(this, R.drawable.pizza), 4.5f);
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "피자핫",
-                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리", ContextCompat.getDrawable(this, R.drawable.ramen));
+                "2021-02-10", "너무맛있엉ㅆ어용 눈물이 날정도예요", "닭다리",
+                ContextCompat.getDrawable(this, R.drawable.ramen), 4.5f);
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
