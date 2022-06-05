@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/btn_light_gray.xml" value="0.1" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/btn_round.xml" value="0.1715" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/btn_white.xml" value="0.1" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/dot_line.xml" value="0.1715" />
@@ -17,10 +18,12 @@
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/activity_order_history.xml" value="0.1625" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/activity_splash.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/my_review_written_item.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/mypage_btn_order_history_icon_resize.xml" value="0.159375" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/order_history_item.xml" value="0.10092592592592593" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/toolbar_join.xml" value="0.1111111111111111" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/toolbar_mypage.xml" value="0.159375" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/toolbar_myreview.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/toolbar_orderhistory.xml" value="0.10092592592592593" />
         <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/toolbar_store_select.xml" value="0.1" />
       </map>
