@@ -3,14 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/YOU/AndroidStudioProjects/store_manager_screen/app/src/main/res/drawable/btn_round.xml" value="0.293" />
-        <entry key="..\:/Users/YOU/AndroidStudioProjects/store_manager_screen/app/src/main/res/drawable/dot_line.xml" value="0.313" />
-        <entry key="..\:/Users/YOU/AndroidStudioProjects/store_manager_screen/app/src/main/res/drawable/edge.xml" value="0.406" />
-        <entry key="..\:/Users/YOU/AndroidStudioProjects/store_manager_screen/app/src/main/res/drawable/round_border.xml" value="0.313" />
-        <entry key="..\:/Users/YOU/AndroidStudioProjects/store_manager_screen/app/src/main/res/layout/activity_main.xml" value="0.20277777777777778" />
-        <entry key="..\:/Users/YOU/AndroidStudioProjects/store_manager_screen/app/src/main/res/layout/activity_order_history.xml" value="0.264" />
-        <entry key="..\:/Users/YOU/AndroidStudioProjects/store_manager_screen/app/src/main/res/layout/order_history_item.xml" value="0.4" />
-        <entry key="..\:/Users/YOU/AndroidStudioProjects/store_manager_screen/app/src/main/res/layout/toolbar_orderhistory.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/btn_round.xml" value="0.1715" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/btn_white.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/dot_line.xml" value="0.1715" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/edge.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/edge4.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/mypage_btn_order_history_icon_resize.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/mypage_btn_review_icon_resize.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable-v24/round_border.xml" value="0.1715" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/activity_ceo_page.xml" value="0.152" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/activity_order_history.xml" value="0.1625" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/activity_splash.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/mypage_btn_order_history_icon_resize.xml" value="0.159375" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/order_history_item.xml" value="0.10092592592592593" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/toolbar_join.xml" value="0.1111111111111111" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/toolbar_mypage.xml" value="0.159375" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/toolbar_orderhistory.xml" value="0.10092592592592593" />
+        <entry key="..\:/Users/ysj62/store_input/app/src/main/res/layout/toolbar_store_select.xml" value="0.1" />
       </map>
     </option>
   </component>

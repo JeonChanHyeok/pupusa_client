@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.store_manager_screen">
+    package="com.example.store_input">
 
     <application
         android:allowBackup="true"
@@ -8,16 +8,31 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Store_manager_screen">
+        android:theme="@style/Theme.Store_input">
         <activity
             android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/DarkActionBar"
+            >
+
+        </activity>
+
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.Pupusa.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MyPage"
+            android:theme="@style/DarkActionBar"
+            />
+        <activity android:name=".OrderHistoryMain"
+            android:theme="@style/DarkActionBar"
+            />
     </application>
 
 </manifest>
