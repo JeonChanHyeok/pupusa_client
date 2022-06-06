@@ -35,6 +35,7 @@ import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 import com.example.servertest.servicecenter.service_center;
 import com.example.servertest.Map_Main;
+import com.example.servertest.customlistview.customview_MainActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.kakao.util.maps.helper.Utility;
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(), "Address Btn Clicked", Toast.LENGTH_LONG).show(); // 버튼 테스트용 -> 잘 작동함
 
-                Intent map = new Intent(getApplicationContext(), Map_Main.class);
+                Intent map = new Intent(getApplicationContext(), customview_MainActivity.class);
                 startActivity(map);
             }
         });

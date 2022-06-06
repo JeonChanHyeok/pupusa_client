@@ -12,6 +12,7 @@ import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ServiceApi {
@@ -48,5 +49,5 @@ public interface ServiceApi {
 
     @FormUrlEncoded
     @POST("/store/storeload")
-    Call<StoreResponse> getStorename(@Field("objJson") String objJson);
+    Call<StoreResponse> getStoreId(@Field("objJson") String objJson);
 }

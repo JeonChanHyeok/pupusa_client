@@ -7,8 +7,8 @@ import java.util.List;
 public class StoreList {
 
     @SerializedName("storeList")
-    private List<StoreList> storeList;
+    private List<Store> storeList;
 
-    public List<StoreList> getStoreList() { return storeList; }
+    public List<Store> getStoreList() { return storeList; }
 
 }
