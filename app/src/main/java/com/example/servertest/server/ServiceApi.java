@@ -48,6 +48,6 @@ public interface ServiceApi {
     Call<Void> sendChatData(@Field("objJson") String objJson);
 
     @FormUrlEncoded
-    @POST("/store/storeload")
+    @POST("/store/load_store_info")
     Call<StoreResponse> getStoreId(@Field("objJson") String objJson);
 }
