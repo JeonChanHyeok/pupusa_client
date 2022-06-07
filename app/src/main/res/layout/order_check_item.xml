@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_order_check_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="주문 정보"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_order_check_date"
+            android:layout_width="wrap_content"
+            android:paddingLeft="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:text="2022.06.25"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_order_check_unconfirm"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:textSize="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_round_pink"
+            android:outlineProvider="none"
+            android:layout_marginRight="15dp"
+            android:text="미확인" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_order_check_ready"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:textSize="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_round_green"
+            android:outlineProvider="none"
+            android:visibility="gone"
+            android:layout_marginRight="15dp"
+            android:text="준비중" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_order_check_delivery"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:textSize="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_round_blue"
+            android:outlineProvider="none"
+            android:visibility="gone"
+            android:layout_marginRight="15dp"
+            android:text="배달중" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_order_check_confirm"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:textSize="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_round_yellow"
+            android:outlineProvider="none"
+            android:visibility="gone"
+            android:layout_marginRight="15dp"
+            android:text="배달완료" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_order_check_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="부산광역시 남구 문현동 189-69"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_order_check_menu"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text="메뉴"
+
+            android:ellipsize="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_order_check_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="10000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textStyle="bold
+"
+            android:text="원"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

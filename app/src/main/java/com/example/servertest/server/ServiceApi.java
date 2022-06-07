@@ -1,5 +1,7 @@
 package com.example.servertest.server;
 
+import com.example.servertest.instore.InStoreInfoResponse;
+import com.example.servertest.instore.StoreLoginResponse;
 import com.example.servertest.login.DupResponse;
 import com.example.servertest.login.JoinResponse;
 import com.example.servertest.login.LoginResponse;
@@ -12,6 +14,14 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 public interface ServiceApi {
+    @FormUrlEncoded
+    @POST("/store/login")
+    Call<StoreLoginResponse> storeLogin(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/store/loadinfo")
+    Call<InStoreInfoResponse> storeInfoLoad(@Field("objJson") String objJson);
+
     @FormUrlEncoded
     @POST("/user/login")
     Call<LoginResponse> userLogin(@Field("objJson") String objJson);

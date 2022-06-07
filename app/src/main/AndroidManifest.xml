@@ -61,6 +61,10 @@
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".payment.ConfirmPaymentActivity"
             android:theme="@style/Theme.Capston"/>
+        <activity android:name=".instore.StoreLoginActivity"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".instore.StoreMyPage"
+            android:theme="@style/Theme.Capston"/>
     </application>
 
 </manifest>

@@ -63,7 +63,7 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
 
     private StompClient mStompClient;
     private List<StompHeader> headerList;
-    private String wsServerUrl = "ws://175.200.243.163:8080/inchatroom/websocket";
+    private String wsServerUrl = "ws://10.0.2.2:8080/inchatroom/websocket";
     private static final String TAG = "ConfirmPaymentActivity";
 
     TextView storeName;

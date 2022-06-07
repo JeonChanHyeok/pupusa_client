@@ -44,7 +44,7 @@ public class ChatRoomActivity extends Activity {
     private List<StompHeader> headerList;
     private Gson gson = new Gson();
     private ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
-    private String wsServerUrl = "ws://175.200.243.163:8080/inchatroom/websocket";
+    private String wsServerUrl = "ws://10.0.2.2:8080/inchatroom/websocket";
     private static final String TAG = "ChatRoomActivity";
 
     List<ChatMessage> chatMessageList;

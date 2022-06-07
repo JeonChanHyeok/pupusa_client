@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,6 +43,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    public static Activity _Main_Activity;
     ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
     Gson gson = new Gson();
     RecyclerView recyclerView;
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        _Main_Activity = MainActivity.this;
         mSearchView = findViewById(R.id.search_view); // SearchView
         main_intent = getIntent();
         isLogin = main_intent.getIntExtra("islogin",0);
@@ -86,13 +88,13 @@ public class MainActivity extends AppCompatActivity {
 
         bindList1();
         bindList2();
-        if(isLogin == 1){
+        if(isLogin == 1) {
             bindList3();
             lvChatRoomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Long roomId = chatRoomListAdapter.getItem(position).getChatRoomId();
-                    Toast.makeText(MainActivity.this, "방번호 : "+ roomId, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "방번호 : " + roomId, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), ChatRoomInfoActivity.class);
                     intent.putExtra("roomId", roomId);
                     intent.putExtra("loginedId", loginedId);
@@ -100,32 +102,33 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-        }
 
-        adapter.setOnItemClickListener(new MainRecyclerAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, int position) {
-                switch (position){
-                    case 0:
-                        Intent storeIntent = new Intent(getApplicationContext(), StoresActivity.class);
-                        storeIntent.putExtra("category", "치킨");
-                        storeIntent.putExtra("loginedId", loginedId);
-                        storeIntent.putExtra("islogin", isLogin);
-                        startActivity(storeIntent);
-                        break;
+
+            adapter.setOnItemClickListener(new MainRecyclerAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View v, int position) {
+                    switch (position) {
+                        case 0:
+                            Intent storeIntent = new Intent(getApplicationContext(), StoresActivity.class);
+                            storeIntent.putExtra("category", "치킨");
+                            storeIntent.putExtra("loginedId", loginedId);
+                            storeIntent.putExtra("islogin", isLogin);
+                            startActivity(storeIntent);
+                            break;
+                    }
                 }
-            }
-        });
+            });
 
-        recyclerAdapter2.setOnItemClickListener(new MainRecyclerAdapter2.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, int position) {
-                Toast.makeText(MainActivity.this, recyclerAdapter2.getArrayList().get(position), Toast.LENGTH_SHORT).show();
-                RequestChatRoom requestChatRoom = new RequestChatRoom(loginedId, recyclerAdapter2.getArrayList().get(position));
-                String objJson = gson.toJson(requestChatRoom);
-                initChatRoomData(objJson);
-            }
-        });
+            recyclerAdapter2.setOnItemClickListener(new MainRecyclerAdapter2.OnItemClickListener() {
+                @Override
+                public void onItemClick(View v, int position) {
+                    Toast.makeText(MainActivity.this, recyclerAdapter2.getArrayList().get(position), Toast.LENGTH_SHORT).show();
+                    RequestChatRoom requestChatRoom = new RequestChatRoom(loginedId, recyclerAdapter2.getArrayList().get(position));
+                    String objJson = gson.toJson(requestChatRoom);
+                    initChatRoomData(objJson);
+                }
+            });
+        }
     }
 
 
