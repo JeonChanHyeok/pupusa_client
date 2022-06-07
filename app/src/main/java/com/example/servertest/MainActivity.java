@@ -36,6 +36,7 @@ import com.example.servertest.mypage.MyPageActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import com.example.servertest.servicecenter.ServiceCenter;
 import com.example.servertest.Map_Main;
@@ -45,6 +46,11 @@ import com.example.servertest.servicecenter.ServiceCenter;
 
 import com.example.servertest.stores.StoresActivity;
 
+=======
+import com.example.servertest.servicecenter.service_center;
+import com.example.servertest.Map_Main;
+import com.example.servertest.customlistview.customview_MainActivity;
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 =======
 import com.example.servertest.servicecenter.service_center;
 import com.example.servertest.Map_Main;
@@ -218,9 +224,12 @@ public class MainActivity extends AppCompatActivity {
                     }else{
                         Intent it = new Intent(this, MyPageActivity.class);
 <<<<<<< HEAD
+<<<<<<< HEAD
                         it.putExtra("loginedId", loginedId);
                         it.putExtra("loginedName", loginedName);
                         it.putExtra("islogin", isLogin);
+=======
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 =======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
                         startActivity(it);

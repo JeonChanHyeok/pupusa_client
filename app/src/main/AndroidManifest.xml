@@ -29,11 +29,15 @@
         <activity android:name="com.example.servertest.login.JoinActivity"/>
         <activity android:name="com.example.servertest.alret.AlertActivity"/>
         <activity android:name="com.example.servertest.MainActivity"/>
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
         <activity android:name="com.example.servertest.chat.ChatRoomController"/>
         <activity android:name=".customlistview.customview_MainActivity" />
         <activity android:name="com.example.servertest.Map_Main"/>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         <activity android:name=".mypage.MyPageActivity"></activity>
 
@@ -49,6 +53,14 @@
         <activity android:name=".servicecenter.service_center"
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
             android:theme="@style/Theme.Capston"/>
+=======
+        <activity android:name=".mypage.MyPageActivity"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".mypage.order_history"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".servicecenter.service_center"
+            android:theme="@style/Theme.Capston"/>
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
         <activity android:name=".mypage.my_review"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.wishlist.WishListActivity"

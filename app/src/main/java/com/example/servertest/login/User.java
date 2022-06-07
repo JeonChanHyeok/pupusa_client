@@ -8,6 +8,9 @@ import java.io.Serializable;
 public class User implements Serializable {
 =======
 public class User {
+<<<<<<< HEAD
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
+=======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     private String userId;
 

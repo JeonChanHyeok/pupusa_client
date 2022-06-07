@@ -44,14 +44,20 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
                 startActivity(intent);
 =======
+=======
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
                 id = et_login_email.getText().toString();
                 pw = et_login_pw.getText().toString();
                 JoinData data = new JoinData(id, pw);
                 String objJson = gson.toJson(data);
                 startJoin(objJson);
+<<<<<<< HEAD
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
+=======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
             }
         });
