@@ -19,7 +19,7 @@ public class AnnouncementActivity extends Activity {
         int width = newDisplay.getWidth();
 
         ArrayList<AnnouncementGroup> DataList = new ArrayList<AnnouncementGroup>();
-        listView = (ExpandableListView)findViewById(R.id.mylist);
+        listView = (ExpandableListView)findViewById(R.id.lv_order_list);
         AnnouncementGroup temp = new AnnouncementGroup("공지사항  22.05.24");
         temp.child.add("안녕하세요 행복한 배달입니다. \n더 나은 서비스 제공을 위해 시스템 점검이 진행 될 예정입니다.\n \n ■ 점검 일시\n -22년 05월 24일(수) 오전 18시~21시(약 3시간)\n\n 점검시간은 상황에 따라 조기 종료되거나 연장될 수 있습니다.\n 앞으로도 더 나은 서비스 제공을 위해 최선을 다하겠습니다. \n 감사합니다.");
 

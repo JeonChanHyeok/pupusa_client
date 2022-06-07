@@ -40,7 +40,7 @@
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_my_review_written_item_delete"
+            android:id="@+id/btn_create_chat_room_make"
             android:layout_width="40dp"
             android:layout_height="20dp"
             android:layout_alignParentTop="true"

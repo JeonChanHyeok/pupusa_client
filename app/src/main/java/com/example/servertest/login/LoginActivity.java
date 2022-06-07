@@ -1,5 +1,6 @@
 package com.example.servertest.login;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+    public static Activity _Main_Activity;
     ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
     String id;
     String pw;
@@ -41,11 +43,6 @@ public class LoginActivity extends AppCompatActivity {
         tv_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*id = et_login_email.getText().toString();
-                pw = et_login_pw.getText().toString();
-                JoinData data = new JoinData(id, pw);
-                String objJson = gson.toJson(data);
-                startJoin(objJson);*/
                 Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
                 startActivity(intent);
             }
@@ -62,7 +59,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void startLogin(String json) {
@@ -75,9 +71,12 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         Intent inLogin = new Intent(getApplicationContext(), MainActivity.class);
                         inLogin.putExtra("islogin", 1);
-                        inLogin.putExtra("loginedId", id);
+                        inLogin.putExtra("loginedId", response.body().getUserId());
+                        inLogin.putExtra("loginedName", response.body().getUserName());
                         startActivity(inLogin);
                         finish();
+                    }else{
+                        Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }catch (Exception e){
                     e.printStackTrace();

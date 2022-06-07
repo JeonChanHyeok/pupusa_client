@@ -3,42 +3,22 @@ package com.example.servertest.chat;
 import com.google.gson.annotations.SerializedName;
 
 public class ChatMessage {
-    @SerializedName("message")
-    private String message;
+    @SerializedName("messageText")
+    private String messageText;
 
-    @SerializedName("roomId")
-    private String roomId;
+    @SerializedName("chatRoomId")
+    private Long chatRoomId;
 
     @SerializedName("userId")
     private String userId;
 
-    public ChatMessage(String msg, String roomId, String userId) {
-        this.message = msg;
-        this.roomId = roomId;
+    @SerializedName("messageTime")
+    private String messageTime;
+
+    public ChatMessage(String messageText, Long chatRoomId, String userId, String messageTime) {
+        this.messageText = messageText;
+        this.chatRoomId = chatRoomId;
         this.userId = userId;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public String getRoomId() {
-        return roomId;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setRoomId(String roomId) {
-        this.roomId = roomId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
+        this.messageTime = messageTime;
     }
 }

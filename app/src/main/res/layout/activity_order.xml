@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include
+                android:id="@+id/include"
+                layout="@layout/toolbar_detail_order"
+
+                />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/tv_order_store_name"
+                    android:layout_width="150dp"
+                    android:layout_height="53sp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/popcorn"
+                    android:gravity="center"
+                    android:text="자담 치킨"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_order_pickup_location"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="7"
+                    android:layout_height="53sp"
+                    android:background="@color/popcorn"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:text="부산광역시 남구 문현동 189-69"
+                    android:textColor="@color/black"
+                     />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="5dp" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_order_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="58dp"
+                    android:background="@color/popcorn"
+                    android:text="위치변경"
+                    android:layout_weight="2"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="5dp"
+                android:layout_height="5dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_order_choice_menu"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="@color/popcorn"
+                    android:text="메뉴선택"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_weight="8"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp">
+
+                    <ExpandableListView
+                        android:id="@+id/lv_order_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="370dp"
+                        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_go_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/popcorn"
+                    android:text="주문하기">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+

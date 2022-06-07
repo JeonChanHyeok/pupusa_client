@@ -1,6 +1,9 @@
 package com.example.servertest.login;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -9,9 +12,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.servertest.MainActivity;
 import com.example.servertest.R;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,7 +28,9 @@ public class JoinActivity extends AppCompatActivity {
     EditText joinEmailEt;
     EditText joinPwEt;
     EditText joinPwCheckEt;
-    Button dupChkBtn;
+    Button dupChkBtn, joinBtn;
+
+    Gson gson = new Gson();
 
     private boolean dupchk = false;
 
@@ -39,15 +46,13 @@ public class JoinActivity extends AppCompatActivity {
         joinPwEt = findViewById(R.id.et_join_pw);
         joinPwCheckEt = findViewById(R.id.et_join_pw_check);
         dupChkBtn = findViewById(R.id.btn_join_check);
-
-        String joinName = joinNameEt.getText().toString();
-        String joinEmail = joinEmailEt.getText().toString();
-        String joinPw = joinPwEt.getText().toString();
-        String joinPwCheck = joinPwCheckEt.getText().toString();
+        joinBtn = findViewById(R.id.btn_join);
 
         dupChkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String joinEmail = joinEmailEt.getText().toString();
+                System.out.println(joinEmail);
                 Call<DupResponse> dup = service.userEmailDupChk(joinEmail);
                 dup.enqueue(new Callback<DupResponse>() {
                     @Override
@@ -55,17 +60,58 @@ public class JoinActivity extends AppCompatActivity {
                         if(response.body().getCode() == 1){
                             dupchk = true;
                             dupChkBtn.setClickable(false);
-                            Toast.makeText(JoinActivity.this, "중복확인 완료", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(JoinActivity.this, "사용하실 수 있는 이메일입니다.", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(JoinActivity.this, "이미 가입된 이메일입니다.", Toast.LENGTH_SHORT).show();
                         }
                     }
-
                     @Override
                     public void onFailure(Call<DupResponse> call, Throwable t) {
                         Toast.makeText(JoinActivity.this, "통신 오류", Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+        joinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String joinName = joinNameEt.getText().toString();
+                String joinEmail = joinEmailEt.getText().toString();
+                String joinPw = joinPwEt.getText().toString();
+                String joinPwCheck = joinPwCheckEt.getText().toString();
+
+                if(dupchk){
+                    if(joinPw.equals(joinPwCheck)){
+                        JoinData user = new JoinData(joinEmail, joinPw, joinName);
+                        String objJson = gson.toJson(user);
+                        startJoin(objJson);
+                    }else{
+                        Toast.makeText(JoinActivity.this, "비밀번호 확인을 해주세요.", Toast.LENGTH_SHORT).show();
+                    }
+
+                }else{
+                    Toast.makeText(JoinActivity.this, "아이디 중복체크를 해주세요.", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        joinEmailEt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                dupchk = false;
+                dupChkBtn.setClickable(true);
             }
         });
 
@@ -79,7 +125,12 @@ public class JoinActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<JoinResponse> call, Response<JoinResponse> response) {
                 try{
-
+                    if(response.body().getCode() == 1){
+                        Toast.makeText(JoinActivity.this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }else{
+                        Toast.makeText(JoinActivity.this, "회원가입에 오류가 발생하였습니다. 잠시 후 다시 시도해 주십시오.", Toast.LENGTH_SHORT).show();
+                    }
                 }catch (Exception e){
                     e.printStackTrace();
                 }

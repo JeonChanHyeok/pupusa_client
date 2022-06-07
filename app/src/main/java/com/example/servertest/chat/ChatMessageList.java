@@ -6,9 +6,9 @@ import java.util.List;
 
 public class ChatMessageList {
     @SerializedName("chatMessageList")
-    private List<ChatMessage> chatMessageList;
+    private List<ChatMessageResponse> chatMessageList;
 
-    public List<ChatMessage> getChatMessageList() {
+    public List<ChatMessageResponse> getChatMessageList() {
         return chatMessageList;
     }
 }

@@ -3,9 +3,14 @@ package com.example.servertest.server;
 import com.example.servertest.login.DupResponse;
 import com.example.servertest.login.JoinResponse;
 import com.example.servertest.login.LoginResponse;
+
 import com.example.servertest.store.StoreData;
 import com.example.servertest.store.StoreList;
 import com.example.servertest.store.StoreResponse;
+
+import com.example.servertest.login.User;
+import com.example.servertest.order.OrderRoomInfoResponse;
+
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -19,23 +24,32 @@ public interface ServiceApi {
     Call<LoginResponse> userLogin(@Field("objJson") String objJson);
 
     @FormUrlEncoded
-    @POST("/user/joinemaildupchk")
+    @POST("/user/joindupchk")
     Call<DupResponse> userEmailDupChk(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/user/join")
     Call<JoinResponse> userJoin(@Field("objJson") String objJson);
 
+    @FormUrlEncoded
+    @POST("/mypage/load")
+    Call<User> userInfoLoad(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
     @POST("/chat/roomload")
-    Call<Object>  loadRoomList();
+    Call<Object>  loadRoomList(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/chat/roommake")
-    Call<Object> makeChatRoom(@Field("objJson") String objJson);
+    Call<Long> makeChatRoom(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/chat/loadroominfo")
+    Call<Object> loadRoomInfo(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/chat/joinroom")
-    Call<Void> goChatRoom(@Field("objJson") String objJson);
+    Call<Integer> goChatRoom(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/chat/exitroom")
@@ -46,10 +60,36 @@ public interface ServiceApi {
     Call<Object> loadChatData(@Field("objJson") String objJson);
 
     @FormUrlEncoded
-    @POST("/chat/sendchatmsg")
-    Call<Void> sendChatData(@Field("objJson") String objJson);
+    @POST("/store/loadstore")
+    Call<Void> loadStore(@Field("objJson") String objJson);
 
     @FormUrlEncoded
+    @POST("/order/loadroominfo")
+    Call<OrderRoomInfoResponse> loadOrderRoomInfo(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/order/loadorderlist")
+    Call<Object> loadOrderList(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/order/makeorder")
+    Call<Object> sendOrder(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/chat/getstate")
+    Call<Integer> getChatRoomState(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/order/goPay")
+    Call<Void> goPay(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+
     @POST("/store/load_store_info")
     Call<Object> getStoreId(@Field("objJson") String objJson);
+
+    @POST("/pay/loadPayList")
+    Call<Object> loadPayList(@Field("objJson") String objJson);
+
+
 }

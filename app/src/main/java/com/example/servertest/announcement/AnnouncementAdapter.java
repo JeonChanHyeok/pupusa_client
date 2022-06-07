@@ -37,8 +37,8 @@ public class AnnouncementAdapter extends BaseExpandableListAdapter {
         }
         ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
         layoutParams.height = 100;
-        TextView groupName = (TextView)convertView.findViewById(R.id.groupName);
-        groupName.setText(DataList.get(groupPosition).groupName);
+        //TextView groupName = (TextView)convertView.findViewById(R.id.groupName);
+        //groupName.setText(DataList.get(groupPosition).groupName);
         return convertView;
     }
 
@@ -50,8 +50,8 @@ public class AnnouncementAdapter extends BaseExpandableListAdapter {
         }
         ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
         layoutParams.height = 500;
-        TextView childName = (TextView)convertView.findViewById(R.id.childName);
-        childName.setText(DataList.get(groupPosition).child.get(childPosition));
+        //TextView childName = (TextView)convertView.findViewById(R.id.childName);
+        //childName.setText(DataList.get(groupPosition).child.get(childPosition));
         return convertView;
     }
     @Override

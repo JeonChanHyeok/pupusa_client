@@ -6,6 +6,9 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.servertest.login.LoginActivity;
+import com.example.servertest.stores.StoresActivity;
+
 
 public class SplashActivity extends AppCompatActivity {
 

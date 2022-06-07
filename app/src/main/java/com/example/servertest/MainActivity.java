@@ -5,6 +5,8 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -25,12 +27,12 @@ import android.widget.Toast;
 
 //import com.example.servertest.alret.AlertActivity;
 import com.example.servertest.announcement.AnnouncementActivity;
-import com.example.servertest.chat.ChatRoom;
-import com.example.servertest.chat.ChatRoomController;
-import com.example.servertest.chat.ChatRoomList;
-import com.example.servertest.chat.JoinRoomData;
+import com.example.servertest.chatroom.ChatRoomInfoActivity;
+import com.example.servertest.chatroom.ChatRoomList;
+import com.example.servertest.chatroom.ChatRoomListAdapter;
+import com.example.servertest.chatroom.ChatRoomResponse;
 import com.example.servertest.login.LoginActivity;
-import com.example.servertest.mypage.MyPage;
+import com.example.servertest.mypage.MyPageActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 
@@ -40,6 +42,8 @@ import com.example.servertest.customlistview.customview_MainActivity;
 
 import com.example.servertest.servicecenter.ServiceCenter;
 
+import com.example.servertest.stores.StoresActivity;
+
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.kakao.util.maps.helper.Utility;
@@ -48,7 +52,11 @@ import com.kakao.util.maps.helper.Utility;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+
 import java.util.Map;
+
+import java.util.List;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -57,6 +65,12 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
     Gson gson = new Gson();
+    RecyclerView recyclerView;
+    MainRecyclerAdapter adapter;
+    RecyclerView recyclerView2;
+    MainRecyclerAdapter2 recyclerAdapter2;
+    ListView lvChatRoomList;
+    ChatRoomListAdapter chatRoomListAdapter;
 
     private static final String TAG = "Main_Activity";
 
@@ -68,14 +82,15 @@ public class MainActivity extends AppCompatActivity {
     private Intent main_intent;
     private int isLogin = 0;
     private String loginedId;
+    private String loginedName;
     private ChatRoomList chatRoomList;
     private ListView listView;
     private ChatRoomListAdapter myAdapter;
 
-    Button map_btn;
-    //지도 출력용 테스트 버튼
+
 
     ArrayList<ChatRoomListData> chattingRoomDataList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,69 +98,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mSearchView = findViewById(R.id.search_view); // SearchView
-
         main_intent = getIntent();
         isLogin = main_intent.getIntExtra("islogin",0);
         loginedId = main_intent.getStringExtra("loginedId");
+        loginedName = main_intent.getStringExtra("loginedName");
         chatRoomList = new ChatRoomList();
         listView = (ListView)findViewById(R.id.listView);
 
-        map_btn = (Button)findViewById(R.id.map_button);
-        //툴바의 MAP버튼 연결
-        map_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(), "Address Btn Clicked", Toast.LENGTH_LONG).show(); // 버튼 테스트용 -> 잘 작동함
 
-                Intent map = new Intent(getApplicationContext(), customview_MainActivity.class);
-                startActivity(map);
-            }
-        });
 
         //this.InitializeDrawerLayout();
+
+        this.InitializeDrawerLayout();
+
         this.InitializeSearchView();
-        this.InitializeChattingRoomData();
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView parent, View v, int position, long id){
-                if(isLogin == 1) {
-                        Toast.makeText(getApplicationContext(),
-                                myAdapter.getItem(position).getMyContext() + "번 방에 입장합니다.",
-                                Toast.LENGTH_LONG).show();
-                        JoinRoomData joinRoomData = new JoinRoomData(myAdapter.getItem(position).getMyContext().substring(6), loginedId);
-                        String objJson = gson.toJson(joinRoomData);
-                        Call joinRoom = service.goChatRoom(objJson);
-                        joinRoom.enqueue(new Callback() {
-                            @Override
-                            public void onResponse(Call call, Response response) {
-                                Intent go_in_chat = new Intent(getApplicationContext(), ChatRoomController.class);
-                                go_in_chat.putExtra("userId", loginedId);
-                                go_in_chat.putExtra("roomId", myAdapter.getItem(position).getMyContext().substring(6));
-                                startActivity(go_in_chat);
-                            }
-
-                            @Override
-                            public void onFailure(Call call, Throwable t) {
-                            }
-                        });
+        bindList1();
+        bindList2();
+        if(isLogin == 1){
+            bindList3();
+            lvChatRoomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Long roomId = chatRoomListAdapter.getItem(position).getChatRoomId();
+                    Toast.makeText(MainActivity.this, "방번호 : "+ roomId, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), ChatRoomInfoActivity.class);
+                    intent.putExtra("roomId", roomId);
+                    intent.putExtra("loginedId", loginedId);
+                    intent.putExtra("isLogin", isLogin);
+                    startActivity(intent);
                 }
-                else{
-                    Toast.makeText(getApplicationContext(),
-                            "로그인이 안 되어 있습니다.",
-                            Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-    }
+            });
+        }
 
-
-    public void InitializeChattingRoomData()
-    {
-        chattingRoomDataList = new ArrayList<ChatRoomListData>();
-        Call chat = service.loadRoomList();
-        chat.enqueue(new Callback() {
+        adapter.setOnItemClickListener(new MainRecyclerAdapter.OnItemClickListener() {
             @Override
+
             public void onResponse(Call call, Response response) {
                 String chatlist = new Gson().toJson(response.body());
                 chatRoomList = new Gson().fromJson(chatlist,ChatRoomList.class);
@@ -154,16 +142,31 @@ public class MainActivity extends AppCompatActivity {
 //                }
                 myAdapter = new ChatRoomListAdapter(getApplicationContext(), chattingRoomDataList);
                 listView.setAdapter(myAdapter);
+
+            public void onItemClick(View v, int position) {
+                switch (position){
+                    case 0:
+                        Intent storeIntent = new Intent(getApplicationContext(), StoresActivity.class);
+                        storeIntent.putExtra("category", "치킨");
+                        storeIntent.putExtra("loginedId", loginedId);
+                        storeIntent.putExtra("islogin", isLogin);
+                        startActivity(storeIntent);
+                        break;
+                }
+
             }
-
+            }
+    
+        recyclerAdapter2.setOnItemClickListener(new MainRecyclerAdapter2.OnItemClickListener() {
             @Override
-            public void onFailure(Call call, Throwable t) {
-
+            public void onItemClick(View v, int position) {
+                Toast.makeText(MainActivity.this, recyclerAdapter2.getArrayList().get(position), Toast.LENGTH_SHORT).show();
+                RequestChatRoom requestChatRoom = new RequestChatRoom(loginedId, recyclerAdapter2.getArrayList().get(position));
+                String objJson = gson.toJson(requestChatRoom);
+                initChatRoomData(objJson);
             }
         });
     }
-
-
 
 
 
@@ -177,9 +180,6 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-
-
-
 
     @SuppressLint({"NonConstantResourceId", "RtlHardcoded"})
     public void InitializeDrawerLayout() {
@@ -210,7 +210,10 @@ public class MainActivity extends AppCompatActivity {
                         Intent it = new Intent(this, LoginActivity.class);
                         startActivity(it);
                     }else{
-                        Intent it = new Intent(this, MyPage.class);
+                        Intent it = new Intent(this, MyPageActivity.class);
+                        it.putExtra("loginedId", loginedId);
+                        it.putExtra("loginedName", loginedName);
+                        it.putExtra("islogin", isLogin);
                         startActivity(it);
                     }
                     return true;
@@ -233,7 +236,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), title + ": 약관 및 정책을 확인합니다.", Toast.LENGTH_SHORT).show();
                     Log.e(TAG, "약관 및 정책");
                     return true;
-
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
@@ -291,3 +293,95 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
+    //매개변수로 카테고리 넘기기
+    public void initChatRoomData(String objJson){
+        Call loadRoomList = service.loadRoomList(objJson);
+        loadRoomList.enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                String str = gson.toJson(response.body());
+                System.out.println(str);
+                chatRoomList = gson.fromJson(str, ChatRoomList.class);
+                chatRoomListAdapter.setSample(chatRoomList.getchatroomlist());
+                chatRoomListAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    private void bindList1() {
+        //List item 생성
+        List<MainRecyclerItem> itemList = new ArrayList<>();
+
+        itemList.add(new MainRecyclerItem(R.drawable.ic_chicken));
+        itemList.add(new MainRecyclerItem(R.drawable.ic_japan2));
+        itemList.add(new MainRecyclerItem(R.drawable.ic_china2));
+        itemList.add(new MainRecyclerItem(R.drawable.ic_bunsik2));
+
+        //Recycler View
+        RecyclerView recyclerView = findViewById(R.id.rv_main);
+
+        //Adapter 추가
+        this.adapter = new MainRecyclerAdapter(itemList);
+        recyclerView.setAdapter(adapter);
+
+        //Layout magager 추가
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)) ; // 좌우 스크롤
+
+    }
+    private void bindList2(){
+        recyclerView2 = findViewById(R.id.rv_Whole_chattingRoom);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)) ; // 좌우 스크롤
+        recyclerAdapter2 = new MainRecyclerAdapter2();
+        for (int i = 0; i < 6; i++) {
+            String str1 = "";
+            switch (i) {
+                case 0:
+                    str1 = "전체";
+                    break;
+                case 1:
+                    str1 = "치킨";
+                    break;
+                case 2:
+                    str1 = "피자";
+                    break;
+                case 3:
+                    str1 = "분식";
+                    break;
+                case 4:
+                    str1 = "일식";
+                    break;
+                case 5:
+                    str1 = "패스트푸드";
+                    break;
+            }
+            recyclerAdapter2.setArrayData(str1);
+        }
+        recyclerView2.setAdapter(recyclerAdapter2);
+    }
+    public void bindList3(){
+        lvChatRoomList = findViewById(R.id.lv_main_chat_room_list);
+        chatRoomListAdapter = new ChatRoomListAdapter(getApplicationContext());
+        RequestChatRoom requestChatRoom = new RequestChatRoom(loginedId, "전체");
+        String objJson = gson.toJson(requestChatRoom);
+        initChatRoomData(objJson);
+        lvChatRoomList.setAdapter(chatRoomListAdapter);
+    }
+
+    private class RequestChatRoom{
+        String requestUserId;
+        String requestCategory;
+
+        public RequestChatRoom(String requestUserId, String requestCategory) {
+            this.requestUserId = requestUserId;
+            this.requestCategory = requestCategory;
+        }
+    }
+
+}

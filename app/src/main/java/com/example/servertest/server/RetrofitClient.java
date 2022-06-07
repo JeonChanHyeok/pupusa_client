@@ -10,7 +10,6 @@ public class RetrofitClient {
     // aws주소 ->"http://ec2-34-227-207-122.compute-1.amazonaws.com:8080";
 
 
-
     private static Retrofit retrofit = null;
 
     private RetrofitClient() {
