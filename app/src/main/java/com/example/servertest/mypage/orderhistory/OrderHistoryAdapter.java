@@ -1,4 +1,4 @@
-package com.example.servertest.mypage;
+package com.example.servertest.mypage.orderhistory;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -9,25 +9,24 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import com.example.servertest.R;
 
-import java.util.ArrayList;
+public class OrderHistoryAdapter extends BaseAdapter {
+    private ArrayList<OrderHistoryItem> orderHistoryItemList = new ArrayList<>();
 
-public class order_history_adapter extends BaseAdapter {
-    private ArrayList<order_history_item> order_history_item = new ArrayList<>();
-
-    public order_history_adapter(){}
+    public OrderHistoryAdapter(){}
 
     // 최초의 화면의 갯수를 설정
     @Override
     public int getCount() {
-        return order_history_item.size();
+        return orderHistoryItemList.size();
     }
 
     // 아이템이 클릭될 때 아이템의 데이터를 도출
     @Override
     public Object getItem(int position) {
-        return order_history_item.get(position);
+        return orderHistoryItemList.get(position);
     }
 
     //지정한 위치(position)에 있는 데이터와 관계된 아이템(row)의 ID를 리턴
@@ -48,34 +47,34 @@ public class order_history_adapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.order_history_item, parent, false); }
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.shop_img);
-        TextView shopName = (TextView) convertView.findViewById(R.id.shop_name);
-        TextView date = (TextView) convertView.findViewById(R.id.date);
-        TextView menu = (TextView) convertView.findViewById(R.id.menu);
-        TextView price = (TextView) convertView.findViewById(R.id.price);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.iv_order_history_item_store_img);
+        TextView shopName = (TextView) convertView.findViewById(R.id.tv_order_history_item_store_name);
+        TextView date = (TextView) convertView.findViewById(R.id.tv_order_history_item_date);
+        TextView menu = (TextView) convertView.findViewById(R.id.tv_order_history_item_menu);
+        TextView price = (TextView) convertView.findViewById(R.id.tv_order_history_item_price);
 
         //Data Seet에서 position에 위치한 데이터 참조 획득
-        order_history_item order_item = order_history_item.get(position);
+        OrderHistoryItem orderItem = orderHistoryItemList.get(position);
 
-        imageView.setImageDrawable(order_item.getShop_img());
-        shopName.setText(order_item.getShop_name());
-        date.setText(order_item.getDate());
-        menu.setText(order_item.getMenu());
-        price.setText(String.valueOf(order_item.getPrice()));
+        imageView.setImageDrawable(orderItem.getStoreImg());
+        shopName.setText(orderItem.getStoreName());
+        date.setText(orderItem.getDate());
+        menu.setText(orderItem.getMenu());
+        price.setText(String.valueOf(orderItem.getPrice()));
 
         return convertView;
     }
 
     //item에 데이터 추가
     public void addItem(Drawable shop_img, String shop_name, String date, String menu, int price){
-        order_history_item item = new order_history_item();
+        OrderHistoryItem item = new OrderHistoryItem();
 
-        item.setShop_img(shop_img);
+        item.setStoreImg(shop_img);
         item.setDate(date);
         item.setPrice(price);
-        item.setShop_name(shop_name);
+        item.setStoreName(shop_name);
         item.setMenu(menu);
 
-        order_history_item.add(item);
+        orderHistoryItemList.add(item);
     }
 }

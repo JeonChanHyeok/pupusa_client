@@ -52,4 +52,5 @@ dependencies {
     //For Kakao Map API
     implementation files('libs/libDaumMapAndroid.jar')
 
+
 }

@@ -1,4 +1,4 @@
-package com.example.servertest.mypage;
+package com.example.servertest.mypage.myreview;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -9,23 +9,22 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import com.example.servertest.R;
 
-import java.util.ArrayList;
+public class MyReviewWrittenAdapter extends BaseAdapter {
+    private ArrayList<MyReviewWrittenItem> MyReviewWrittenItemList = new ArrayList<>();
 
-public class my_review_written_adapter extends BaseAdapter {
-    private ArrayList<my_review_written_item> my_review_written_item = new ArrayList<>();
-
-    public my_review_written_adapter(){}
+    public MyReviewWrittenAdapter(){}
 
     @Override
     public int getCount() {
-        return my_review_written_item.size();
+        return MyReviewWrittenItemList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return my_review_written_item.get(position);
+        return MyReviewWrittenItemList.get(position);
     }
 
     @Override
@@ -43,17 +42,17 @@ public class my_review_written_adapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.my_review_written_item, parent, false);
         }
 
-        ImageView iconImageView = (ImageView) convertView.findViewById(R.id.icon);
-        TextView storeTextView = (TextView) convertView.findViewById(R.id.store_name);
-        TextView dateTextView = (TextView) convertView.findViewById(R.id.date);
-        TextView contentTextView = (TextView) convertView.findViewById(R.id.content);
-        TextView menu = (TextView) convertView.findViewById(R.id.menu);
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.image);
+        ImageView iconImageView = (ImageView) convertView.findViewById(R.id.ig_my_review_written_item_star_rate);
+        TextView storeTextView = (TextView) convertView.findViewById(R.id.tv_my_review_written_item_store_name);
+        TextView dateTextView = (TextView) convertView.findViewById(R.id.tv_my_review_written_item_date);
+        TextView contentTextView = (TextView) convertView.findViewById(R.id.tv_my_review_written_item_content);
+        TextView menu = (TextView) convertView.findViewById(R.id.tv_my_review_written_item_menu);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.iv_my_review_written_item_menu_image);
 
-        my_review_written_item my_review_item = my_review_written_item.get(position);
+        MyReviewWrittenItem my_review_item = MyReviewWrittenItemList.get(position);
 
-        iconImageView.setImageDrawable(my_review_item.getIcon());
-        storeTextView.setText(my_review_item.getStore_name());
+        iconImageView.setImageDrawable(my_review_item.getReviewRate());
+        storeTextView.setText(my_review_item.getStoreName());
         dateTextView.setText(my_review_item.getDate());
         contentTextView.setText(my_review_item.getContent());
         menu.setText(my_review_item.getMenu());
@@ -63,17 +62,17 @@ public class my_review_written_adapter extends BaseAdapter {
     }
 
     public void addItem(Drawable icon, String store, String date, String content, String menu, Drawable image){
-        my_review_written_item item = new my_review_written_item();
+        MyReviewWrittenItem item = new MyReviewWrittenItem();
         item.setDate(date);
-        item.setIcon(icon);
+        item.setReviewRate(icon);
         item.setMenu(menu);
         item.setContent(content);
-        item.setStore_name(store);
+        item.setStoreName(store);
         item.setImage(image);
-        my_review_written_item.add(item);
+        MyReviewWrittenItemList.add(item);
     }
 
     public void delItem(int position) {
-        my_review_written_item.remove(position);
+        MyReviewWrittenItemList.remove(position);
     }
 }

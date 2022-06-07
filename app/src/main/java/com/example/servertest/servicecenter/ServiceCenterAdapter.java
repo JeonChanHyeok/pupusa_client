@@ -9,23 +9,22 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import com.example.servertest.R;
 
-import java.util.ArrayList;
+public class ServiceCenterAdapter extends BaseAdapter{
+    private ArrayList<ServiceCenterItem> serviceCenterItemList = new ArrayList<ServiceCenterItem>();
 
-public class service_center_adapter extends BaseAdapter{
-    private ArrayList<service_center_item> service_center_item = new ArrayList<service_center_item>();
-
-    public service_center_adapter(){}
+    public ServiceCenterAdapter(){}
 
     @Override
     public int getCount() {
-        return service_center_item.size();
+        return serviceCenterItemList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return service_center_item.get(position);
+        return serviceCenterItemList.get(position);
     }
 
     @Override
@@ -43,10 +42,10 @@ public class service_center_adapter extends BaseAdapter{
             convertView = inflater.inflate(R.layout.service_center_item, parent, false);
         }
 
-        ImageView iconImageView = (ImageView) convertView.findViewById(R.id.iv_my_page_profile_image);
-        TextView titleTextView = (TextView) convertView.findViewById(R.id.textView);
+        ImageView iconImageView = (ImageView) convertView.findViewById(R.id.iv_service_center_item_image);
+        TextView titleTextView = (TextView) convertView.findViewById(R.id.tv_service_center_item_content);
 
-        service_center_item service_item = service_center_item.get(position);
+        ServiceCenterItem service_item = serviceCenterItemList.get(position);
 
         iconImageView.setImageDrawable(service_item.getIcon());
         titleTextView.setText(service_item.getTitle());
@@ -55,9 +54,9 @@ public class service_center_adapter extends BaseAdapter{
     }
 
     public void addItem(Drawable icon, String title){
-        service_center_item item = new service_center_item();
+        ServiceCenterItem item = new ServiceCenterItem();
         item.setIcon(icon);
         item.setTitle(title);
-        service_center_item.add(item);
+        serviceCenterItemList.add(item);
     }
 }

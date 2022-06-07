@@ -30,12 +30,16 @@ import com.example.servertest.chat.ChatRoomController;
 import com.example.servertest.chat.ChatRoomList;
 import com.example.servertest.chat.JoinRoomData;
 import com.example.servertest.login.LoginActivity;
-import com.example.servertest.mypage.MyPageActivity;
+import com.example.servertest.mypage.MyPage;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
+
 import com.example.servertest.servicecenter.service_center;
 import com.example.servertest.Map_Main;
 import com.example.servertest.customlistview.customview_MainActivity;
+
+import com.example.servertest.servicecenter.ServiceCenter;
+
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.kakao.util.maps.helper.Utility;
@@ -206,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent it = new Intent(this, LoginActivity.class);
                         startActivity(it);
                     }else{
-                        Intent it = new Intent(this, MyPageActivity.class);
+                        Intent it = new Intent(this, MyPage.class);
                         startActivity(it);
                     }
                     return true;
@@ -221,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.menu_service_center:
                     Toast.makeText(getApplicationContext(), title + ": 서비스 센터에 접속합니다.", Toast.LENGTH_SHORT).show();
                     Log.e(TAG, "서비스 센터");
-                    Intent intent_sc = new Intent(this, service_center.class);
+                    Intent intent_sc = new Intent(this, ServiceCenter.class);
                     startActivity(intent_sc);
                     return true;
 

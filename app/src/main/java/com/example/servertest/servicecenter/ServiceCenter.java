@@ -9,18 +9,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import com.example.servertest.R;
 
-public class service_center extends AppCompatActivity {
+public class ServiceCenter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.service_center);
+        setContentView(R.layout.activity_service_center);
 
-        ListView listView = findViewById(R.id.ll);
+        ListView listView = findViewById(R.id.ll_service_center);
 
-        service_center_adapter adapter = new service_center_adapter();
+        ServiceCenterAdapter adapter = new ServiceCenterAdapter();
         listView.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.question), "자주 묻는 질문");
@@ -31,7 +30,7 @@ public class service_center extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                service_center_item item = (service_center_item) parent.getItemAtPosition(position);
+                ServiceCenterItem item = (ServiceCenterItem) parent.getItemAtPosition(position);
 
                 String title = item.getTitle();
                 Drawable icon = item.getIcon();

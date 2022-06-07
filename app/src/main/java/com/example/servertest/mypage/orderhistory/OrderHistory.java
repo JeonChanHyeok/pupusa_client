@@ -1,4 +1,4 @@
-package com.example.servertest.mypage;
+package com.example.servertest.mypage.orderhistory;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,18 +7,17 @@ import android.widget.ListView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import com.example.servertest.R;
 
-public class order_history extends AppCompatActivity {
+public class OrderHistory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.order_history);
+        setContentView(R.layout.activity_order_history);
 
-        ListView listView = findViewById(R.id.ll);
+        ListView listView = findViewById(R.id.ll_order_history);
 
-        order_history_adapter adapter = new order_history_adapter();
+        OrderHistoryAdapter adapter = new OrderHistoryAdapter();
         listView.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this,R.drawable.kyochon),"교촌치킨", "2022-04-10", "순살 닭강정 치킨", 10000);
@@ -28,9 +27,9 @@ public class order_history extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                order_history_item item = (order_history_item) parent.getItemAtPosition(position);
+                OrderHistoryItem item = (OrderHistoryItem) parent.getItemAtPosition(position);
 
-                String title = item.getShop_name();
+                String title = item.getStoreName();
                 String str = title;
 
                 Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show();

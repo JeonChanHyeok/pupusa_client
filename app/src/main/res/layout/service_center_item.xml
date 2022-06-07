@@ -16,13 +16,13 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <ImageView
-            android:id="@+id/iv_my_page_profile_image"
+            android:id="@+id/iv_service_center_item_image"
             android:scaleType="fitCenter"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_width="50dp"
             android:layout_height="20dp"/>
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_service_center_item_content"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal|center_vertical"

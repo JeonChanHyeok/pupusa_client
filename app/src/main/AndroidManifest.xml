@@ -4,10 +4,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <!-- 지도 부분 permission Start-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <!-- 지도 부분 permission End-->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,16 +32,28 @@
         <activity android:name="com.example.servertest.alret.AlertActivity"/>
         <activity android:name="com.example.servertest.MainActivity"/>
         <activity android:name="com.example.servertest.chat.ChatRoomController"/>
+
         <activity android:name=".customlistview.customview_MainActivity" />
         <activity android:name="com.example.servertest.Map_Main"/>
 
         <activity android:name=".mypage.MyPageActivity"
+
+        <activity android:name=".mypage.MenuList"
             android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.order_history"
+        <activity android:name=".mypage.InformationChatRoom"
             android:theme="@style/Theme.Capston"/>
-        <activity android:name=".servicecenter.service_center"
+        <activity android:name=".mypage.MyPage"
             android:theme="@style/Theme.Capston"/>
-        <activity android:name=".mypage.my_review"
+        <activity android:name=".mypage.CreateChatRoom"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".mypage.ConnectAddressApi"
+
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".mypage.orderhistory.OrderHistory"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".servicecenter.ServiceCenter"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".mypage.myreview.MyReview"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.wishlist.WishListActivity"
             android:theme="@style/Theme.Capston"/>
@@ -53,5 +67,5 @@
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="4836efed425c05ae10a211f0956a589c"/>
         <!-- 지도 앱 사용키-->
     </application>
-
+     
 </manifest>
