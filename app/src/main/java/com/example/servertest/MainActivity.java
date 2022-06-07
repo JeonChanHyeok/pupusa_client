@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Long roomId = chatRoomListAdapter.getItem(position).getChatRoomId();
+                    Toast.makeText(MainActivity.this, "방번호 : "+ roomId, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), ChatRoomInfoActivity.class);
                     intent.putExtra("roomId", roomId);
                     intent.putExtra("loginedId", loginedId);
@@ -238,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 String str = gson.toJson(response.body());
+                System.out.println(str);
                 chatRoomList = gson.fromJson(str, ChatRoomList.class);
                 chatRoomListAdapter.setSample(chatRoomList.getchatroomlist());
                 chatRoomListAdapter.notifyDataSetChanged();

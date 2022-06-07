@@ -76,4 +76,8 @@ public interface ServiceApi {
     @POST("/order/goPay")
     Call<Void> goPay(@Field("objJson") String objJson);
 
+    @FormUrlEncoded
+    @POST("/pay/loadPayList")
+    Call<Object> loadPayList(@Field("objJson") String objJson);
+
 }

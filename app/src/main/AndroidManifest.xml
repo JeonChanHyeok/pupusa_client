@@ -59,7 +59,7 @@
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".order.OrderActivity"
             android:theme="@style/Theme.Capston"/>
-        <activity android:name=".order.ConfirmPaymentActivity"
+        <activity android:name=".payment.ConfirmPaymentActivity"
             android:theme="@style/Theme.Capston"/>
     </application>
 

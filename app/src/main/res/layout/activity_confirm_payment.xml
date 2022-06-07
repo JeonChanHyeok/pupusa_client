@@ -68,7 +68,7 @@
                     android:layout_marginRight="15dp"
                     android:background="@drawable/btn_round"
                     android:paddingLeft="10dp"
-                    android:text="3층(입력칸)"
+                    android:text="상세 주소"
                     android:textColor="@color/black"
                     android:textSize="13dp"
                     app:layout_constraintStart_toStartOf="@+id/tv_confirm_payment_address"
@@ -168,8 +168,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/btn_change_color"
-                        android:clickable="true"
-                        android:onClick="paymentMethodButtonClicked"
                         android:outlineProvider="none"
                         android:text="페이코"
                         android:textColor="@color/black" />
@@ -185,8 +183,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/btn_change_color"
-                        android:clickable="true"
-                        android:onClick="paymentMethodButtonClicked"
                         android:outlineProvider="none"
                         android:text="토스"
                         android:textColor="@color/black" />
@@ -355,7 +351,6 @@
                         android:id="@+id/tv_confirm_payment_delivery_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3000"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
 
@@ -404,7 +399,6 @@
                         android:id="@+id/tv_confirm_payment_amount_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="67000"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
 
@@ -547,7 +541,7 @@
                         android:id="@+id/tv_confirm_payment_my_discount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2000"
+                        android:text="0"
                         android:textColor="#ff0066"
                         android:textSize="14dp" />
 
@@ -598,7 +592,6 @@
                         android:id="@+id/tv_confirm_payment_my_amount_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="23000"
                         android:textColor="#FCD12A"
                         android:textSize="22dp"
                         android:textStyle="bold" />
@@ -631,6 +624,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_confirm_payment_pay"
+                    android:clickable="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"

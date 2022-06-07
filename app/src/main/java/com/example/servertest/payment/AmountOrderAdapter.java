@@ -1,7 +1,6 @@
-package com.example.servertest.order;
+package com.example.servertest.payment;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

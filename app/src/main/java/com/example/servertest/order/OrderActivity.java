@@ -8,17 +8,16 @@ import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.servertest.R;
+import com.example.servertest.payment.ConfirmPaymentActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -125,6 +124,8 @@ public class OrderActivity extends AppCompatActivity {
                     }
                 });
                 Intent go_order = new Intent(getApplicationContext(), ConfirmPaymentActivity.class);
+                go_order.putExtra("roomId", roomId);
+                go_order.putExtra("loginedId", userId);
                 startActivity(go_order);
                 finish();
             }

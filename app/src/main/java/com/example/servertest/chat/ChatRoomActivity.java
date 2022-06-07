@@ -10,14 +10,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.servertest.R;
-import com.example.servertest.order.ConfirmPaymentActivity;
+import com.example.servertest.payment.ConfirmPaymentActivity;
 import com.example.servertest.order.OrderActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
@@ -148,8 +147,10 @@ public class ChatRoomActivity extends Activity {
                     goOrder.putExtra("loginedId", loginedId);
                     startActivity(goOrder);
                 }else if(state == 1){
-                    Intent go_order = new Intent(getApplicationContext(), ConfirmPaymentActivity.class);
-                    startActivity(go_order);
+                    Intent go_payment = new Intent(getApplicationContext(), ConfirmPaymentActivity.class);
+                    go_payment.putExtra("roomId", roomId);
+                    go_payment.putExtra("loginedId", loginedId);
+                    startActivity(go_payment);
                 }
             }
 

@@ -57,7 +57,7 @@ public class ChatRoomInfoActivity extends AppCompatActivity {
                 String str = gson.toJson(response.body());
                 ChatRoomInfoResponse chatRoomInfoResponse = gson.fromJson(str, ChatRoomInfoResponse.class);
 
-                tvChatRoomTitle.setText(chatRoomInfoResponse.getChatRoomName());
+                tvChatRoomTitle.setText(roomId + "번 방 : " +chatRoomInfoResponse.getChatRoomName());
                 tvChatRoomMasterUser.setText("방장 : " + chatRoomInfoResponse.getChatRoomMasterUser());
                 tvChatRoomUserCount.setText("" + chatRoomInfoResponse.getChatRoomUserCount() + " / 8");
                 tvChatRoomStoreName.setText(chatRoomInfoResponse.getStoreName());

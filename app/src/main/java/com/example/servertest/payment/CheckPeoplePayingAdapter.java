@@ -1,4 +1,4 @@
-package com.example.servertest.order;
+package com.example.servertest.payment;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,12 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.example.servertest.R;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -84,6 +81,13 @@ public class CheckPeoplePayingAdapter extends BaseExpandableListAdapter {
         }
         TextView childTextView = (TextView) convertView.findViewById(R.id.tv_check_people_paying_child);
         childTextView.setText(dataList.get(groupPosition).child.get(childPosition));
+        CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.cb_check_people_paying_child);
+        if(dataList.get(groupPosition).payChk.get(childPosition)){
+            checkBox.setChecked(true);
+        }else{
+            checkBox.setChecked(false);
+        }
+
         return convertView;
     }
 

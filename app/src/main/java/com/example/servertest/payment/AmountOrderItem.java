@@ -1,4 +1,4 @@
-package com.example.servertest.order;
+package com.example.servertest.payment;
 
 public class AmountOrderItem {
     private String menu;
