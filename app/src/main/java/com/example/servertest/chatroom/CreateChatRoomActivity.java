@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.servertest.Map_Main;
 import com.example.servertest.R;
 import com.example.servertest.chat.ChatRoomActivity;
 import com.example.servertest.server.RetrofitClient;
@@ -87,7 +88,7 @@ public class CreateChatRoomActivity extends AppCompatActivity {
         map_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent map = new Intent(getApplicationContext(), customview_MainActivity.class);
+                Intent map = new Intent(getApplicationContext(), Map_Main.class);
                 startActivity(map);
             }
         });

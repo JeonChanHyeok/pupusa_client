@@ -5,7 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     //http://ec2-34-227-207-122.compute-1.amazonaws.com:8080
-    private final static String BASE_URL = "http://175.200.243.163:8080";
+    private final static String BASE_URL = "http://10.0.2.2:8080";
+    // 안드로이드 localhost = 10.0.2.2
     private static Retrofit retrofit = null;
 
     private RetrofitClient() {

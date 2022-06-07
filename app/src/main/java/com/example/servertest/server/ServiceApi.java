@@ -80,4 +80,8 @@ public interface ServiceApi {
     @POST("/pay/loadPayList")
     Call<Object> loadPayList(@Field("objJson") String objJson);
 
+    @FormUrlEncoded
+    @POST("/store/load_store_info")
+    Call<Object> getStoreId(@Field("objJson") String objJson);
+
 }

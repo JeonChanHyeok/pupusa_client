@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.servertest">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +28,8 @@
         <activity android:name="com.example.servertest.login.JoinActivity"/>
         <activity android:name="com.example.servertest.alret.AlertActivity"/>
         <activity android:name="com.example.servertest.MainActivity"/>
+        <activity android:name="com.example.servertest.Map_Main"/>
+        <activity android:name="com.example.servertest.customlistview.customview_MainActivity"/>
         <activity android:name=".mypage.MenuList"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.MyPageActivity"
@@ -62,5 +67,8 @@
         <activity android:name=".payment.ConfirmPaymentActivity"
             android:theme="@style/Theme.Capston"/>
     </application>
+
+    <meta-data android:name="com.kakao.sdk.AppKey" android:value="4836efed425c05ae10a211f0956a589c"/>
+    <!-- 지도 앱 사용키-->
 
 </manifest>
