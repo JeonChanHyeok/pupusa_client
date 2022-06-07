@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         chatRoomList = new ChatRoomList();
         listView = (ListView)findViewById(R.id.listView);
 
-
+        getHashKey();
         this.InitializeDrawerLayout();
         this.InitializeSearchView();
 
@@ -132,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
                 initChatRoomData(objJson);
             }
         });
+
+
     }
 
 
@@ -349,5 +351,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
 
 }

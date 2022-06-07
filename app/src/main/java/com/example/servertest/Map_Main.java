@@ -48,7 +48,7 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
 
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
-    private static final String APP_KEY = "4836efed425c05ae10a211f0956a589c";
+    private static final String APP_KEY = "b0e0bef2a7d3083d97adbcb875c8caea";
     // API 사용 키
     private String global_address = "";
     // 현재 위치 주소를 저장할 변수

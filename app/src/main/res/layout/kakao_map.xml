@@ -30,7 +30,7 @@
             android:id="@+id/map_view"
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="1"></RelativeLayout>
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/kakao_button_address"
