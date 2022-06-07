@@ -35,6 +35,7 @@ import com.example.servertest.login.LoginActivity;
 import com.example.servertest.mypage.MyPageActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
+<<<<<<< HEAD
 
 import com.example.servertest.servicecenter.ServiceCenter;
 import com.example.servertest.Map_Main;
@@ -44,6 +45,11 @@ import com.example.servertest.servicecenter.ServiceCenter;
 
 import com.example.servertest.stores.StoresActivity;
 
+=======
+import com.example.servertest.servicecenter.service_center;
+import com.example.servertest.Map_Main;
+import com.example.servertest.customlistview.customview_MainActivity;
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.kakao.util.maps.helper.Utility;
@@ -211,9 +217,12 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(it);
                     }else{
                         Intent it = new Intent(this, MyPageActivity.class);
+<<<<<<< HEAD
                         it.putExtra("loginedId", loginedId);
                         it.putExtra("loginedName", loginedName);
                         it.putExtra("islogin", isLogin);
+=======
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
                         startActivity(it);
                     }
                     return true;
@@ -228,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.menu_service_center:
                     Toast.makeText(getApplicationContext(), title + ": 서비스 센터에 접속합니다.", Toast.LENGTH_SHORT).show();
                     Log.e(TAG, "서비스 센터");
-                    Intent intent_sc = new Intent(this, ServiceCenter.class);
+                    Intent intent_sc = new Intent(this, service_center.class);
                     startActivity(intent_sc);
                     return true;
 

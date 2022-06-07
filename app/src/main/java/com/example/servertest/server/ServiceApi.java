@@ -1,6 +1,6 @@
 package com.example.servertest.server;
 
-import com.example.servertest.login.DupResponse;
+import com.example.servertest.chat.ChatRoomList;
 import com.example.servertest.login.JoinResponse;
 import com.example.servertest.login.LoginResponse;
 
@@ -13,6 +13,8 @@ import com.example.servertest.order.OrderRoomInfoResponse;
 
 
 import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -24,10 +26,13 @@ public interface ServiceApi {
     Call<LoginResponse> userLogin(@Field("objJson") String objJson);
 
     @FormUrlEncoded
+<<<<<<< HEAD
     @POST("/user/joindupchk")
     Call<DupResponse> userEmailDupChk(@Field("objJson") String objJson);
 
     @FormUrlEncoded
+=======
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     @POST("/user/join")
     Call<JoinResponse> userJoin(@Field("objJson") String objJson);
 

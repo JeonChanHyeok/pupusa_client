@@ -4,12 +4,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-
     private final static String BASE_URL = "http://10.0.2.2:8080";
     //http:10.0.2.2 -> 로컬 접속시
     // aws주소 ->"http://ec2-34-227-207-122.compute-1.amazonaws.com:8080";
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     private static Retrofit retrofit = null;
 
     private RetrofitClient() {

@@ -53,8 +53,11 @@ dependencies {
     //For Kakao Map API
     implementation files('libs/libDaumMapAndroid.jar')
 
+<<<<<<< HEAD
     implementation 'de.hdodenhof:circleimageview:3.1.0' //Circle ImageView
 
 
 
+=======
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 }

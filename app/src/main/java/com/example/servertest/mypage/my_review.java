@@ -1,4 +1,4 @@
-package com.example.servertest.mypage.myreview;
+package com.example.servertest.mypage;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,17 +8,18 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
 import com.example.servertest.R;
 
-public class MyReview extends AppCompatActivity {
+public class my_review extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_review);
+        setContentView(R.layout.my_review);
 
-        ListView listView = findViewById(R.id.ll_my_review);
+        ListView listView = findViewById(R.id.ll2);
 
-        MyReviewWrittenAdapter adapter = new MyReviewWrittenAdapter();
+        my_review_written_adapter adapter = new my_review_written_adapter();
         listView.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.rating), "닭다리치킨집",
@@ -44,9 +45,9 @@ public class MyReview extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MyReviewWrittenItem item = (MyReviewWrittenItem) parent.getItemAtPosition(position);
+                my_review_written_item item = (my_review_written_item) parent.getItemAtPosition(position);
 
-                String title = item.getStoreName();
+                String title = item.getStore_name();
                 String str = title;
 
                 Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();

@@ -1,4 +1,4 @@
-package com.example.servertest.mypage.myreview;
+package com.example.servertest.mypage;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,12 +9,14 @@ import android.widget.ListView;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+
 import com.example.servertest.R;
 
-public class MyReviewScroll extends Fragment {
+public class my_review_scroll extends Fragment {
     private ListView ll;
     private ListView ll2;
-    private MyReviewWrittenAdapter adapter;
+    private my_review_written_adapter adapter;
 
     public static void setListViewHeightBasedOnChildren(ListView listView) {
         ListAdapter listAdapter = (ListAdapter) listView.getAdapter();
@@ -33,11 +35,11 @@ public class MyReviewScroll extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_my_review, container, false);
+        View v = inflater.inflate(R.layout.my_review, container, false);
 
         //report list view
-        adapter = new MyReviewWrittenAdapter();
-        ll = (ListView) v.findViewById(R.id.ll_my_review_written_item);
+        adapter = new my_review_written_adapter();
+        ll = (ListView) v.findViewById(R.id.ll);
         ll.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this.getContext(), R.drawable.rating), "닭다리치킨집",
@@ -49,8 +51,8 @@ public class MyReviewScroll extends Fragment {
         adapter.notifyDataSetChanged();
 
         //report list view
-        adapter = new MyReviewWrittenAdapter();
-        ll2 = (ListView) v.findViewById(R.id.ll_my_review);
+        adapter = new my_review_written_adapter();
+        ll2 = (ListView) v.findViewById(R.id.ll2);
         ll2.setAdapter(adapter);
 
         adapter.addItem(ContextCompat.getDrawable(this.getContext(), R.drawable.rating), "닭다리치킨집",

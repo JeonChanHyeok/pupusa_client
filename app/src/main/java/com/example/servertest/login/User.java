@@ -1,10 +1,14 @@
 package com.example.servertest.login;
 
+<<<<<<< HEAD
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
 public class User implements Serializable {
+=======
+public class User {
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     private String userId;
 
     private String userPw;

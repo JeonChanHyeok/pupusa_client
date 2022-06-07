@@ -1,29 +1,29 @@
-package com.example.servertest.mypage.myreview;
+package com.example.servertest.mypage;
 
 import android.graphics.drawable.Drawable;
 
-public class MyReviewWrittenItem {
-    private String storeName; //가게이름
-    private Drawable reviewRate; //리뷰 별점
+public class my_review_written_item {
+    private String store_name; //가게이름
+    private Drawable icon; //리뷰 별점
     private Drawable image; //메뉴 사진
     private String date; //날짜
     private String content; //리뷰 내용
     private String menu; //메뉴
 
-    public String getStoreName() {
-        return storeName;
+    public String getStore_name() {
+        return store_name;
     }
 
-    public void setStoreName(String storeName) {
-        this.storeName = storeName;
+    public void setStore_name(String store_name) {
+        this.store_name = store_name;
     }
 
-    public Drawable getReviewRate() {
-        return reviewRate;
+    public Drawable getIcon() {
+        return icon;
     }
 
-    public void setReviewRate(Drawable reviewRate) {
-        this.reviewRate = reviewRate;
+    public void setIcon(Drawable icon) {
+        this.icon = icon;
     }
 
     public String getDate() {

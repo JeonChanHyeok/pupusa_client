@@ -2,6 +2,7 @@ package com.example.servertest.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -10,10 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+=======
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servertest.MainActivity;
 import com.example.servertest.R;
+<<<<<<< HEAD
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 import com.google.gson.Gson;
@@ -36,10 +40,15 @@ public class JoinActivity extends AppCompatActivity {
 
     ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
 
+=======
+
+public class JoinActivity extends AppCompatActivity {
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
+<<<<<<< HEAD
 
         joinNameEt = findViewById(R.id.et_join_name);
         joinEmailEt = findViewById(R.id.et_join_email);
@@ -140,5 +149,7 @@ public class JoinActivity extends AppCompatActivity {
 
             }
         });
+=======
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     }
 }

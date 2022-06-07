@@ -2,7 +2,7 @@ package com.example.servertest.servicecenter;
 
 import android.graphics.drawable.Drawable;
 
-public class ServiceCenterItem {
+public class service_center_item {
     private Drawable icon;
     private String title;
 

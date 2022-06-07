@@ -43,8 +43,16 @@ public class LoginActivity extends AppCompatActivity {
         tv_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
                 startActivity(intent);
+=======
+                id = et_login_email.getText().toString();
+                pw = et_login_pw.getText().toString();
+                JoinData data = new JoinData(id, pw);
+                String objJson = gson.toJson(data);
+                startJoin(objJson);
+>>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
             }
         });
 
@@ -61,6 +69,27 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void startJoin(String json) {
+        Call<JoinResponse> join = service.userJoin(json);
+        join.enqueue(new Callback<JoinResponse>() {
+            @Override
+            public void onResponse(Call<JoinResponse> call, Response<JoinResponse> response) {
+                try{
+                    Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JoinResponse> call, Throwable t) {
+                Log.e("log",t.getMessage());
+                Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
     private void startLogin(String json) {
         Call<LoginResponse> login = service.userLogin(json);
         login.enqueue(new Callback<LoginResponse>() {
