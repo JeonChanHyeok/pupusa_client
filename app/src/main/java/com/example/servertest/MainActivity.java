@@ -34,7 +34,7 @@ import com.example.servertest.mypage.MyPage;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 
-import com.example.servertest.servicecenter.service_center;
+import com.example.servertest.servicecenter.ServiceCenter;
 import com.example.servertest.Map_Main;
 import com.example.servertest.customlistview.customview_MainActivity;
 

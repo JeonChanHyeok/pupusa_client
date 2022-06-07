@@ -36,7 +36,7 @@
         <activity android:name=".customlistview.customview_MainActivity" />
         <activity android:name="com.example.servertest.Map_Main"/>
 
-        <activity android:name=".mypage.MyPageActivity"
+        <activity android:name=".mypage.MyPageActivity"></activity>
 
         <activity android:name=".mypage.MenuList"
             android:theme="@style/Theme.Capston"/>
