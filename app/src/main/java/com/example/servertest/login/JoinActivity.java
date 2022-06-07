@@ -3,7 +3,6 @@ package com.example.servertest.login;
 import android.content.Intent;
 import android.os.Bundle;
 <<<<<<< HEAD
-<<<<<<< HEAD
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -14,13 +13,10 @@ import android.widget.Toast;
 
 =======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
-=======
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servertest.MainActivity;
 import com.example.servertest.R;
-<<<<<<< HEAD
 <<<<<<< HEAD
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
@@ -48,15 +44,10 @@ public class JoinActivity extends AppCompatActivity {
 
 public class JoinActivity extends AppCompatActivity {
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
-=======
-
-public class JoinActivity extends AppCompatActivity {
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
-<<<<<<< HEAD
 <<<<<<< HEAD
 
         joinNameEt = findViewById(R.id.et_join_name);
@@ -158,8 +149,6 @@ public class JoinActivity extends AppCompatActivity {
 
             }
         });
-=======
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 =======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     }

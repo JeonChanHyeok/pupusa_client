@@ -8,11 +8,8 @@ public class RetrofitClient {
     //http:10.0.2.2 -> 로컬 접속시
     // aws주소 ->"http://ec2-34-227-207-122.compute-1.amazonaws.com:8080";
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 
-=======
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 =======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     private static Retrofit retrofit = null;

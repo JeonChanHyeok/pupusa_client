@@ -27,13 +27,10 @@ public interface ServiceApi {
 
     @FormUrlEncoded
 <<<<<<< HEAD
-<<<<<<< HEAD
     @POST("/user/joindupchk")
     Call<DupResponse> userEmailDupChk(@Field("objJson") String objJson);
 
     @FormUrlEncoded
-=======
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 =======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     @POST("/user/join")

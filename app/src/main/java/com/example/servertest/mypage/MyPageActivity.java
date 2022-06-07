@@ -1,18 +1,14 @@
 package com.example.servertest.mypage;
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatActivity;
 
-=======
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 =======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
 <<<<<<< HEAD
 import android.widget.TextView;
 
@@ -38,8 +34,6 @@ public class MyPageActivity extends AppCompatActivity {
 
     ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
 =======
-=======
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,9 +43,6 @@ import com.example.servertest.mypage.wishlist.WishListActivity;
 import com.example.servertest.R;
 
 public class MyPageActivity extends AppCompatActivity {
-<<<<<<< HEAD
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
-=======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 
     @Override
@@ -59,7 +50,6 @@ public class MyPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_page);
 
-<<<<<<< HEAD
 <<<<<<< HEAD
         myPageIntent = getIntent();
         loginedId = myPageIntent.getStringExtra("loginedId");
@@ -110,16 +100,11 @@ public class MyPageActivity extends AppCompatActivity {
 
 
 =======
-=======
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
         Button btn_order = findViewById(R.id.btn_my_page_order_history);
         Button btn_review = findViewById(R.id.btn_my_page_review_management);
         Button btn_wish_list = findViewById(R.id.btn_my_page_wish_list);
         Button btn_chat_history = findViewById(R.id.btn_my_page_chattingroom_history);
         Button btn_coupon = findViewById(R.id.btn_my_page_coupon_management);
-<<<<<<< HEAD
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
-=======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 
         btn_order.setOnClickListener(new View.OnClickListener() {
@@ -127,11 +112,7 @@ public class MyPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 System.out.println("click");
 <<<<<<< HEAD
-<<<<<<< HEAD
                 Intent intent = new Intent(MyPageActivity.this, OrderHistory.class);
-=======
-                Intent intent = new Intent(MyPageActivity.this, order_history.class);
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 =======
                 Intent intent = new Intent(MyPageActivity.this, order_history.class);
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
@@ -143,11 +124,7 @@ public class MyPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 <<<<<<< HEAD
-<<<<<<< HEAD
                 Intent intent = new Intent(MyPageActivity.this, MyReview.class);
-=======
-                Intent intent = new Intent(MyPageActivity.this, my_review.class);
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 =======
                 Intent intent = new Intent(MyPageActivity.this, my_review.class);
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
@@ -159,11 +136,7 @@ public class MyPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 <<<<<<< HEAD
-<<<<<<< HEAD
                 Intent intent = new Intent(MyPageActivity.this, WishListActivity.class);
-=======
-                Intent intent = new Intent(getApplicationContext(), WishListActivity.class);
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
 =======
                 Intent intent = new Intent(getApplicationContext(), WishListActivity.class);
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
@@ -171,28 +144,21 @@ public class MyPageActivity extends AppCompatActivity {
             }
         });
 
-<<<<<<< HEAD
 <<<<<<< HEAD
         btn_locker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MyPageActivity.this, CreateChatRoom.class);
 =======
-=======
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
         btn_coupon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Coupon.class);
-<<<<<<< HEAD
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
-=======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
                 startActivity(intent);
             }
         });
 
-<<<<<<< HEAD
 <<<<<<< HEAD
 
         btn_change_info.setOnClickListener(new View.OnClickListener() {
@@ -216,8 +182,6 @@ public class MyPageActivity extends AppCompatActivity {
         });
 
 =======
-=======
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
         btn_chat_history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -225,9 +189,6 @@ public class MyPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-<<<<<<< HEAD
->>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
-=======
 >>>>>>> parent of a8c9519 (Merge branch 'master' into Seonhyun_Kim)
     }
 
