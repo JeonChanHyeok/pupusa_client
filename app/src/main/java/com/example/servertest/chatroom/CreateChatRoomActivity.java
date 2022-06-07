@@ -81,6 +81,19 @@ public class CreateChatRoomActivity extends AppCompatActivity {
             }
         });
 
+        // 지도로 위치찾기 기능 시작
+        // 버튼을 누르면 지도로 위치찾기 기능이 시작된다.
+        Button map_button = (Button) findViewById(R.id.btn_create_chat_room_current_location);
+        map_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent map = new Intent(getApplicationContext(), customview_MainActivity.class);
+                startActivity(map);
+            }
+        });
+
+
+
 
 
 
