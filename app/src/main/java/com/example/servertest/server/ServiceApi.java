@@ -49,5 +49,5 @@ public interface ServiceApi {
 
     @FormUrlEncoded
     @POST("/store/load_store_info")
-    Call<StoreResponse> getStoreId(@Field("objJson") String objJson);
+    Call<Object> getStoreId(@Field("objJson") String objJson);
 }

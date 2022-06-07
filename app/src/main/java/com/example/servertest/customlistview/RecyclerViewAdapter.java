@@ -48,6 +48,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private ArrayList<RecyclerViewItem> mList = null;
 
+    public ArrayList<RecyclerViewItem> getmList() {
+        return mList;
+    }
+
     public RecyclerViewAdapter(ArrayList<RecyclerViewItem> mList) {
         this.mList = mList;
     }

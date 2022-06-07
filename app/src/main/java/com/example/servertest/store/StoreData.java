@@ -11,8 +11,13 @@ public class StoreData {
     @SerializedName("storeName")
     private String storeName;
 
-    public StoreData(Long storeId, String storeName) {
+
+    @SerializedName("category")
+    private String category;
+
+    public StoreData(Long storeId, String storeName, String category) {
         this.storeId = storeId;
         this.storeName = storeName;
+        this.category = category;
     }
 }
