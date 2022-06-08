@@ -14,78 +14,57 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.servertest.R;
+import com.example.servertest.customlistview.ListViewAdapter;
+import com.example.servertest.customlistview.RecyclerViewAdapter;
+import com.example.servertest.customlistview.RecyclerViewItem;
+import com.example.servertest.server.RetrofitClient;
+import com.example.servertest.server.ServiceApi;
+import com.example.servertest.store.StoreActivity;
+import com.example.servertest.store.StoreResponse;
+import com.example.servertest.store.StoreResponseList;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class StoresActivity extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
-    private ArrayList<StoresRecyclerViewItem> mList;
-    private StoresRecyclerViewAdapter mRecyclerViewAdapter;
+    ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
+    private ArrayList<StoreResponseList> storeResponseLists;
 
-    Long storeId;
-    Intent intent;
-    ListView list;
-    StoresListViewAdapter adapter;
-    Intent chatIntent;
+
+    private RecyclerView mRecyclerView;
+    private ArrayList<RecyclerViewItem> mList;
+    private RecyclerViewAdapter mRecyclerViewAdapter;
+    private ListView mListView;
+    ListViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_store);
-
-        intent = getIntent();
-
-        String loginedId = intent.getStringExtra("loginedId");
-        String category = intent.getStringExtra("category");
-        int isLogin = intent.getIntExtra("isLogin", 0);
-        storeId = 0L;
-
-
+        setContentView(R.layout.store_select_activity_main);
         firstInit();
         TextView tvTitle = (TextView) findViewById(R.id.tv_store_select);
-        addItem("1인분주문");
-        addItem("신규 맛집");
+        addItem("전체");
         addItem("치킨");
         addItem("피자");
-        addItem("족발");
+        addItem("중식");
 
-
-
-
-        mRecyclerViewAdapter = new StoresRecyclerViewAdapter(mList);
+        mRecyclerViewAdapter = new RecyclerViewAdapter(mList);
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
-        mRecyclerViewAdapter.setOnItemClickListener(new StoresRecyclerViewAdapter.OnItemClickListener() {
+        mRecyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                Toast.makeText(StoresActivity.this, ""+position, Toast.LENGTH_SHORT).show();
-                //temp(position);
+                //Toast.makeText(customview_MainActivity.this, ""+position, Toast.LENGTH_SHORT).show();
+                temp(position);
+                adapter.notifyDataSetChanged();
             }
         });
 
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Store store;
-                switch (position){
-                    case 0:
-                        chatIntent = new Intent(getApplicationContext(), GongGuPopup.class);
-                        chatIntent.putExtra("loginedId", loginedId);
-                        chatIntent.putExtra("isLogin", isLogin);
-                        chatIntent.putExtra("storeId", 0L);
-                        startActivity(chatIntent);
-                        break;
-                    case 1:
-                        chatIntent = new Intent();
-                        chatIntent.putExtra("loginedId", loginedId);
-                        chatIntent.putExtra("isLogin", isLogin);
-                        chatIntent.putExtra("storeId", 1L);
-                        startActivity(chatIntent);
-                        break;
-                }
-            }
-        });
     }
 
     public void firstInit() {
@@ -94,8 +73,8 @@ public class StoresActivity extends AppCompatActivity {
     }
 
 
-    public void addItem(String subText) {
-        StoresRecyclerViewItem item = new StoresRecyclerViewItem();
+    public void addItem(String subText){
+        RecyclerViewItem item = new RecyclerViewItem();
 
         item.setSubText(subText);
 
@@ -103,51 +82,93 @@ public class StoresActivity extends AppCompatActivity {
 
 //.....................리스트뷰
 
-
-
-        list = (ListView) findViewById(R.id.lv_store_select_list2);
-        adapter = new StoresListViewAdapter();
-
-        list.setAdapter(adapter);
-
-        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5", "3000원", "15~30분");
-        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9", "3000원", "15~30분");
-        /*adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6", "3000원", "15~30분");
-        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8", "3000원", "15~30분");
-        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_bhc), "BHC치킨", "4.9", "3000원", "15~30분");
-        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_cheogatjib), "처갓집치킨", "4.6", "3000원", "15~30분");
-        adapter.additem(ContextCompat.getDrawable(this, R.drawable.bbq), "BBQ", "4.5", "3000원", "15~30분");
-        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_nana), "네네치킨", "4.5", "3000원", "15~30분");
-        */
-    }
-    public void temp(int i){
         ListView list;
-        StoresListViewAdapter adapter;
+        ListViewAdapter adapter;
 
         list = (ListView)findViewById(R.id.lv_store_select_list2);
-        adapter = new StoresListViewAdapter();
+        adapter = new ListViewAdapter();
 
         list.setAdapter(adapter);
 
+//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
+//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
+//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
+//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
+//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_bhc), "BHC치킨", "4.9","3000원","15~30분");
+//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_cheogatjib), "처갓집치킨", "4.6","3000원","15~30분");
+//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.bbq), "BBQ", "4.5","3000원","15~30분");
+//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_nana), "네네치킨", "4.5","3000원","15~30분");
+
+
+    }
+    public void temp(int i){
+
+        StoreActivity storeActivity = new StoreActivity();
+
+        ListView list;
+
+        list = (ListView)findViewById(R.id.lv_store_select_list2);
+        adapter = new ListViewAdapter();
+
+        list.setAdapter(adapter);
+        String objJson = mRecyclerViewAdapter.getmList().get(i).getSubText();
+        getStoreName(objJson);
+        adapter.notifyDataSetChanged();
+
+/*
         switch (i){
             case 0:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
+
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
                 break;
             case 1:
-
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
                 break;
             case 2:
+                getStoreName("치킨");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
                 break;
             case 3:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
                 break;
             case 4:
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
+                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
                 break;
             case 5:
                 adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
                 adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
                 break;
-        }
+        }*/
 
         adapter.notifyDataSetChanged();
+
+    }
+    public void getStoreName(String objJson) {
+        Call store = service.getStoreId(objJson);
+        store.enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                String str = new Gson().toJson(response.body());
+                StoreResponseList storeResponseList = new Gson().fromJson(str, StoreResponseList.class);
+                System.out.println("storeRL: " + str);
+                for(StoreResponse s : storeResponseList.getStoreResponseList()){
+                    adapter.additem(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_restaurant), s.getStoreName(), "4.5",s.getDelieveryFee() +"원","15~30분");
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+            }
+        });
+
+
     }
 
 }
