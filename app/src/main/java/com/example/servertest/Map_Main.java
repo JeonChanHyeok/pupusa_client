@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 
 //import com.google.android.gms.common.internal.Constants;
+import com.example.servertest.chatroom.CreateChatRoomActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 //import com.google.android.gms.maps.MapView;
 
@@ -48,10 +49,14 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
 
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
-    private static final String APP_KEY = "b0e0bef2a7d3083d97adbcb875c8caea";
+    private static final String APP_KEY = "4836efed425c05ae10a211f0956a589c";
     // API 사용 키
     private String global_address = "";
     // 현재 위치 주소를 저장할 변수
+    private String total_address;
+    // 사용자 위치 + 상세주소
+
+    CreateChatRoomActivity createChatRoomActivity;
 
     private Button btn_address;
     //선택한 위치의 주소를 리턴하는 버튼
@@ -88,6 +93,25 @@ public class Map_Main extends AppCompatActivity implements MapView.CurrentLocati
             public void onClick(View view) {
                 mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
 
+            }
+        });
+        // 주소선택 버튼
+        // 사용자 위치 + 상세주소를 리턴한다.
+        Button return_address = (Button) findViewById(R.id.button_return_address);
+        return_address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TextView gps_location = (TextView) findViewById(R.id.textView_Addresss);
+                //gps의 위치 주소
+                TextView specific_location = (TextView) findViewById(R.id.edittext_specific_address);
+
+                total_address = (gps_location.getText().toString()) + specific_location.getText().toString();
+
+                Intent intent = new Intent();
+                intent.putExtra("address", total_address);
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
 

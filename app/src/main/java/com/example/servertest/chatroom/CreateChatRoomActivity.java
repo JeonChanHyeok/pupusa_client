@@ -1,5 +1,6 @@
 package com.example.servertest.chatroom;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,11 +26,13 @@ import retrofit2.Response;
 public class CreateChatRoomActivity extends AppCompatActivity {
     private Gson gson = new Gson();
     private ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
+    private static int REQUEST_CODE = 100;
 
     String chatRoomTitle;
     String chatRoomAddress;
     String chatRoomStoreName;
     String chatRoomInfo;
+    EditText etChatRoomAddress;
 
     String loginedId;
     int isLogin;
@@ -50,6 +53,8 @@ public class CreateChatRoomActivity extends AppCompatActivity {
         EditText etChatRoomAddress = (EditText) findViewById(R.id.et_create_chat_room_input_address);
         TextView tvChatRoomStoreName = (TextView) findViewById(R.id.tv_create_chat_room_input_store_name);
         EditText etChatRoomInfo = (EditText) findViewById(R.id.et_create_chat_room_input_content);
+
+        etChatRoomAddress.setText(getIntent().getStringExtra("address"));
 
         Button btnMake = (Button) findViewById(R.id.btn_create_chat_room_make);
 
@@ -89,13 +94,26 @@ public class CreateChatRoomActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent map = new Intent(getApplicationContext(), Map_Main.class);
-                startActivity(map);
+                startActivityForResult(map, REQUEST_CODE);
             }
         });
 
+    }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode != Activity.RESULT_OK) {
+                return;
+            }
+            String sendText = data.getExtras().getString("address");
+            etChatRoomAddress = (EditText) findViewById(R.id.et_create_chat_room_input_address);
+            etChatRoomAddress.setText(sendText);
+            //System.out.println("Addressqwe: " + sendText);
+        }
 
 
     }

@@ -66,7 +66,7 @@
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".payment.ConfirmPaymentActivity"
             android:theme="@style/Theme.Capston"/>
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="b0e0bef2a7d3083d97adbcb875c8caea"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="4836efed425c05ae10a211f0956a589c"/>
     </application>
 
 </manifest>

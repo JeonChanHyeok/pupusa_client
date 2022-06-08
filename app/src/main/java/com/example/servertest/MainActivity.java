@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView)findViewById(R.id.listView);
 
         getHashKey();
-        this.InitializeDrawerLayout();
+        //this.InitializeDrawerLayout();
         this.InitializeSearchView();
 
         bindList1();
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         //액션바 변경하기(들어갈 수 있는 타입 : Toolbar type
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         ivMenu.setOnClickListener(v -> {
             Log.d(TAG, "onClick: 클릭됨");
