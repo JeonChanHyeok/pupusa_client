@@ -65,6 +65,21 @@ public class StoresActivity extends AppCompatActivity {
             }
         });
 
+        // 가게 선택 시 가게에 대한 정보 Toast로 출력
+        ListView store_listview = findViewById(R.id.lv_store_select_list_2);
+        ListViewAdapter store_listViewAdapter = new ListViewAdapter();
+        store_listview.setAdapter(store_listViewAdapter);
+        store_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                store_listViewAdapter.getItem(position);
+
+                Toast.makeText(StoresActivity.this, position, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 
     public void firstInit() {
@@ -85,65 +100,26 @@ public class StoresActivity extends AppCompatActivity {
         ListView list;
         ListViewAdapter adapter;
 
-        list = (ListView)findViewById(R.id.lv_store_select_list2);
+        list = (ListView)findViewById(R.id.lv_store_select_list_2);
         adapter = new ListViewAdapter();
 
         list.setAdapter(adapter);
 
-//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
-//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
-//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
-//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
-//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_bhc), "BHC치킨", "4.9","3000원","15~30분");
-//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_cheogatjib), "처갓집치킨", "4.6","3000원","15~30분");
-//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.bbq), "BBQ", "4.5","3000원","15~30분");
-//        adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_nana), "네네치킨", "4.5","3000원","15~30분");
-
-
     }
+
     public void temp(int i){
 
         StoreActivity storeActivity = new StoreActivity();
 
         ListView list;
 
-        list = (ListView)findViewById(R.id.lv_store_select_list2);
+        list = (ListView)findViewById(R.id.lv_store_select_list_2);
         adapter = new ListViewAdapter();
-
+        
         list.setAdapter(adapter);
         String objJson = mRecyclerViewAdapter.getmList().get(i).getSubText();
         getStoreName(objJson);
         adapter.notifyDataSetChanged();
-
-/*
-        switch (i){
-            case 0:
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
-
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
-                break;
-            case 1:
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
-                break;
-            case 2:
-                getStoreName("치킨");
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
-                break;
-            case 3:
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
-                break;
-            case 4:
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.puradak), "푸라닭치킨", "4.6","3000원","15~30분");
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_60), "60계치킨", "4.8","3000원","15~30분");
-                break;
-            case 5:
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_kyochon), "교촌치킨", "4.5","3000원","15~30분");
-                adapter.additem(ContextCompat.getDrawable(this, R.drawable.ic_gcova), "지코바치킨", "4.9","3000원","15~30분");
-                break;
-        }*/
 
         adapter.notifyDataSetChanged();
 

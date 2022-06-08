@@ -67,4 +67,5 @@ public class ListViewAdapter extends BaseAdapter {
         item.setPickup_time(pickup_time);
         itemList.add(item);
     }
+
 }
