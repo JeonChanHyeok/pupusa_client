@@ -420,7 +420,7 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
         }
         tv2.setText("" + myDelpee);
         TextView tv = (TextView) findViewById(R.id.tv_confirm_payment_my_amount_price);
-        tv.setText("" + myPirce + myDelpee);
+        tv.setText("" + (myPirce + myDelpee));
         amountOrderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long l) {

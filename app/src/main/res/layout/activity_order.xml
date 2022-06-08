@@ -3,7 +3,8 @@
 
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white">
 
 
 
@@ -23,13 +24,18 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_marginTop="15dp"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="가게 명 :"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_marginTop="20dp"
                     android:id="@+id/tv_order_store_name"
                     android:layout_width="150dp"
-                    android:layout_height="53sp"
-                    android:layout_marginStart="20dp"
-                    android:background="@color/popcorn"
-                    android:gravity="center"
+                    android:layout_height="wrap_content"
                     android:text="자담 치킨"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -49,12 +55,12 @@
                     android:layout_width="wrap_content"
                     android:layout_weight="7"
                     android:layout_height="53sp"
-                    android:background="@color/popcorn"
+                    android:background="@drawable/edge6"
                     android:gravity="center"
                     android:textSize="16sp"
                     android:text="부산광역시 남구 문현동 189-69"
                     android:textColor="@color/black"
-                     />
+                    android:layout_marginLeft="10dp" />
                 <View
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -63,11 +69,12 @@
                     android:id="@+id/btn_order_location"
                     android:layout_width="wrap_content"
                     android:layout_height="58dp"
-                    android:background="@color/popcorn"
+                    android:background="@drawable/edge"
                     android:text="위치변경"
                     android:layout_weight="2"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="15sp"
+                    android:layout_marginRight="10dp"/>
 
 
 
@@ -77,19 +84,21 @@
                 android:layout_height="5dp" />
             <LinearLayout
                 android:orientation="vertical"
-                android:gravity="center"
+                android:gravity="left"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_order_choice_menu"
-                    android:layout_width="200dp"
+                    android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:background="@color/popcorn"
                     android:text="메뉴선택"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:layout_weight="8"/>
+                    android:layout_weight="8"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"

@@ -88,7 +88,7 @@ public class OrderActivity extends AppCompatActivity {
         btn_choice_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SendOrder sendOrder = new SendOrder(userId, roomId, 7L);
+                SendOrder sendOrder = new SendOrder(userId, roomId, 8L);
                 String objJson = gson.toJson(sendOrder);
                 Call send = service.sendOrder(objJson);
                 send.enqueue(new Callback() {

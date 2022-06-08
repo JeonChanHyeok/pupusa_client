@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
 
     <LinearLayout
@@ -38,7 +39,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edge4"
-            android:text="위치 선택"
+            android:text="수령 위치 선택"
             android:textSize="15dp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -64,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:background="@color/popcorn"
-        android:text="선택"
+        android:text="완료"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.693"

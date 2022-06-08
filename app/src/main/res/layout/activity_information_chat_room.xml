@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <include
             android:id="@+id/include"
@@ -142,7 +143,9 @@
             android:text="채팅방 참가하기"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tv_information_chat_room_title"
-            app:layout_constraintStart_toStartOf="@+id/tv_information_chat_room_content" />
+            app:layout_constraintStart_toStartOf="@+id/tv_information_chat_room_content"
+            android:background="@drawable/round_border"
+            android:backgroundTint="#FCD12A"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
