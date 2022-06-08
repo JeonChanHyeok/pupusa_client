@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -44,7 +45,7 @@ public class ChatRoomActivity extends Activity {
     private List<StompHeader> headerList;
     private Gson gson = new Gson();
     private ServiceApi service = RetrofitClient.getClient().create(ServiceApi.class);
-    private String wsServerUrl = "ws://10.0.2.2:8080/inchatroom/websocket";
+    private String wsServerUrl = "ws://175.200.243.163:8080/inchatroom/websocket";
     private static final String TAG = "ChatRoomActivity";
 
     List<ChatMessage> chatMessageList;
@@ -151,6 +152,8 @@ public class ChatRoomActivity extends Activity {
                     go_payment.putExtra("roomId", roomId);
                     go_payment.putExtra("loginedId", loginedId);
                     startActivity(go_payment);
+                }else if(state == 2){
+                    Toast.makeText(ChatRoomActivity.this, "결제가 완료 된 채팅방입니다.", Toast.LENGTH_SHORT).show();
                 }
             }
 

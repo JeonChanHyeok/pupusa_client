@@ -1,6 +1,7 @@
 package com.example.servertest.server;
 
 import com.example.servertest.instore.InStoreInfoResponse;
+import com.example.servertest.instore.InStoreOrderResponse;
 import com.example.servertest.instore.StoreLoginResponse;
 import com.example.servertest.login.DupResponse;
 import com.example.servertest.login.JoinResponse;
@@ -17,6 +18,14 @@ public interface ServiceApi {
     @FormUrlEncoded
     @POST("/store/login")
     Call<StoreLoginResponse> storeLogin(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/store/orderload")
+    Call<Object> orderLoadInStore(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/order/changeloc")
+    Call<Void> changeLocation(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/store/loadinfo")

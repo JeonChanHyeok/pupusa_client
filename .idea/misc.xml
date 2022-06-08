@@ -28,16 +28,18 @@
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/drawable/round_border.xml" value="0.193" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_alert.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_chat_room.xml" value="0.25" />
-        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_confirm_payment.xml" value="0.33" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_confirm_payment.xml" value="0.25" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_create_chat_room.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_information_chat_room.xml" value="0.25" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_join.xml" value="0.25" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_map_main.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_menu_list.xml" value="0.25" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_my_page.xml" value="0.1824561403508772" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_my_review.xml" value="0.3463541666666667" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_order.xml" value="0.22" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_order_history.xml" value="0.2006340579710145" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_popup.xml" value="0.2391304347826087" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_recycler_item.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/activity_splash.xml" value="0.109375" />
@@ -59,6 +61,7 @@
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/detailorder_parent_list_view.xml" value="0.1" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/gonggu_popup.xml" value="0.2391304347826087" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/item_main_chat_room_list.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/kakao_map.xml" value="0.13994565217391305" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/list_main_chat_list.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/list_store.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/listview_alert.xml" value="0.109375" />
@@ -76,6 +79,7 @@
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/mypage.xml" value="0.15729166666666666" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/order_check_item.xml" value="0.165625" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/order_history.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/order_history_item.xml" value="0.2006340579710145" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/room_center_item_list.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/room_left_item_list.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/room_right_item_list.xml" value="0.22282608695652173" />
@@ -92,6 +96,7 @@
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_in_chat_room.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_informationchatroom.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_join.xml" value="0.109375" />
+        <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_location_select.xml" value="0.2520833333333333" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_orderhistory.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/toolbar_store_select.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/wjsck/Desktop/TP/cap2/servertest/app/src/main/res/layout/wish_listview_custom.xml" value="0.2391304347826087" />

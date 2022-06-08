@@ -68,7 +68,8 @@
                     android:layout_marginRight="15dp"
                     android:background="@drawable/btn_round"
                     android:paddingLeft="10dp"
-                    android:text="상세 주소"
+                    android:text=""
+                    android:hint="상세 주소"
                     android:textColor="@color/black"
                     android:textSize="13dp"
                     app:layout_constraintStart_toStartOf="@+id/tv_confirm_payment_address"
@@ -129,6 +130,7 @@
                     android:layout_marginRight="15dp"
                     android:background="@drawable/btn_round"
                     android:gravity="top"
+                    android:text=""
                     android:hint="주문시 요청사항을 입력하세요."
                     android:paddingLeft="10dp"
                     android:paddingTop="8dp"
@@ -624,7 +626,6 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_confirm_payment_pay"
-                    android:clickable="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"

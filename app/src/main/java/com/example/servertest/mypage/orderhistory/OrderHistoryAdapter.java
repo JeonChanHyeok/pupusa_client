@@ -47,7 +47,7 @@ public class OrderHistoryAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.order_history_item, parent, false); }
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.iv_order_history_item_store_img);
+        /*ImageView imageView = (ImageView) convertView.findViewById(R.id.iv_order_history_item_store_img);
         TextView shopName = (TextView) convertView.findViewById(R.id.tv_order_history_item_store_name);
         TextView date = (TextView) convertView.findViewById(R.id.tv_order_history_item_date);
         TextView menu = (TextView) convertView.findViewById(R.id.tv_order_history_item_menu);
@@ -60,7 +60,7 @@ public class OrderHistoryAdapter extends BaseAdapter {
         shopName.setText(orderItem.getStoreName());
         date.setText(orderItem.getDate());
         menu.setText(orderItem.getMenu());
-        price.setText(String.valueOf(orderItem.getPrice()));
+        price.setText(String.valueOf(orderItem.getPrice()));*/
 
         return convertView;
     }

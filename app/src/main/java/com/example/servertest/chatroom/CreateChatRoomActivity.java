@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servertest.R;
 import com.example.servertest.chat.ChatRoomActivity;
+import com.example.servertest.map.Map_Main;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
 import com.google.gson.Gson;
@@ -33,6 +34,7 @@ public class CreateChatRoomActivity extends AppCompatActivity {
     String loginedId;
     int isLogin;
     Long chatRoomStoreId;
+    EditText etChatRoomAddress;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,11 +48,20 @@ public class CreateChatRoomActivity extends AppCompatActivity {
         chatRoomStoreId = getIntent.getLongExtra("storeId",0);
         chatRoomStoreName = "치킨집1";
         EditText etChatRoomTitle = (EditText) findViewById(R.id.et_create_chat_room_input_title);
-        EditText etChatRoomAddress = (EditText) findViewById(R.id.et_create_chat_room_input_address);
+        etChatRoomAddress = (EditText) findViewById(R.id.et_create_chat_room_input_address);
         TextView tvChatRoomStoreName = (TextView) findViewById(R.id.tv_create_chat_room_input_store_name);
         EditText etChatRoomInfo = (EditText) findViewById(R.id.et_create_chat_room_input_content);
 
         Button btnMake = (Button) findViewById(R.id.btn_create_chat_room_make);
+        Button goMap = (Button) findViewById(R.id.btn_create_chat_room_current_location);
+
+        goMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent map = new Intent(getApplicationContext(), Map_Main.class);
+                startActivityForResult(map, 0);
+            }
+        });
 
         btnMake.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,8 +92,11 @@ public class CreateChatRoomActivity extends AppCompatActivity {
             }
         });
 
-
-
-
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String address = data.getStringExtra("address");
+        etChatRoomAddress.setText(address);
     }
 }

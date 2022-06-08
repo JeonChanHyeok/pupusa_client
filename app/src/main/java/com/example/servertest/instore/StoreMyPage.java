@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.servertest.R;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
-import com.example.servertest.stores.StoreOrderCheck;
 import com.google.gson.Gson;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -66,7 +65,8 @@ public class StoreMyPage extends AppCompatActivity {
         btn_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StoreMyPage.this, StoreOrderCheck.class);
+                Intent intent = new Intent(getApplicationContext(), StoreOrderCheck.class);
+                intent.putExtra("storeId", storeId);
                 startActivity(intent);
             }
         });

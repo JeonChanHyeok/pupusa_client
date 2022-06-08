@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.servertest.R;
+import com.example.servertest.map.Map_Main;
 import com.example.servertest.payment.ConfirmPaymentActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
@@ -30,6 +31,7 @@ public class OrderActivity extends AppCompatActivity {
     DetailOrderAdapter detailOrderAdapter;
     Long roomId;
     ArrayList<DetailOrderGroup> DataList;
+    TextView tv_order_pickup_location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class OrderActivity extends AppCompatActivity {
         roomId = getIntent().getLongExtra("roomId", 0L);
         TextView tv_store_name = (TextView)findViewById(R.id.tv_order_store_name);
         Button btn_choice_menu = (Button) findViewById(R.id.btn_order_choice_menu);
-        TextView tv_order_pickup_location = (TextView) findViewById(R.id.tv_order_pickup_location);
+        tv_order_pickup_location = (TextView) findViewById(R.id.tv_order_pickup_location);
         Button btn_order_location = (Button) findViewById(R.id.btn_order_location);
         Button btn_go_order = (Button) findViewById(R.id.btn_go_order);
         Display newDisplay = getWindowManager().getDefaultDisplay();
@@ -71,6 +73,14 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<OrderRoomInfoResponse> call, Throwable t) {
 
+            }
+        });
+
+        btn_order_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent map = new Intent(getApplicationContext(), Map_Main.class);
+                startActivityForResult(map, 0);
             }
         });
 
@@ -130,6 +140,40 @@ public class OrderActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String address = data.getStringExtra("address");
+        Location location = new Location(roomId, address);
+        String objJson = gson.toJson(location);
+        Call calll = service.changeLocation(objJson);
+        calll.enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                Toast.makeText(OrderActivity.this, "주소가 변경되었습니다.", Toast.LENGTH_SHORT).show();
+                finish();//인텐트 종료
+                overridePendingTransition(0, 0);//인텐트 효과 없애기
+                Intent intent = getIntent(); //인텐트
+                startActivity(intent); //액티비티 열기
+                overridePendingTransition(0, 0);//인텐트 효과 없애기
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+            }
+        });
+
+    }
+    private class Location{
+        Long roomId;
+        String address;
+
+        public Location(Long roomId, String location) {
+            this.roomId = roomId;
+            this.address = location;
+        }
     }
 
     public void initOrderList(){

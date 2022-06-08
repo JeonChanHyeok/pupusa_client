@@ -58,12 +58,15 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
 
     String loginedId;
     Long roomId;
+    boolean payAble;
+    int allPrice;
+    String wantMsg1, wantMsg2, wantMsg3;
 
     ConfirmPaymentResponse confirmPaymentResponse;
 
     private StompClient mStompClient;
     private List<StompHeader> headerList;
-    private String wsServerUrl = "ws://10.0.2.2:8080/inchatroom/websocket";
+    private String wsServerUrl = "ws://175.200.243.163:8080/inchatroom/websocket";
     private static final String TAG = "ConfirmPaymentActivity";
 
     TextView storeName;
@@ -83,8 +86,11 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
         storeName = (TextView) findViewById(R.id.tv_confirm_payment_store_name);
         address = (TextView) findViewById(R.id.tv_confirm_payment_address);
         allDeliPee = (TextView) findViewById(R.id.tv_confirm_payment_delivery_price);
+        confirmPaymentRequestEditBox = findViewById(R.id.et_confirm_payment_request_input);
+        EditText et_address = findViewById(R.id.tv_confirm_payment_detail_address);
         AppCompatButton btnPayco = (AppCompatButton) findViewById(R.id.btn_confirm_payment_payco);
         AppCompatButton btntoss = (AppCompatButton) findViewById(R.id.btn_confirm_payment_toss);
+        AppCompatButton btnPay = (AppCompatButton) findViewById(R.id.btn_confirm_payment_pay);
         System.out.println("방 번호: " + roomId);
         initStomp();
         initData();
@@ -125,6 +131,29 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
                 String objJson = gson.toJson(msg);
                 sendMsg(objJson);
                 Toast.makeText(getApplicationContext(), "결제완료", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s = confirmPaymentRequestEditBox.getText().toString();
+
+                if(loginedId.equals(confirmPaymentResponse.getMasterUserId()) && payAble){
+                    if(wantMsg3.equals("직접 입력")){
+                        Bill bill = new Bill(roomId, allPrice, wantMsg1+ "\n" + wantMsg2 + "\n" + s, confirmPaymentResponse.getRoomPickUpAddress() + " " + et_address.getText().toString());
+                        String objJson = gson.toJson(bill);
+                        sendMsg2(objJson);
+                    }else{
+                        Bill bill = new Bill(roomId, allPrice, wantMsg1+ "\n" + wantMsg2 + "\n" + wantMsg3, confirmPaymentResponse.getRoomPickUpAddress() + " " + et_address.getText().toString());
+                        String objJson = gson.toJson(bill);
+                        sendMsg2(objJson);
+                    }
+                }else{
+                    Toast.makeText(ConfirmPaymentActivity.this, "방장이 아니거나 결제가 끝나지 않았습니다.", Toast.LENGTH_SHORT).show();
+                }
+
+
+
             }
         });
 
@@ -197,7 +226,7 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
             if(a) i++;
         }
         if(i == item.payChk.size() && loginedId.equals(confirmPaymentResponse.getMasterUserId())){
-            findViewById(R.id.btn_confirm_payment_pay).setClickable(true);
+            payAble = true;
         }
 
         dataList.add(item);
@@ -272,7 +301,7 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
                 }
                 String menu = adapter.getItem(position);
                 btnConfirmPaymentRequestDialog.setText(menu);
-                Toast.makeText(ConfirmPaymentActivity.this, menu, Toast.LENGTH_SHORT).show();
+                wantMsg3 = adapter.getItem(position);;
             }
         });
         alert.show();
@@ -281,12 +310,14 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
     //주문 요청사항 체크박스 클릭 이벤트
     public void onCheckboxClicked(View v){
         if(cbConfirmPaymentDoor.isChecked()){
-            String str = cbConfirmPaymentDoor.getText().toString();
-            Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+            wantMsg1 = "문 앞에 놓고 가주세요. (o)";
+        }else{
+            wantMsg1 = "문 앞에 놓고 가주세요. (x)";
         }
         if(cbConfirmPaymentOneday.isChecked()){
-            String str = cbConfirmPaymentOneday.getText().toString();
-            Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+            wantMsg2 = "일회용 수저, 포크가 필요해요. (o)";
+        }else{
+            wantMsg2 = "일회용 수저, 포크가 필요해요. (x)";
         }
     }
 
@@ -312,7 +343,7 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
                 }
             }
         }
-        int allPrice = 0;
+        allPrice = 0;
         //메뉴
         for(Menus m : menus){
             adapter.addItem(m.name, m.count, m.price);
@@ -463,7 +494,9 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
 
         mStompClient.topic("/topic/chat/pay/" + roomId)
                 .subscribe(topicMessage -> {
-                    System.out.println(topicMessage.getPayload());
+                    if(topicMessage.getPayload().equals("end")){
+                        finish();
+                    }
                     initData();
                 });
         // add Header
@@ -474,7 +507,9 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
     public void sendMsg(String c){
         mStompClient.send("/chat/pay" ,c).subscribe();
     }
-
+    public void sendMsg2(String c){
+        mStompClient.send("/chat/sendbill" ,c).subscribe();
+    }
 
     private class Msg{
         String userId;
@@ -487,6 +522,15 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
     }
     private class Bill{
         Long roomId;
+        int allPrice;
         String msg;
+        String address;
+
+        public Bill(Long roomId, int allPrice, String msg, String address) {
+            this.roomId = roomId;
+            this.allPrice = allPrice;
+            this.msg = msg;
+            this.address = address;
+        }
     }
 }
