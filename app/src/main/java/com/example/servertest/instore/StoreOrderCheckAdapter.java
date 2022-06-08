@@ -73,9 +73,10 @@ public class StoreOrderCheckAdapter extends BaseAdapter {
     }
 
     //item에 데이터 추가
-    public void addItem(String address, String menu, String date, int price){
+    public void addItem(Long id, String address, String menu, String date, int price){
         StoreOrderCheckItem item = new StoreOrderCheckItem();
 
+        item.setChatRoomId(id);
         item.setPrice(price);
         item.setAddress(address);
         item.setDate(date);

@@ -1,12 +1,19 @@
 package com.example.servertest.instore;
 
 public class StoreOrderCheckItem {
-   /* private Long chatRoomId;
-    private*/
+    private Long chatRoomId;
     private String address;
     private String menu;
     private String date;
     private int price;
+
+    public Long getChatRoomId() {
+        return chatRoomId;
+    }
+
+    public void setChatRoomId(Long chatRoomId) {
+        this.chatRoomId = chatRoomId;
+    }
 
     public int getPrice() {
         return price;

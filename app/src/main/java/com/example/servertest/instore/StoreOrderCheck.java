@@ -38,6 +38,7 @@ public class StoreOrderCheck extends AppCompatActivity {
     private String wsServerUrl = "ws://175.200.243.163:8080/inchatroom/websocket";
     private static final String TAG = "ChatRoomActivity";
     StoreOrderCheckAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,15 +56,12 @@ public class StoreOrderCheck extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
                 StoreOrderCheckItem item = (StoreOrderCheckItem) parent.getItemAtPosition(position);
-
+                //Intent intent = new Intent(getApplicationContext(), )
             }
         });
     }
 
     public void orderList(){
-
-
-
         String objJson = gson.toJson(storeId);
         Call call = service.orderLoadInStore(objJson);
         call.enqueue(new Callback() {
@@ -75,7 +73,7 @@ public class StoreOrderCheck extends AppCompatActivity {
                 List<InStoreOrderResponse> inStoreOrderResponses = inStoreOrderResponseList.getInStoreOrderResponseList();
                 adapter.orderCheckItemList.clear();
                 for(InStoreOrderResponse i:inStoreOrderResponses){
-                    adapter.addItem(i.getAddress(), i.getMenusName(), i.getDate(), i.getPrice());
+                    adapter.addItem(i.getRoomId(), i.getAddress(), i.getMenusName(), i.getDate(), i.getPrice());
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -83,26 +81,6 @@ public class StoreOrderCheck extends AppCompatActivity {
             public void onFailure(Call call, Throwable t) {
             }
         });
-
-
-/*
-        adapter.addItem("부산 가야로 11길 22로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.05", 10000);
-        adapter.addItem("부산 가야로 22길 22로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.04", 20000);
-        adapter.addItem("부산 가야로 33길 33로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.03", 20000);
-        adapter.addItem("부산 가야로 44길 44로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.02", 20000);
-        adapter.addItem("부산 가야로 55길 55로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.01", 20000);
-        adapter.addItem("부산 가야로 11길 22로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.05", 230000);
-        adapter.addItem("부산 가야로 22길 22로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.04", 20000);
-        adapter.addItem("부산 가야로 33길 33로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.03", 20000);
-        adapter.addItem("부산 가야로 44길 44로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.02", 10000);
-        adapter.addItem("부산 가야로 55길 55로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.01", 20000);
-        adapter.addItem("부산 가야로 11길 22로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.05", 20000);
-        adapter.addItem("부산 가야로 22길 22로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.04", 20000);
-        adapter.addItem("부산 가야로 33길 33로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.03", 40000);
-        adapter.addItem("부산 가야로 44길 44로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.02", 20000);
-        adapter.addItem("부산 가야로 55길 55로", "맛있는 치킨, 맛없는치킨, 꿀꿀치킨", "2022.06.01", 20000);
-*/
-
 
 
     }
