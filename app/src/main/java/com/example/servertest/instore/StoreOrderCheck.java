@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.servertest.R;
@@ -56,9 +57,20 @@ public class StoreOrderCheck extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
                 StoreOrderCheckItem item = (StoreOrderCheckItem) parent.getItemAtPosition(position);
-                //Intent intent = new Intent(getApplicationContext(), )
+                Intent intent = new Intent(getApplicationContext(), StoreOrderHistoryMain.class);
+                intent.putExtra("payOrderId", item.getPayOrderId());
+                startActivityForResult(intent, 0);
+
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String text = data.getStringExtra("text");
+        orderList();
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 
     public void orderList(){
@@ -73,7 +85,7 @@ public class StoreOrderCheck extends AppCompatActivity {
                 List<InStoreOrderResponse> inStoreOrderResponses = inStoreOrderResponseList.getInStoreOrderResponseList();
                 adapter.orderCheckItemList.clear();
                 for(InStoreOrderResponse i:inStoreOrderResponses){
-                    adapter.addItem(i.getRoomId(), i.getAddress(), i.getMenusName(), i.getDate(), i.getPrice());
+                    adapter.addItem(i.getPayOrderId(), i.getAddress(), i.getMenusName(), i.getDate(), i.getPrice(), i.getState());
                 }
                 adapter.notifyDataSetChanged();
             }

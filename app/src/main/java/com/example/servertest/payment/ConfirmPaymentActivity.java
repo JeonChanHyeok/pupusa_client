@@ -60,7 +60,7 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
     Long roomId;
     boolean payAble;
     int allPrice;
-    String wantMsg1, wantMsg2, wantMsg3;
+    String wantMsg1 = "문 앞에 놓고 가주세요. (x)", wantMsg2 = "일회용 수저, 포크가 필요해요. (x)", wantMsg3;
 
     ConfirmPaymentResponse confirmPaymentResponse;
 
@@ -94,6 +94,7 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
         System.out.println("방 번호: " + roomId);
         initStomp();
         initData();
+
 
         //요청사항 버튼 클릭 시
         findViewById(R.id.btn_confirm_payment_request_dialog).setOnClickListener(new View.OnClickListener() {
@@ -139,6 +140,9 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
                 String s = confirmPaymentRequestEditBox.getText().toString();
 
                 if(loginedId.equals(confirmPaymentResponse.getMasterUserId()) && payAble){
+                    if(wantMsg3 == null){
+                        wantMsg3 = "없음";
+                    }
                     if(wantMsg3.equals("직접 입력")){
                         Bill bill = new Bill(roomId, allPrice, wantMsg1+ "\n" + wantMsg2 + "\n" + s, confirmPaymentResponse.getRoomPickUpAddress() + " " + et_address.getText().toString());
                         String objJson = gson.toJson(bill);
@@ -338,7 +342,7 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
                 for(int j=0; j < menus.size();j++){
                     if(confirmPaymentResponse.getMenuName().get(i).equals(menus.get(j).name)){
                         menus.get(j).count++;
-                        menus.get(j).price += menus.get(j).price;
+                        menus.get(j).price += confirmPaymentResponse.getMenuPrice().get(i);
                     }
                 }
             }
@@ -398,7 +402,7 @@ public class ConfirmPaymentActivity extends AppCompatActivity {
                     for (int j = 0; j < menus.size(); j++) {
                         if (confirmPaymentResponse.getMenuName().get(i).equals(menus.get(j).name)) {
                             menus.get(j).count++;
-                            menus.get(j).price += menus.get(j).price;
+                            menus.get(j).price += confirmPaymentResponse.getMenuPrice().get(i);
                         }
                     }
                 }

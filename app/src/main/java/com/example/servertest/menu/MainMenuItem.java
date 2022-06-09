@@ -1,4 +1,4 @@
-package com.example.servertest.mypage;
+package com.example.servertest.menu;
 
 import android.graphics.drawable.Drawable;
 
@@ -6,6 +6,7 @@ public class MainMenuItem {
     private String menuName;
     private int price;
     private Drawable image;
+    private Long menuId;
 
     public String getMenuName() {
         return menuName;

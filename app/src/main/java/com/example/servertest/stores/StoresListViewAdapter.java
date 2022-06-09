@@ -57,7 +57,7 @@ public class StoresListViewAdapter extends BaseAdapter {
         //뷰 리턴
     }
     //메인에서 받으면 커스텀으로 보내기 위한
-    public void additem(Drawable post, String title, String star_score,String pickup_charge,String pickup_time ){
+    public void additem(Drawable post, String title, String star_score,String pickup_charge,String pickup_time ,Long id){
         StoresListViewItem item = new StoresListViewItem();
 
         item.setPost(post);
@@ -65,6 +65,7 @@ public class StoresListViewAdapter extends BaseAdapter {
         item.setDescript(star_score);
         item.setPickup_charge(pickup_charge);
         item.setPickup_time(pickup_time);
+        item.setId(id);
         itemList.add(item);
     }
 }

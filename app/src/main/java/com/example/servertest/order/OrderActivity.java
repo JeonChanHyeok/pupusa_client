@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.servertest.R;
 import com.example.servertest.map.Map_Main;
+import com.example.servertest.menu.MenuList;
 import com.example.servertest.payment.ConfirmPaymentActivity;
 import com.example.servertest.server.RetrofitClient;
 import com.example.servertest.server.ServiceApi;
@@ -32,13 +34,14 @@ public class OrderActivity extends AppCompatActivity {
     Long roomId;
     ArrayList<DetailOrderGroup> DataList;
     TextView tv_order_pickup_location;
+    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-        String userId = getIntent().getStringExtra("loginedId");
+        userId = getIntent().getStringExtra("loginedId");
         roomId = getIntent().getLongExtra("roomId", 0L);
         TextView tv_store_name = (TextView)findViewById(R.id.tv_order_store_name);
         Button btn_choice_menu = (Button) findViewById(R.id.btn_order_choice_menu);
@@ -80,7 +83,7 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent map = new Intent(getApplicationContext(), Map_Main.class);
-                startActivityForResult(map, 0);
+                startActivityForResult(map, 1);
             }
         });
 
@@ -88,32 +91,9 @@ public class OrderActivity extends AppCompatActivity {
         btn_choice_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SendOrder sendOrder = new SendOrder(userId, roomId, 8L);
-                String objJson = gson.toJson(sendOrder);
-                Call send = service.sendOrder(objJson);
-                send.enqueue(new Callback() {
-                    @Override
-                    public void onResponse(Call call, Response response) {
-                        String str = gson.toJson(response.body());
-                        OrderResponseList orderResponses = gson.fromJson(str, OrderResponseList.class);
-                        if(orderResponses.getCode() == 0){
-                            Toast.makeText(OrderActivity.this, "결제가 진행중입니다.", Toast.LENGTH_SHORT).show();
-                        }else{
-                            DataList.clear();
-                            for(OrderResponse o : orderResponses.getOrderResponseList()){
-                                DetailOrderGroup temp = new DetailOrderGroup(o.getUserName());
-                                temp.child.add(o.getMenuName() + " " + o.getPrice() + "원");
-                                DataList.add(temp);
-                            }
-                            detailOrderAdapter.notifyDataSetChanged();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call call, Throwable t) {
-
-                    }
-                });
+                Intent intent = new Intent(getApplicationContext(), MenuList.class);
+                intent.putExtra("roomId", roomId);
+                startActivityForResult(intent, 0);
             }
         });
 
@@ -133,37 +113,59 @@ public class OrderActivity extends AppCompatActivity {
 
                     }
                 });
-                Intent go_order = new Intent(getApplicationContext(), ConfirmPaymentActivity.class);
-                go_order.putExtra("roomId", roomId);
-                go_order.putExtra("loginedId", userId);
-                startActivity(go_order);
+                Toast.makeText(OrderActivity.this, "주문을 시작합니다. 다시 한번 장바구니 버튼을 눌러주세요.", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        String address = data.getStringExtra("address");
-        Location location = new Location(roomId, address);
-        String objJson = gson.toJson(location);
-        Call calll = service.changeLocation(objJson);
-        calll.enqueue(new Callback() {
-            @Override
-            public void onResponse(Call call, Response response) {
-                Toast.makeText(OrderActivity.this, "주소가 변경되었습니다.", Toast.LENGTH_SHORT).show();
-                finish();//인텐트 종료
-                overridePendingTransition(0, 0);//인텐트 효과 없애기
-                Intent intent = getIntent(); //인텐트
-                startActivity(intent); //액티비티 열기
-                overridePendingTransition(0, 0);//인텐트 효과 없애기
-            }
+        if(requestCode == 1) {
+            String address = data.getStringExtra("address");
+            Location location = new Location(roomId, address);
+            String objJson = gson.toJson(location);
+            Call calll = service.changeLocation(objJson);
+            calll.enqueue(new Callback() {
+                @Override
+                public void onResponse(Call call, Response response) {
+                    Toast.makeText(OrderActivity.this, "주소가 변경되었습니다.", Toast.LENGTH_SHORT).show();
+                    finish();//인텐트 종료
+                    overridePendingTransition(0, 0);//인텐트 효과 없애기
+                    Intent intent = getIntent(); //인텐트
+                    startActivity(intent); //액티비티 열기
+                    overridePendingTransition(0, 0);//인텐트 효과 없애기
+                }
 
-            @Override
-            public void onFailure(Call call, Throwable t) {
+                @Override
+                public void onFailure(Call call, Throwable t) {
 
-            }
-        });
+                }
+            });
+        }else{
+            Long menuId = data.getLongExtra("menuId", 0L);
+            SendOrder sendOrder = new SendOrder(userId, roomId, menuId);
+            String objJson = gson.toJson(sendOrder);
+            Call send = service.sendOrder(objJson);
+            send.enqueue(new Callback() {
+                @Override
+                public void onResponse(Call call, Response response) {
+                    String str = gson.toJson(response.body());
+                    OrderResponseList orderResponses = gson.fromJson(str, OrderResponseList.class);
+                    if(orderResponses.getCode() == 0){
+                        Toast.makeText(OrderActivity.this, "결제가 진행중입니다.", Toast.LENGTH_SHORT).show();
+                    }else{
+                        initOrderList();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call call, Throwable t) {
+
+                }
+            });
+        }
 
     }
     private class Location{
@@ -184,6 +186,7 @@ public class OrderActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 String str = gson.toJson(response.body());
                 OrderResponseList orderResponses = gson.fromJson(str, OrderResponseList.class);
+                DataList.clear();
                 for(OrderResponse o : orderResponses.getOrderResponseList()){
                     DetailOrderGroup temp = new DetailOrderGroup(o.getUserName());
                     temp.child.add(o.getMenuName() + " " + o.getPrice() + "원");

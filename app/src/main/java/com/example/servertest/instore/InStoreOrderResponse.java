@@ -1,14 +1,19 @@
 package com.example.servertest.instore;
 
 public class InStoreOrderResponse {
-    private Long roomId;
+    private Long payOrderId;
     private String address;
     private String menusName;
     private String date;
     private int price;
+    private int state;
 
-    public Long getRoomId() {
-        return roomId;
+    public int getState() {
+        return state;
+    }
+
+    public Long getPayOrderId() {
+        return payOrderId;
     }
 
     public String getAddress() {

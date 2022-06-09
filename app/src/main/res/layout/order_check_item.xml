@@ -38,41 +38,6 @@
             android:layout_marginRight="15dp"
             android:text="미확인" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_order_check_ready"
-            android:layout_width="40dp"
-            android:layout_height="20dp"
-            android:textSize="10dp"
-            android:textColor="@color/white"
-            android:background="@drawable/btn_round_green"
-            android:outlineProvider="none"
-            android:visibility="gone"
-            android:layout_marginRight="15dp"
-            android:text="준비중" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_order_check_delivery"
-            android:layout_width="40dp"
-            android:layout_height="20dp"
-            android:textSize="10dp"
-            android:textColor="@color/white"
-            android:background="@drawable/btn_round_blue"
-            android:outlineProvider="none"
-            android:visibility="gone"
-            android:layout_marginRight="15dp"
-            android:text="배달중" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_order_check_confirm"
-            android:layout_width="40dp"
-            android:layout_height="20dp"
-            android:textSize="10dp"
-            android:textColor="@color/white"
-            android:background="@drawable/btn_round_yellow"
-            android:outlineProvider="none"
-            android:visibility="gone"
-            android:layout_marginRight="15dp"
-            android:text="배달완료" />
     </LinearLayout>
 
     <TextView
@@ -80,7 +45,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:text="부산광역시 남구 문현동 189-69"
         android:textColor="@color/black"
         android:textSize="14dp" />
 

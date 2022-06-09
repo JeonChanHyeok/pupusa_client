@@ -44,18 +44,25 @@ public class StoreOrderHistoryAdapter extends BaseAdapter {
         //"orderHistoryItem" Layout을 infalte하여 convertView 참조 획득.
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.order_history_item, parent, false); }
+            convertView = inflater.inflate(R.layout.in_store_order_item, parent, false); }
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        TextView menuName = (TextView) convertView.findViewById(R.id.tv_order_history_menu_name);
-        TextView menuNum = (TextView) convertView.findViewById(R.id.tv_order_history_menu_num);
-        TextView menuPrice = (TextView) convertView.findViewById(R.id.tv_order_history_menu_price);
+        TextView menuName = (TextView) convertView.findViewById(R.id.tv_in_store_order_menu_name);
+        TextView menuNum = (TextView) convertView.findViewById(R.id.tv_in_store_order_menu_num);
+        TextView menuPrice = (TextView) convertView.findViewById(R.id.tv_in_store_order_menu_price);
+        TextView gae = (TextView) convertView.findViewById(R.id._in_store_order_gae);
 
         //Data Seet에서 position에 위치한 데이터 참조 획득
         StoreOrderHistoryItem orderItem = orderHistoryItemList.get(position);
 
         menuName.setText(orderItem.getMenuName());
-        menuNum.setText(String.valueOf(orderItem.getMenuNum()));
+        if(orderItem.getMenuNum() == 999){
+            menuNum.setText("");
+            gae.setText("");
+        }else{
+            menuNum.setText(String.valueOf(orderItem.getMenuNum()));
+            gae.setText("개");
+        }
         menuPrice.setText(String.valueOf(orderItem.getMenuPrice()));
 
         return convertView;

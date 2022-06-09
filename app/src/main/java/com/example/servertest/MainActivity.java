@@ -116,15 +116,26 @@ public class MainActivity extends AppCompatActivity {
             adapter.setOnItemClickListener(new MainRecyclerAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(View v, int position) {
-                    switch (position) {
+                    Intent storeIntent = new Intent(getApplicationContext(), StoresActivity.class);
+                    String category;
+                    switch (position){
                         case 0:
-                            Intent storeIntent = new Intent(getApplicationContext(), StoresActivity.class);
-                            storeIntent.putExtra("category", "치킨");
-                            storeIntent.putExtra("loginedId", loginedId);
-                            storeIntent.putExtra("islogin", isLogin);
-                            startActivity(storeIntent);
+                            category = "치킨";
+                            break;
+                        case 1:
+                            category = "중식";
+                            break;
+                        case 2:
+                            category = "분식";
+                            break;
+                        default:
+                            category = "전체";
                             break;
                     }
+                    storeIntent.putExtra("category", category);
+                    storeIntent.putExtra("loginedId", loginedId);
+                    storeIntent.putExtra("islogin", isLogin);
+                    startActivity(storeIntent);
                 }
             });
 
@@ -237,10 +248,9 @@ public class MainActivity extends AppCompatActivity {
     public void nextLayout(View v) {
         int id = v.getId();
         ImageView imageView = v.findViewById(id);
-        String tag = (String) imageView.getTag();
 
         Intent it = new Intent(this, AlertActivity.class);
-        it.putExtra("it_tag", tag);
+        it.putExtra("loginedId", loginedId);
         startActivity(it);
     }
 
@@ -270,7 +280,6 @@ public class MainActivity extends AppCompatActivity {
         List<MainRecyclerItem> itemList = new ArrayList<>();
 
         itemList.add(new MainRecyclerItem(R.drawable.ic_chicken));
-        itemList.add(new MainRecyclerItem(R.drawable.ic_japan2));
         itemList.add(new MainRecyclerItem(R.drawable.ic_china2));
         itemList.add(new MainRecyclerItem(R.drawable.ic_bunsik2));
 
@@ -300,16 +309,10 @@ public class MainActivity extends AppCompatActivity {
                     str1 = "치킨";
                     break;
                 case 2:
-                    str1 = "피자";
+                    str1 = "중식";
                     break;
                 case 3:
                     str1 = "분식";
-                    break;
-                case 4:
-                    str1 = "일식";
-                    break;
-                case 5:
-                    str1 = "패스트푸드";
                     break;
             }
             recyclerAdapter2.setArrayData(str1);

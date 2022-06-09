@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.AppCompatButton;
+
 import com.example.servertest.R;
 
 import java.util.ArrayList;
@@ -55,7 +57,7 @@ public class StoreOrderCheckAdapter extends BaseAdapter {
         TextView address = (TextView) convertView.findViewById(R.id.tv_order_check_address);
         TextView menu = (TextView) convertView.findViewById(R.id.tv_order_check_menu);
         TextView price = (TextView) convertView.findViewById(R.id.tv_order_check_price);
-
+        AppCompatButton button0 = (AppCompatButton)convertView.findViewById(R.id.btn_order_check_unconfirm);
         listView = (ListView) convertView.findViewById(R.id.ll_order_check);
         button = (Button) convertView.findViewById(R.id.btn_order_check_unconfirm);
         //listView.setFocusable(false);
@@ -63,6 +65,25 @@ public class StoreOrderCheckAdapter extends BaseAdapter {
 
         //Data Seet에서 position에 위치한 데이터 참조 획득
         StoreOrderCheckItem orderItem = orderCheckItemList.get(position);
+
+        switch (orderItem.getState()){
+            case 0:
+                button0.setText("미확인");
+                button0.setBackgroundResource(R.drawable.btn_round_pink);
+                break;
+            case 1:
+                button0.setText("준비중");
+                button0.setBackgroundResource(R.drawable.btn_round_green);
+                break;
+            case 2:
+                button0.setText("배달중");
+                button0.setBackgroundResource(R.drawable.btn_round_blue);
+                break;
+            case 3:
+                button0.setText("배달완료");
+                button0.setBackgroundResource(R.drawable.btn_round_yellow);
+                break;
+        }
 
         price.setText(String.valueOf(orderItem.getPrice()));
         date.setText(orderItem.getDate());
@@ -73,15 +94,14 @@ public class StoreOrderCheckAdapter extends BaseAdapter {
     }
 
     //item에 데이터 추가
-    public void addItem(Long id, String address, String menu, String date, int price){
+    public void addItem(Long id, String address, String menu, String date, int price, int state){
         StoreOrderCheckItem item = new StoreOrderCheckItem();
-
-        item.setChatRoomId(id);
+        item.setPayOrderId(id);
         item.setPrice(price);
         item.setAddress(address);
         item.setDate(date);
         item.setMenu(menu);
-
+        item.setState(state);
         orderCheckItemList.add(item);
     }
 }

@@ -48,7 +48,6 @@ public class StoreMyPage extends AppCompatActivity {
                         iv.setImageResource(R.drawable.ic_bunsik2);
                         break;
                 }
-
             }
 
             @Override
@@ -87,11 +86,11 @@ public class StoreMyPage extends AppCompatActivity {
         btn_review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(StoreMyPage.this, StoreMyReview.class);
-                //startActivity(intent);
+                Intent intent = new Intent(StoreMyPage.this, StoreMyReview.class);
+                startActivity(intent);
+
             }
         });
-
     }
 
     //뒤로가기 방지
@@ -99,7 +98,4 @@ public class StoreMyPage extends AppCompatActivity {
     public void onBackPressed() {
         //super.onBackPressed();
     }
-
-
-
 }

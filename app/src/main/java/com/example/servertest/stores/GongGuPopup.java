@@ -22,6 +22,7 @@ public class GongGuPopup extends Activity {
     String loginedId;
     int isLogin;
     Long storeId;
+    String storeName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class GongGuPopup extends Activity {
         loginedId = getIntent.getStringExtra("loginedId");
         isLogin = getIntent.getIntExtra("isLogin", 0);
         storeId = getIntent.getLongExtra("storeId", 0);
+        storeName = getIntent.getStringExtra("storeName");
+
 
 
 
@@ -54,6 +57,7 @@ public class GongGuPopup extends Activity {
                 createChatRoomIntent.putExtra("loginedId", loginedId);
                 createChatRoomIntent.putExtra("isLogin", isLogin);
                 createChatRoomIntent.putExtra("storeId", storeId);
+                createChatRoomIntent.putExtra("storeName", storeName);
                 startActivity(createChatRoomIntent);
             }
         });

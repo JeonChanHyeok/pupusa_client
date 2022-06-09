@@ -19,6 +19,11 @@ public class StoresRecyclerViewAdapter extends RecyclerView.Adapter<StoresRecycl
     }
     //리스너 객체 참조 변수
     private OnItemClickListener mListener = null;
+
+    public ArrayList<StoresRecyclerViewItem> getmList() {
+        return mList;
+    }
+
     //리스너 객체 참조를 어댑터에 전달 메서드
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.mListener = listener;
@@ -59,13 +64,13 @@ public class StoresRecyclerViewAdapter extends RecyclerView.Adapter<StoresRecycl
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View view = inflater.inflate(R.layout.activity_recycler_item, parent, false);
-        StoresRecyclerViewAdapter.ViewHolder vh = new StoresRecyclerViewAdapter.ViewHolder(view);
+        ViewHolder vh = new ViewHolder(view);
         return vh;
     }
 
     // position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시
     @Override
-    public void onBindViewHolder(@NonNull StoresRecyclerViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         StoresRecyclerViewItem item = mList.get(position);
 
         //holder.imgView_item.setImageResource(R.drawable.ic_launcher_background);   // 사진 없어서 기본 파일로 이미지 띄움

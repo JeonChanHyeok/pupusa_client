@@ -19,6 +19,10 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerAdapte
         mItemList = a_list;
     }
 
+    public List<MainRecyclerItem> getmItemList() {
+        return mItemList;
+    }
+
     interface OnItemClickListener{
         void onItemClick(View v, int position); //뷰와 포지션값
     }

@@ -1,11 +1,11 @@
-package com.example.servertest.mypage;
+package com.example.servertest.menu;
 
 import android.graphics.Rect;
 import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MenuBarDeco extends RecyclerView.ItemDecoration {
+public class MainMenuDeco extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);

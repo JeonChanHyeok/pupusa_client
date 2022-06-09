@@ -1,8 +1,10 @@
 package com.example.servertest.server;
 
+import com.example.servertest.alret.AlertResponseList;
 import com.example.servertest.instore.InStoreInfoResponse;
 import com.example.servertest.instore.InStoreOrderResponse;
 import com.example.servertest.instore.StoreLoginResponse;
+import com.example.servertest.instore.StoreOrderContentResponse;
 import com.example.servertest.login.DupResponse;
 import com.example.servertest.login.JoinResponse;
 import com.example.servertest.login.LoginResponse;
@@ -22,6 +24,18 @@ public interface ServiceApi {
     @FormUrlEncoded
     @POST("/store/orderload")
     Call<Object> orderLoadInStore(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/store/payorderload")
+    Call<StoreOrderContentResponse> payOrderLoadInStore(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/store/payorderconfirm")
+    Call<Void> payOrderConfirmInStore(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/alert/load")
+    Call<AlertResponseList> loadAlert(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("/order/changeloc")
@@ -98,5 +112,13 @@ public interface ServiceApi {
     @FormUrlEncoded
     @POST("/pay/loadPayList")
     Call<Object> loadPayList(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/store/load_store_info")
+    Call<Object> getStoreId(@Field("objJson") String objJson);
+
+    @FormUrlEncoded
+    @POST("/menu/loadmenulist")
+    Call<Object> getMenus(@Field("objJson") String objJson);
 
 }

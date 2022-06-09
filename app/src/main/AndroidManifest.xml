@@ -27,8 +27,6 @@
         <activity android:name="com.example.servertest.login.JoinActivity"/>
         <activity android:name="com.example.servertest.alret.AlertActivity"/>
         <activity android:name="com.example.servertest.MainActivity"/>
-        <activity android:name=".mypage.MenuList"
-            android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.MyPageActivity"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".mypage.CreateChatRoom"
@@ -68,6 +66,10 @@
         <activity android:name=".instore.StoreMyPage"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".instore.StoreOrderCheck"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".instore.StoreOrderHistoryMain"
+            android:theme="@style/Theme.Capston"/>
+        <activity android:name=".menu.MenuList"
             android:theme="@style/Theme.Capston"/>
         <activity android:name=".map.Map_Main"
             android:theme="@style/Theme.Capston"/>

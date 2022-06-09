@@ -34,7 +34,7 @@ public class CreateChatRoomActivity extends AppCompatActivity {
     String loginedId;
     int isLogin;
     Long chatRoomStoreId;
-    EditText etChatRoomAddress;
+    TextView etChatRoomAddress;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,11 +46,13 @@ public class CreateChatRoomActivity extends AppCompatActivity {
         loginedId = getIntent.getStringExtra("loginedId");
         isLogin = getIntent.getIntExtra("isLogin",0);
         chatRoomStoreId = getIntent.getLongExtra("storeId",0);
-        chatRoomStoreName = "치킨집1";
+        chatRoomStoreName = getIntent.getStringExtra("storeName");
         EditText etChatRoomTitle = (EditText) findViewById(R.id.et_create_chat_room_input_title);
-        etChatRoomAddress = (EditText) findViewById(R.id.et_create_chat_room_input_address);
+        etChatRoomAddress = (TextView) findViewById(R.id.et_create_chat_room_input_address);
         TextView tvChatRoomStoreName = (TextView) findViewById(R.id.tv_create_chat_room_input_store_name);
         EditText etChatRoomInfo = (EditText) findViewById(R.id.et_create_chat_room_input_content);
+
+        tvChatRoomStoreName.setText(chatRoomStoreName);
 
         Button btnMake = (Button) findViewById(R.id.btn_create_chat_room_make);
         Button goMap = (Button) findViewById(R.id.btn_create_chat_room_current_location);

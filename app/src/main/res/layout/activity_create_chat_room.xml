@@ -49,11 +49,12 @@
             app:layout_constraintStart_toStartOf="@+id/et_create_chat_room_input_title"
             app:layout_constraintTop_toBottomOf="@id/et_create_chat_room_input_title" />
 
-        <EditText
+        <TextView
             android:id="@+id/et_create_chat_room_input_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="주소를 입력해주세요"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="@+id/et_create_chat_room_input_title"
             app:layout_constraintStart_toStartOf="@+id/tv_create_chat_room_address"
             app:layout_constraintTop_toBottomOf="@id/tv_create_chat_room_address" />
@@ -80,11 +81,11 @@
             app:layout_constraintStart_toStartOf="@+id/btn_create_chat_room_current_location"
             app:layout_constraintTop_toBottomOf="@+id/btn_create_chat_room_current_location" />
 
-        <EditText
+        <TextView
             android:id="@+id/tv_create_chat_room_input_store_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="가게 이름을 입력해주세요"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="@+id/et_create_chat_room_input_address"
             app:layout_constraintStart_toStartOf="@+id/et_create_chat_room_input_address"
             app:layout_constraintTop_toBottomOf="@+id/tv_rcreate_chat_room_store_name" />

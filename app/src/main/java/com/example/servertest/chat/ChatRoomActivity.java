@@ -154,6 +154,8 @@ public class ChatRoomActivity extends Activity {
                     startActivity(go_payment);
                 }else if(state == 2){
                     Toast.makeText(ChatRoomActivity.this, "결제가 완료 된 채팅방입니다.", Toast.LENGTH_SHORT).show();
+                }else if(state == 3){
+                    Toast.makeText(ChatRoomActivity.this, "배달 완료 된 채팅방입니다.", Toast.LENGTH_SHORT).show();
                 }
             }
 

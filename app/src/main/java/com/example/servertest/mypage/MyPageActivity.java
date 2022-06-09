@@ -121,9 +121,9 @@ public class MyPageActivity extends AppCompatActivity {
         btn_change_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyPageActivity.this, MenuList.class);
+                /*Intent intent = new Intent(MyPageActivity.this, MenuList.class);
                 intent.putExtra("user", user);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
         btn_logout.setOnClickListener(new View.OnClickListener() {

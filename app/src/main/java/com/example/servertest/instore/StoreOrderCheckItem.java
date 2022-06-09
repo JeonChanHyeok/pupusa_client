@@ -1,18 +1,27 @@
 package com.example.servertest.instore;
 
 public class StoreOrderCheckItem {
-    private Long chatRoomId;
+    private Long payOrderId;
     private String address;
     private String menu;
     private String date;
     private int price;
+    private int state;
 
-    public Long getChatRoomId() {
-        return chatRoomId;
+    public int getState() {
+        return state;
     }
 
-    public void setChatRoomId(Long chatRoomId) {
-        this.chatRoomId = chatRoomId;
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public Long getPayOrderId() {
+        return payOrderId;
+    }
+
+    public void setPayOrderId(Long payOrderId) {
+        this.payOrderId = payOrderId;
     }
 
     public int getPrice() {

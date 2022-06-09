@@ -1,4 +1,4 @@
-package com.example.servertest.mypage;
+package com.example.servertest.menu;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -9,8 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import com.example.servertest.R;
+
+import java.util.ArrayList;
 
 public class SelectMenuItemAdapter extends BaseAdapter {
     private ArrayList<SelectMenuItem> SelectMenuItemList = new ArrayList<>();
@@ -58,14 +59,14 @@ public class SelectMenuItemAdapter extends BaseAdapter {
     }
 
     //item에 데이터 추가
-    public void addItem(Drawable menuImg, String content, String menu, int price){
+    public void addItem(Drawable menuImg, String content, String menu, int price, Long menuId){
         SelectMenuItem item = new SelectMenuItem();
 
         item.setMenuImg(menuImg);
         item.setMenuContent(content);
         item.setMenuPrice(price);
         item.setMenuName(menu);
-
+        item.setMenuId(menuId);
         SelectMenuItemList.add(item);
     }
 }
